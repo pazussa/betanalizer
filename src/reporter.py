@@ -305,7 +305,7 @@ class ReportGenerator:
         
         # Construir encabezados dinámicamente
         headers = ["Partido", "Fecha_Hora_COT", "Score_Final", "Diferencia_Cuota_Promedio",
-                   "Mercado", "Cuota", "Casa_Apuestas", 
+                   "Mercado", "Cuota", "Casa_Apuestas", "Volatilidad_Pct",
                    "Margen_Casa_Pct", "Margen_Mercado_Promedio_Pct", "Ventaja_Margen_Pct", 
                    "Cuota_Promedio_Mercado",
                    "Bwin_Cuota_1", "Bwin_Cuota_X", "Bwin_Cuota_2", "Bwin_Margen_Pct"]
@@ -372,6 +372,9 @@ class ReportGenerator:
                         bwin_margin = round(h2h.overround_percentage, 2)
                         break
             
+            # Obtener volatilidad
+            volatility = result.volatility_std if result.volatility_std is not None else ""
+            
             # Construir línea CSV
             row_data = [
                 f'"{result.match_display}"',
@@ -381,6 +384,7 @@ class ReportGenerator:
                 f'"{market_code}"',
                 str(result.best_odds),
                 f'"{result.bookmaker.value}"',
+                str(volatility),
                 str(margin_bookmaker),
                 str(margin_avg),
                 str(margin_advantage),

@@ -142,6 +142,9 @@ class FootballOddsAnalyzer:
                 if bookmaker_h2h:
                     bookmaker_margin = round(bookmaker_h2h.overround_percentage, 2)
             
+            # Calcular volatilidad (desviación estándar) de las cuotas 1X
+            volatility = self._calculate_volatility([odds.odds for odds in match_odds.odds_1x])
+            
             result = AnalysisResult(
                 match=match_odds.match,
                 market=MarketType.DOUBLE_CHANCE_1X,
@@ -154,6 +157,7 @@ class FootballOddsAnalyzer:
                 bookmaker_margin=bookmaker_margin,
                 avg_market_margin=round(avg_margin, 2) if avg_margin else None,
                 avg_market_odds=round(match_odds.avg_1x_odds, 4) if match_odds.avg_1x_odds > 0 else None,
+                volatility_std=volatility,
                 match_odds=match_odds
             )
             results.append(result)
@@ -175,6 +179,9 @@ class FootballOddsAnalyzer:
                 if bookmaker_h2h:
                     bookmaker_margin = round(bookmaker_h2h.overround_percentage, 2)
             
+            # Calcular volatilidad (desviación estándar) de las cuotas X2
+            volatility = self._calculate_volatility([odds.odds for odds in match_odds.odds_x2])
+            
             result = AnalysisResult(
                 match=match_odds.match,
                 market=MarketType.DOUBLE_CHANCE_X2,
@@ -187,6 +194,7 @@ class FootballOddsAnalyzer:
                 bookmaker_margin=bookmaker_margin,
                 avg_market_margin=round(avg_margin, 2) if avg_margin else None,
                 avg_market_odds=round(match_odds.avg_x2_odds, 4) if match_odds.avg_x2_odds > 0 else None,
+                volatility_std=volatility,
                 match_odds=match_odds
             )
             results.append(result)
@@ -285,6 +293,38 @@ class FootballOddsAnalyzer:
         except Exception as e:
             self.logger.error(f"Error en análisis completo: {e}")
             raise ValidationError(f"Error en análisis: {e}")
+    
+    def _calculate_volatility(self, odds_list: List[float]) -> Optional[float]:
+        """
+        Calcula la volatilidad (desviación estándar) de una lista de cuotas
+        
+        Args:
+            odds_list: Lista de cuotas del mismo mercado de diferentes casas
+            
+        Returns:
+            Desviación estándar en porcentaje (None si no hay suficientes datos)
+        """
+        if not odds_list or len(odds_list) < 2:
+            return None
+        
+        try:
+            # Calcular promedio
+            mean = sum(odds_list) / len(odds_list)
+            
+            # Calcular varianza
+            variance = sum((x - mean) ** 2 for x in odds_list) / len(odds_list)
+            
+            # Calcular desviación estándar
+            std_dev = variance ** 0.5
+            
+            # Convertir a porcentaje relativo al promedio
+            volatility_pct = (std_dev / mean) * 100 if mean > 0 else 0
+            
+            return round(volatility_pct, 2)
+            
+        except Exception as e:
+            self.logger.warning(f"Error calculando volatilidad: {e}")
+            return None
     
     async def validate_api_connections(self) -> Dict[str, bool]:
         """

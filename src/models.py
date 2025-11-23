@@ -174,6 +174,7 @@ class AnalysisResult(BaseModel):
     bookmaker_margin: Optional[float] = None  # Margen de la casa de apuestas (%)
     avg_market_margin: Optional[float] = None  # Margen promedio del mercado (%)
     avg_market_odds: Optional[float] = None  # Promedio de cuotas del mercado
+    volatility_std: Optional[float] = None  # Volatilidad (desviación estándar) de las cuotas del mercado (%)
     match_odds: Optional['MatchOdds'] = None  # Todas las cuotas del partido
     
     @property
