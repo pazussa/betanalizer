@@ -72,8 +72,8 @@ def cli():
 )
 @click.option(
     '--hours-ahead', '-h',
-    default=168,
-    help='Horas hacia adelante para buscar partidos (por defecto 168 = 7 días)',
+    default=72,
+    help='Horas hacia adelante para buscar partidos (por defecto 72 = 3 días)',
     type=click.IntRange(1, 336)
 )
 @click.option(
