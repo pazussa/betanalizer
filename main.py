@@ -22,15 +22,23 @@ from src.reporter import ReportGenerator
 from src.models import ValidationError
 
 
-# Configurar logging
+# Configurar logging con UTF-8 para manejar caracteres especiales
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('betting_analysis.log'),
+        logging.FileHandler('betting_analysis.log', encoding='utf-8'),
         logging.StreamHandler()
     ]
 )
+
+# Configurar StreamHandler con UTF-8 en Windows
+import sys
+if sys.platform == 'win32':
+    import io
+    for handler in logging.root.handlers:
+        if isinstance(handler, logging.StreamHandler) and handler.stream == sys.stderr:
+            handler.stream = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 
 logger = logging.getLogger(__name__)
 
@@ -77,6 +85,12 @@ def cli():
     type=click.IntRange(1, 336)
 )
 @click.option(
+    '--hours-from',
+    default=0,
+    help='Horas desde ahora para comenzar a buscar partidos (por defecto 0)',
+    type=click.IntRange(0, 336)
+)
+@click.option(
     '--show-all/--only-compliant',
     default=True,
     help='Mostrar todos los resultados o solo los que cumplen criterios'
@@ -86,7 +100,7 @@ def cli():
     help='Exportar resultados a archivo CSV',
     type=click.Path()
 )
-def analyze(min_probability, min_odds, hours_ahead, show_all, export_csv):
+def analyze(min_probability, min_odds, hours_ahead, hours_from, show_all, export_csv):
     """
     Ejecutar análisis completo de cuotas de fútbol
     
@@ -112,11 +126,16 @@ def analyze(min_probability, min_odds, hours_ahead, show_all, export_csv):
                 sys.exit(1)
             
             # Ejecutar análisis
-            click.echo(f"📊 Analizando partidos próximos ({hours_ahead} horas = {hours_ahead//24} días)...")
+            if hours_from > 0:
+                click.echo(f"📊 Analizando partidos entre {hours_from} y {hours_ahead} horas (rango de {hours_ahead - hours_from} horas)...")
+            else:
+                click.echo(f"📊 Analizando partidos próximos ({hours_ahead} horas = {hours_ahead//24} días)...")
+            
             results = await analyzer.analyze_all_matches(
                 min_probability=min_probability,
                 min_odds=min_odds,
-                hours_ahead=hours_ahead
+                hours_ahead=hours_ahead,
+                hours_from=hours_from
             )
             
             if not results:

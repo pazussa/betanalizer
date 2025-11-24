@@ -44,23 +44,62 @@ class TheOddsAPIClient:
         """
         all_matches = []
         
-        # Lista de ligas de fútbol disponibles en The Odds API
+        # Lista de ligas de fútbol disponibles en The Odds API (39 ligas activas)
         soccer_leagues = [
-            ("soccer_epl", "Premier League", "England"),
+            # Top 5 Ligas Europeas
+            ("soccer_epl", "EPL", "England"),
             ("soccer_spain_la_liga", "La Liga", "Spain"),
             ("soccer_germany_bundesliga", "Bundesliga", "Germany"),
             ("soccer_italy_serie_a", "Serie A", "Italy"),
             ("soccer_france_ligue_one", "Ligue 1", "France"),
-            ("soccer_uefa_champs_league", "Champions League", "Europe"),
-            ("soccer_uefa_europa_league", "Europa League", "Europe"),
+            
+            # Segunda División Europa
+            ("soccer_efl_champ", "Championship", "England"),
+            ("soccer_spain_segunda_division", "La Liga 2", "Spain"),
+            ("soccer_germany_bundesliga2", "Bundesliga 2", "Germany"),
+            ("soccer_italy_serie_b", "Serie B", "Italy"),
+            ("soccer_france_ligue_two", "Ligue 2", "France"),
+            
+            # Otras Ligas Europeas Principales
             ("soccer_netherlands_eredivisie", "Eredivisie", "Netherlands"),
             ("soccer_portugal_primeira_liga", "Primeira Liga", "Portugal"),
+            ("soccer_belgium_first_div", "Belgium First Div", "Belgium"),
+            ("soccer_turkey_super_league", "Super League", "Turkey"),
+            ("soccer_greece_super_league", "Super League", "Greece"),
+            ("soccer_austria_bundesliga", "Austrian Bundesliga", "Austria"),
+            ("soccer_switzerland_superleague", "Swiss Superleague", "Switzerland"),
+            ("soccer_denmark_superliga", "Superliga", "Denmark"),
+            ("soccer_sweden_allsvenskan", "Allsvenskan", "Sweden"),
+            ("soccer_norway_eliteserien", "Eliteserien", "Norway"),
+            ("soccer_poland_ekstraklasa", "Ekstraklasa", "Poland"),
+            ("soccer_spl", "Premiership", "Scotland"),
+            
+            # Ligas Inglesas Inferiores
+            ("soccer_england_league1", "League 1", "England"),
+            ("soccer_england_league2", "League 2", "England"),
+            ("soccer_germany_liga3", "3. Liga", "Germany"),
+            
+            # Competiciones Europeas
+            ("soccer_uefa_champs_league", "Champions League", "Europe"),
+            ("soccer_uefa_europa_league", "Europa League", "Europe"),
+            ("soccer_uefa_europa_conference_league", "Conference League", "Europe"),
+            
+            # América
             ("soccer_brazil_campeonato", "Brasileirão", "Brazil"),
             ("soccer_argentina_primera_division", "Primera División", "Argentina"),
-            ("soccer_chile_primera_division", "Primera División Chile", "Chile"),
-            ("soccer_colombia_primera_a", "Liga Colombia", "Colombia"),
+            ("soccer_chile_campeonato", "Primera División", "Chile"),
             ("soccer_mexico_ligamx", "Liga MX", "Mexico"),
-            ("soccer_usa_mls", "MLS", "USA")
+            ("soccer_usa_mls", "MLS", "USA"),
+            ("soccer_conmebol_copa_libertadores", "Copa Libertadores", "South America"),
+            
+            # Asia y Oceanía
+            ("soccer_japan_j_league", "J League", "Japan"),
+            ("soccer_korea_kleague1", "K League 1", "South Korea"),
+            ("soccer_australia_aleague", "A-League", "Australia"),
+            
+            # Competiciones Internacionales
+            ("soccer_fifa_world_cup_qualifiers_europe", "World Cup Qualifiers EU", "Europe"),
+            ("soccer_fifa_world_cup_winner", "World Cup Winner", "World")
         ]
         
         for sport_key, league_name, country in soccer_leagues:
@@ -124,7 +163,7 @@ class TheOddsAPIClient:
                 "markets": "h2h",  # Head to head (1X2)
                 "oddsFormat": "decimal",
                 "dateFormat": "iso",
-                "bookmakers": "betsson,pinnacle,marathonbet,codere_it,winamax_fr,winamax_de"
+                "bookmakers": "betsson,pinnacle,marathonbet,codere_it"
             }
             
             response = await self.client.get(url, params=params)
@@ -143,9 +182,7 @@ class TheOddsAPIClient:
                     "betsson": BookmakerType.BETSSON,
                     "pinnacle": BookmakerType.PINNACLE,
                     "marathonbet": BookmakerType.MARATHONBET,
-                    "codere_it": BookmakerType.CODERE_IT,
-                    "winamax_fr": BookmakerType.WINAMAX,
-                    "winamax_de": BookmakerType.WINAMAX_DE
+                    "codere_it": BookmakerType.CODERE_IT
                 }
                 
                 if bookmaker_name not in restricted_bookmakers:
@@ -241,11 +278,6 @@ class TheOddsAPIClient:
         """
         try:
             url = f"{self.BASE_URL}/sports/{sport_key}/events/{match_id}/odds"
-            # Para BTTS agregar más casas que lo ofrecen
-            if market == "btts":
-                bookmakers_param = "betsson,pinnacle,marathonbet,codere_it,winamax_fr,winamax_de,bet365,unibet,williamhill,bwin,ladbrokes,betvictor"
-            else:
-                bookmakers_param = "betsson,pinnacle,marathonbet,codere_it,winamax_fr,winamax_de"
             
             params = {
                 "apiKey": self.api_key,
@@ -253,7 +285,7 @@ class TheOddsAPIClient:
                 "markets": market,
                 "oddsFormat": "decimal",
                 "dateFormat": "iso",
-                "bookmakers": bookmakers_param
+                "bookmakers": "betsson,pinnacle,marathonbet,codere_it"
             }
             
             response = await self.client.get(url, params=params)
@@ -262,26 +294,13 @@ class TheOddsAPIClient:
             data = response.json()
             odds_list = []
             
-            # Mapeo de casas: 6 originales + adicionales para BTTS
+            # Mapeo de las 4 casas principales
             restricted_bookmakers = {
                 "betsson": BookmakerType.BETSSON,
                 "pinnacle": BookmakerType.PINNACLE,
                 "marathonbet": BookmakerType.MARATHONBET,
-                "codere_it": BookmakerType.CODERE_IT,
-                "winamax_fr": BookmakerType.WINAMAX,
-                "winamax_de": BookmakerType.WINAMAX_DE
+                "codere_it": BookmakerType.CODERE_IT
             }
-            
-            # Para BTTS: agregar más casas
-            if market == "btts":
-                restricted_bookmakers.update({
-                    "bet365": BookmakerType.BET365,
-                    "unibet": BookmakerType.UNIBET,
-                    "williamhill": BookmakerType.WILLIAM_HILL,
-                    "bwin": BookmakerType.BWIN,
-                    "ladbrokes": BookmakerType.LADBROKES,
-                    "betvictor": BookmakerType.BETVICTOR
-                })
             
             # Procesar cuotas de cada bookmaker
             for bookmaker_data in data.get("bookmakers", []):

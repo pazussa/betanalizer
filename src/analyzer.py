@@ -26,12 +26,13 @@ class FootballOddsAnalyzer:
         self.min_probability = 0.7
         self.min_odds = 1.30
     
-    async def get_upcoming_matches(self, hours_ahead: int = 168) -> List[Match]:
+    async def get_upcoming_matches(self, hours_ahead: int = 168, hours_from: int = 0) -> List[Match]:
         """
         Obtiene partidos próximos de múltiples fuentes oficiales
         
         Args:
             hours_ahead: Horas hacia adelante para buscar partidos (por defecto 168 = 7 días)
+            hours_from: Horas desde ahora para comenzar a buscar (por defecto 0)
             
         Returns:
             Lista combinada de partidos de todas las fuentes
@@ -41,11 +42,13 @@ class FootballOddsAnalyzer:
             all_matches = await self.odds_client.get_football_matches()
             
             # Filtrar partidos por tiempo
-            cutoff_time = datetime.now(timezone.utc) + timedelta(hours=hours_ahead)
+            now = datetime.now(timezone.utc)
+            start_time = now + timedelta(hours=hours_from)
+            cutoff_time = now + timedelta(hours=hours_ahead)
+            
             upcoming_matches = [
                 match for match in all_matches
-                if match.kickoff_time <= cutoff_time and 
-                   match.kickoff_time > datetime.now(timezone.utc)
+                if start_time <= match.kickoff_time <= cutoff_time
             ]
             
             self.logger.info(f"Encontrados {len(upcoming_matches)} partidos reales en {hours_ahead} horas")
@@ -103,7 +106,7 @@ class FootballOddsAnalyzer:
     
     async def analyze_additional_markets(self, match: Match) -> List[AnalysisResult]:
         """
-        Analiza los mercados adicionales (TOTALS, BTTS, H2H_Q1) para un partido
+        Analiza los mercados adicionales (TOTALS) para un partido
         
         Args:
             match: Partido para analizar
@@ -121,22 +124,6 @@ class FootballOddsAnalyzer:
             results.extend(totals_results)
         except Exception as e:
             self.logger.warning(f"Error analizando TOTALS para {match}: {e}")
-        
-        # Analizar BTTS (Both Teams To Score)
-        try:
-            btts_data = await self.odds_client.get_market_odds(match.id, sport_key, "btts")
-            btts_results = self._analyze_grouped_market(match, btts_data, MarketType.BTTS)
-            results.extend(btts_results)
-        except Exception as e:
-            self.logger.warning(f"Error analizando BTTS para {match}: {e}")
-        
-        # Analizar H2H_Q1 (1X2 Primer Tiempo)
-        try:
-            h2h_q1_data = await self.odds_client.get_market_odds(match.id, sport_key, "h2h_q1")
-            h2h_q1_results = self._analyze_grouped_market(match, h2h_q1_data, MarketType.H2H_Q1)
-            results.extend(h2h_q1_results)
-        except Exception as e:
-            self.logger.warning(f"Error analizando H2H_Q1 para {match}: {e}")
         
         return results
     
@@ -172,9 +159,9 @@ class FootballOddsAnalyzer:
             if not odds_list or len(odds_list) <= 1:
                 continue
             
-            # Para BTTS: permitir mercados con solo 1 casa (es un mercado importante)
+            # Filtrar mercados con menos de 2 casas de apuestas
             bookmakers_count = len(set(o["bookmaker"] for o in odds_list))
-            if bookmakers_count < 2 and market_type != MarketType.BTTS:
+            if bookmakers_count < 2:
                 continue
             
             # Obtener la mejor cuota
@@ -190,7 +177,7 @@ class FootballOddsAnalyzer:
             bookmaker_margin = None
             avg_market_margin = None
             
-            # Buscar el par complementario para calcular margen
+            # Buscar el par complementario para calcular margen (solo para TOTALS)
             if market_type == MarketType.TOTALS:
                 # Para totals: buscar Over/Under del mismo punto
                 is_over = "Over" in market_name
@@ -254,26 +241,6 @@ class FootballOddsAnalyzer:
                         prob_c = 1 / current_odds_bookie[0]["odds"]
                         prob_o = 1 / opposite_odds_bookie[0]["odds"]
                         margin = (prob_c + prob_o - 1) * 100
-                        margins.append(margin)
-                
-                if margins:
-                    avg_market_margin = round(sum(margins) / len(margins), 2)
-            
-            elif market_type == MarketType.H2H_Q1:
-                # Para H2H Q1: buscar las 3 opciones
-                bookmaker_odds = [o for o in odds_data if o["bookmaker"] == best["bookmaker"]]
-                if len(bookmaker_odds) >= 3:
-                    total_prob = sum(1 / o["odds"] for o in bookmaker_odds[:3])
-                    bookmaker_margin = round((total_prob - 1) * 100, 2)
-                
-                # Calcular margen promedio de todas las casas
-                all_bookmakers = set(o["bookmaker"] for o in odds_data)
-                margins = []
-                for bookie in all_bookmakers:
-                    bookie_all_odds = [o for o in odds_data if o["bookmaker"] == bookie]
-                    if len(bookie_all_odds) >= 3:
-                        total_prob = sum(1 / o["odds"] for o in bookie_all_odds[:3])
-                        margin = (total_prob - 1) * 100
                         margins.append(margin)
                 
                 if margins:
@@ -432,6 +399,7 @@ class FootballOddsAnalyzer:
         min_probability: float = 0.7,
         min_odds: float = 1.30,
         hours_ahead: int = 168,
+        hours_from: int = 0,
         prioritize_near_matches: bool = True
     ) -> List[AnalysisResult]:
         """
@@ -441,6 +409,7 @@ class FootballOddsAnalyzer:
             min_probability: Probabilidad implícita mínima
             min_odds: Cuota mínima
             hours_ahead: Horas hacia adelante para buscar partidos (por defecto 168 = 7 días)
+            hours_from: Horas desde ahora para comenzar a buscar (por defecto 0)
             prioritize_near_matches: Si True, prioriza partidos cercanos (próximas 72h) donde hay más probabilidad de cuotas
             
         Returns:
@@ -450,7 +419,7 @@ class FootballOddsAnalyzer:
             self.logger.info("Iniciando análisis completo de partidos")
             
             # 1. Obtener partidos próximos
-            matches = await self.get_upcoming_matches(hours_ahead)
+            matches = await self.get_upcoming_matches(hours_ahead, hours_from)
             if not matches:
                 self.logger.warning("No se encontraron partidos para analizar")
                 return []
