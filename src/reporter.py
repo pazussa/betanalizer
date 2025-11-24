@@ -4,6 +4,9 @@ from datetime import datetime, timedelta
 from tabulate import tabulate
 from .models import AnalysisResult, MarketType
 import os
+import csv
+from pathlib import Path
+import pytz
 
 
 class ReportGenerator:
@@ -14,6 +17,106 @@ class ReportGenerator:
     
     def __init__(self):
         self.logger = logging.getLogger(__name__)
+        self.timezone = pytz.timezone("America/Bogota")
+    
+    def generate_combined_csv(self, results: List[AnalysisResult], output_dir: str = ".") -> str:
+        """
+        Genera UN SOLO CSV combinando todos los mercados (1X, X2, TOTALS, BTTS, H2H_Q1)
+        
+        Args:
+            results: Lista de resultados de todos los mercados
+            output_dir: Directorio donde guardar el CSV
+            
+        Returns:
+            Ruta del archivo CSV generado
+        """
+        if not results:
+            return ""
+        
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"analisis_mercados_{timestamp}.csv"
+        filepath = Path(output_dir) / filename
+        
+        # Ordenar por Score_Final descendente
+        sorted_results = sorted(
+            results,
+            key=lambda x: x.final_score if x.final_score is not None else -999999,
+            reverse=True
+        )
+        
+        # Escribir CSV
+        with open(filepath, 'w', newline='', encoding='utf-8') as csvfile:
+            writer = csv.writer(csvfile)
+            
+            # Headers
+            headers = [
+                "Partido",
+                "Fecha_Hora_Colombia",
+                "Liga",
+                "Tipo_Mercado",
+                "Mercado",
+                "Mejor_Cuota",
+                "Mejor_Casa",
+                "Num_Casas",
+                "Score_Final",
+                "Diferencia_Cuota_Promedio",
+                "Volatilidad_Pct",
+                "Margen_Casa_Pct",
+                "Cuota_Promedio_Mercado",
+                "Todas_Las_Cuotas"
+            ]
+            writer.writerow(headers)
+            
+            # Rows
+            for result in sorted_results:
+                # Convertir a hora de Colombia
+                fecha_hora_utc = result.match.kickoff_time
+                fecha_hora_col = fecha_hora_utc.astimezone(self.timezone)
+                fecha_hora_str = fecha_hora_col.strftime('%Y-%m-%d %H:%M:%S')
+                
+                # Tipo de mercado legible
+                market_type_map = {
+                    MarketType.DOUBLE_CHANCE_1X: "Doble Chance",
+                    MarketType.DOUBLE_CHANCE_X2: "Doble Chance",
+                    MarketType.TOTALS: "Goles (Over/Under)",
+                    MarketType.BTTS: "Ambos Marcan",
+                    MarketType.H2H_Q1: "1X2 Primer Tiempo"
+                }
+                tipo_mercado = market_type_map.get(result.market, result.market.value)
+                
+                # Nombre del mercado
+                market_name = result.market_name if result.market_name else result.market.value
+                
+                # Valores opcionales
+                score_final = result.final_score if result.final_score is not None else ""
+                odds_diff = result.odds_advantage if result.odds_advantage is not None else ""
+                volatility = result.volatility_std if result.volatility_std is not None else ""
+                margin_bookmaker = result.bookmaker_margin if result.bookmaker_margin is not None else ""
+                avg_odds = result.avg_market_odds if result.avg_market_odds else ""
+                num_casas = result.num_bookmakers if result.num_bookmakers else ""
+                all_odds = result.all_odds_formatted if result.all_odds_formatted else ""
+                
+                row = [
+                    result.match_display,
+                    fecha_hora_str,
+                    result.match.league,
+                    tipo_mercado,
+                    market_name,
+                    result.best_odds,
+                    result.bookmaker.value,
+                    num_casas,
+                    score_final,
+                    odds_diff,
+                    volatility,
+                    margin_bookmaker,
+                    avg_odds,
+                    all_odds
+                ]
+                
+                writer.writerow(row)
+        
+        self.logger.info(f"CSV combinado generado: {filepath}")
+        return str(filepath)
     
     def generate_analysis_table(
         self, 

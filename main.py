@@ -125,22 +125,90 @@ def analyze(min_probability, min_odds, hours_ahead, show_all, export_csv):
                 await analyzer.cleanup()
                 return
             
-            # Generar y mostrar reporte
-            click.echo("\n" + "="*60)
-            report = reporter.generate_analysis_table(results, show_all=show_all)
-            click.echo(report)
+            # Generar y mostrar estadísticas por mercado
+            click.echo("\n" + "="*80)
+            click.echo("🏟️  ANÁLISIS DE MERCADOS DE APUESTAS")
+            click.echo("🔗 Fuente: The Odds API (datos 100% reales)")
+            click.echo("🕐 Zona horaria: Colombia (America/Bogota)")
+            click.echo("="*80)
             
-            # Generar nombre de archivo CSV automático si no se especificó
+            # Agrupar por tipo de mercado
+            from collections import defaultdict
+            from src.models import MarketType
+            
+            results_by_market = defaultdict(list)
+            for result in results:
+                results_by_market[result.market].append(result)
+            
+            # Mostrar estadísticas por mercado
+            market_names = {
+                MarketType.DOUBLE_CHANCE_1X: "DOBLE CHANCE (1X y X2)",
+                MarketType.DOUBLE_CHANCE_X2: "DOBLE CHANCE (1X y X2)",
+                MarketType.TOTALS: "TOTALS (Over/Under Goles)",
+                MarketType.BTTS: "BTTS (Ambos Equipos Marcan)",
+                MarketType.H2H_Q1: "H2H Q1 (1X2 Primer Tiempo)"
+            }
+            
+            # Agrupar 1X y X2 juntos
+            double_chance_results = []
+            if MarketType.DOUBLE_CHANCE_1X in results_by_market:
+                double_chance_results.extend(results_by_market[MarketType.DOUBLE_CHANCE_1X])
+            if MarketType.DOUBLE_CHANCE_X2 in results_by_market:
+                double_chance_results.extend(results_by_market[MarketType.DOUBLE_CHANCE_X2])
+            
+            if double_chance_results:
+                click.echo(f"\n📊 DOBLE CHANCE (1X y X2):")
+                unique_matches = len(set(r.match.id for r in double_chance_results))
+                click.echo(f"  • Partidos analizados: {unique_matches}")
+                click.echo(f"  • Mercados encontrados: {len(double_chance_results)}")
+                
+                # Top 3
+                top_dc = sorted(double_chance_results, key=lambda x: x.final_score if x.final_score else -999999, reverse=True)[:3]
+                click.echo(f"\n🏆 TOP 3 OPORTUNIDADES:")
+                click.echo("-" * 80)
+                for i, result in enumerate(top_dc, 1):
+                    click.echo(f"\n#{i} - {result.match_display}")
+                    click.echo(f"    Mercado: {result.market_name}")
+                    click.echo(f"    Cuota: {result.best_odds} ({result.bookmaker.value})")
+                    click.echo(f"    Score_Final: {result.final_score if result.final_score else 'N/A'}")
+                    click.echo(f"    Num_Casas: {result.num_bookmakers if result.num_bookmakers else 'N/A'}")
+            
+            # Otros mercados
+            for market_type, market_name in [(MarketType.TOTALS, "TOTALS (Over/Under Goles)"),
+                                              (MarketType.BTTS, "BTTS (Ambos Equipos Marcan)"),
+                                              (MarketType.H2H_Q1, "H2H Q1 (1X2 Primer Tiempo)")]:
+                if market_type in results_by_market:
+                    market_results = results_by_market[market_type]
+                    unique_matches = len(set(r.match.id for r in market_results))
+                    
+                    click.echo(f"\n📊 {market_name}:")
+                    click.echo(f"  • Partidos analizados: {unique_matches}")
+                    click.echo(f"  • Mercados encontrados: {len(market_results)}")
+                    
+                    # Top 3
+                    top = sorted(market_results, key=lambda x: x.final_score if x.final_score else -999999, reverse=True)[:3]
+                    click.echo(f"\n🏆 TOP 3 OPORTUNIDADES:")
+                    click.echo("-" * 80)
+                    for i, result in enumerate(top, 1):
+                        click.echo(f"\n#{i} - {result.match_display}")
+                        click.echo(f"    Mercado: {result.market_name}")
+                        click.echo(f"    Cuota: {result.best_odds} ({result.bookmaker.value})")
+                        click.echo(f"    Score_Final: {result.final_score if result.final_score else 'N/A'}")
+                        click.echo(f"    Num_Casas: {result.num_bookmakers if result.num_bookmakers else 'N/A'}")
+            
+            click.echo("\n" + "="*80)
+            
+            # Generar CSV combinado
             csv_filename = export_csv
             if not csv_filename:
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-                csv_filename = f"analisis_cuotas_{timestamp}.csv"
+                csv_filename = f"analisis_mercados_{timestamp}.csv"
             
-            # Exportar siempre a CSV
-            csv_data = reporter.export_to_csv_format(results)
-            with open(csv_filename, 'w', encoding='utf-8') as f:
-                f.write(csv_data)
-            click.echo(f"\n💾 Resultados exportados a: {csv_filename}")
+            csv_path = reporter.generate_combined_csv(results, output_dir=".")
+            total_markets = len(results)
+            
+            click.echo(f"\n💾 Archivo CSV generado:")
+            click.echo(f"  • {os.path.basename(csv_path)} ({total_markets} mercados combinados)")
             
             # Limpiar recursos
             requests_finales = await analyzer.cleanup()

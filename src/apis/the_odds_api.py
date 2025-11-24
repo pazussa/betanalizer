@@ -227,6 +227,101 @@ class TheOddsAPIClient:
             self.logger.error(f"Error procesando cuotas: {e}")
             raise APIError(f"Error procesando cuotas: {e}")
     
+    async def get_market_odds(self, match_id: str, sport_key: str, market: str) -> List[Dict[str, Any]]:
+        """
+        Obtiene cuotas para un mercado específico (totals, btts, h2h_q1)
+        
+        Args:
+            match_id: ID del partido
+            sport_key: Clave de la liga/deporte
+            market: Tipo de mercado ("totals", "btts", "h2h_q1")
+            
+        Returns:
+            Lista de datos de cuotas del mercado
+        """
+        try:
+            url = f"{self.BASE_URL}/sports/{sport_key}/events/{match_id}/odds"
+            # Para BTTS agregar más casas que lo ofrecen
+            if market == "btts":
+                bookmakers_param = "betsson,pinnacle,marathonbet,codere_it,winamax_fr,winamax_de,bet365,unibet,williamhill,bwin,ladbrokes,betvictor"
+            else:
+                bookmakers_param = "betsson,pinnacle,marathonbet,codere_it,winamax_fr,winamax_de"
+            
+            params = {
+                "apiKey": self.api_key,
+                "regions": "eu,us,uk,au",
+                "markets": market,
+                "oddsFormat": "decimal",
+                "dateFormat": "iso",
+                "bookmakers": bookmakers_param
+            }
+            
+            response = await self.client.get(url, params=params)
+            response.raise_for_status()
+            
+            data = response.json()
+            odds_list = []
+            
+            # Mapeo de casas: 6 originales + adicionales para BTTS
+            restricted_bookmakers = {
+                "betsson": BookmakerType.BETSSON,
+                "pinnacle": BookmakerType.PINNACLE,
+                "marathonbet": BookmakerType.MARATHONBET,
+                "codere_it": BookmakerType.CODERE_IT,
+                "winamax_fr": BookmakerType.WINAMAX,
+                "winamax_de": BookmakerType.WINAMAX_DE
+            }
+            
+            # Para BTTS: agregar más casas
+            if market == "btts":
+                restricted_bookmakers.update({
+                    "bet365": BookmakerType.BET365,
+                    "unibet": BookmakerType.UNIBET,
+                    "williamhill": BookmakerType.WILLIAM_HILL,
+                    "bwin": BookmakerType.BWIN,
+                    "ladbrokes": BookmakerType.LADBROKES,
+                    "betvictor": BookmakerType.BETVICTOR
+                })
+            
+            # Procesar cuotas de cada bookmaker
+            for bookmaker_data in data.get("bookmakers", []):
+                bookmaker_name = bookmaker_data["key"]
+                
+                # Solo procesar las 6 casas permitidas
+                if bookmaker_name not in restricted_bookmakers:
+                    continue
+                
+                bookmaker_enum = restricted_bookmakers[bookmaker_name]
+                
+                for market_data in bookmaker_data.get("markets", []):
+                    timestamp = datetime.fromisoformat(
+                        market_data["last_update"].replace("Z", "+00:00")
+                    )
+                    
+                    for outcome in market_data.get("outcomes", []):
+                        odds_info = {
+                            "bookmaker": bookmaker_enum,
+                            "market_name": outcome["name"],
+                            "odds": outcome["price"],
+                            "point": outcome.get("point"),  # Para totals
+                            "timestamp": timestamp
+                        }
+                        odds_list.append(odds_info)
+            
+            self.logger.info(f"Obtenidas {len(odds_list)} cuotas de {market} para match {match_id}")
+            return odds_list
+            
+        except httpx.HTTPStatusError as e:
+            if e.response.status_code == 404:
+                self.logger.debug(f"Cuotas de {market} no disponibles para match {match_id} (404)")
+                return []
+            else:
+                self.logger.error(f"Error HTTP {e.response.status_code} obteniendo cuotas de {market} para {match_id}")
+                return []
+        except Exception as e:
+            self.logger.warning(f"Error procesando cuotas de {market}: {e}")
+            return []
+    
     async def get_remaining_requests(self) -> int:
         """Obtiene el número de requests restantes en tu quota"""
         try:

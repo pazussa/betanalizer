@@ -2,6 +2,7 @@ import logging
 import asyncio
 from typing import List, Dict, Optional, Tuple
 from datetime import datetime, timezone, timedelta
+from tqdm import tqdm
 from .models import (
     Match, MatchOdds, OddsData, AnalysisResult, 
     MarketType, ValidationError
@@ -100,6 +101,213 @@ class FootballOddsAnalyzer:
             # Devolver estructura vacía en caso de error
             return MatchOdds(match=match, odds_1x=[], odds_x2=[], odds_h2h=[])
     
+    async def analyze_additional_markets(self, match: Match) -> List[AnalysisResult]:
+        """
+        Analiza los mercados adicionales (TOTALS, BTTS, H2H_Q1) para un partido
+        
+        Args:
+            match: Partido para analizar
+            
+        Returns:
+            Lista de resultados de análisis para mercados adicionales
+        """
+        results = []
+        sport_key = getattr(match, 'sport_key', 'soccer_epl')
+        
+        # Analizar TOTALS (Over/Under)
+        try:
+            totals_data = await self.odds_client.get_market_odds(match.id, sport_key, "totals")
+            totals_results = self._analyze_grouped_market(match, totals_data, MarketType.TOTALS)
+            results.extend(totals_results)
+        except Exception as e:
+            self.logger.warning(f"Error analizando TOTALS para {match}: {e}")
+        
+        # Analizar BTTS (Both Teams To Score)
+        try:
+            btts_data = await self.odds_client.get_market_odds(match.id, sport_key, "btts")
+            btts_results = self._analyze_grouped_market(match, btts_data, MarketType.BTTS)
+            results.extend(btts_results)
+        except Exception as e:
+            self.logger.warning(f"Error analizando BTTS para {match}: {e}")
+        
+        # Analizar H2H_Q1 (1X2 Primer Tiempo)
+        try:
+            h2h_q1_data = await self.odds_client.get_market_odds(match.id, sport_key, "h2h_q1")
+            h2h_q1_results = self._analyze_grouped_market(match, h2h_q1_data, MarketType.H2H_Q1)
+            results.extend(h2h_q1_results)
+        except Exception as e:
+            self.logger.warning(f"Error analizando H2H_Q1 para {match}: {e}")
+        
+        return results
+    
+    def _analyze_grouped_market(self, match: Match, odds_data: List[Dict], market_type: MarketType) -> List[AnalysisResult]:
+        """
+        Analiza cuotas agrupadas por mercado específico (ej: Over 2.5, Under 2.5, Yes, No, etc.)
+        
+        Args:
+            match: Partido
+            odds_data: Datos de cuotas
+            market_type: Tipo de mercado
+            
+        Returns:
+            Lista de resultados
+        """
+        if not odds_data:
+            return []
+        
+        results = []
+        
+        # Agrupar por market_name y point
+        from collections import defaultdict
+        markets_dict = defaultdict(list)
+        
+        for odds_info in odds_data:
+            key = odds_info["market_name"]
+            if odds_info.get("point"):
+                key = f"{odds_info['market_name']} {odds_info['point']}"
+            markets_dict[key].append(odds_info)
+        
+        # Analizar cada mercado único
+        for market_name, odds_list in markets_dict.items():
+            if not odds_list or len(odds_list) <= 1:
+                continue
+            
+            # Para BTTS: permitir mercados con solo 1 casa (es un mercado importante)
+            bookmakers_count = len(set(o["bookmaker"] for o in odds_list))
+            if bookmakers_count < 2 and market_type != MarketType.BTTS:
+                continue
+            
+            # Obtener la mejor cuota
+            best = max(odds_list, key=lambda x: x["odds"])
+            
+            # Calcular promedio de cuotas
+            avg_odds = sum(o["odds"] for o in odds_list) / len(odds_list) if odds_list else 0
+            
+            # Calcular volatilidad
+            volatility = self._calculate_volatility([o["odds"] for o in odds_list])
+            
+            # Calcular margen del bookmaker y promedio del mercado
+            bookmaker_margin = None
+            avg_market_margin = None
+            
+            # Buscar el par complementario para calcular margen
+            if market_type == MarketType.TOTALS:
+                # Para totals: buscar Over/Under del mismo punto
+                is_over = "Over" in market_name
+                point = best.get("point")
+                opposite_name = f"{'Under' if is_over else 'Over'} {point}"
+                
+                opposite_odds = [o for o in odds_data 
+                               if o["bookmaker"] == best["bookmaker"] 
+                               and f"{o['market_name']} {o.get('point')}" == opposite_name]
+                
+                if opposite_odds:
+                    prob_current = 1 / best["odds"]
+                    prob_opposite = 1 / opposite_odds[0]["odds"]
+                    bookmaker_margin = round((prob_current + prob_opposite - 1) * 100, 2)
+                
+                # Calcular margen promedio de todas las casas
+                all_bookmakers = set(o["bookmaker"] for o in odds_list)
+                margins = []
+                for bookie in all_bookmakers:
+                    current_odds_bookie = [o for o in odds_data 
+                                          if o["bookmaker"] == bookie 
+                                          and f"{o['market_name']} {o.get('point')}" == market_name]
+                    opposite_odds_bookie = [o for o in odds_data 
+                                           if o["bookmaker"] == bookie 
+                                           and f"{o['market_name']} {o.get('point')}" == opposite_name]
+                    
+                    if current_odds_bookie and opposite_odds_bookie:
+                        prob_c = 1 / current_odds_bookie[0]["odds"]
+                        prob_o = 1 / opposite_odds_bookie[0]["odds"]
+                        margin = (prob_c + prob_o - 1) * 100
+                        margins.append(margin)
+                
+                if margins:
+                    avg_market_margin = round(sum(margins) / len(margins), 2)
+            
+            elif market_type == MarketType.BTTS:
+                # Para BTTS: buscar Yes/No
+                opposite_name = "No" if market_name == "Yes" else "Yes"
+                
+                opposite_odds = [o for o in odds_data 
+                               if o["bookmaker"] == best["bookmaker"] 
+                               and o["market_name"] == opposite_name]
+                
+                if opposite_odds:
+                    prob_current = 1 / best["odds"]
+                    prob_opposite = 1 / opposite_odds[0]["odds"]
+                    bookmaker_margin = round((prob_current + prob_opposite - 1) * 100, 2)
+                
+                # Calcular margen promedio de todas las casas
+                all_bookmakers = set(o["bookmaker"] for o in odds_list)
+                margins = []
+                for bookie in all_bookmakers:
+                    current_odds_bookie = [o for o in odds_data 
+                                          if o["bookmaker"] == bookie 
+                                          and o["market_name"] == market_name]
+                    opposite_odds_bookie = [o for o in odds_data 
+                                           if o["bookmaker"] == bookie 
+                                           and o["market_name"] == opposite_name]
+                    
+                    if current_odds_bookie and opposite_odds_bookie:
+                        prob_c = 1 / current_odds_bookie[0]["odds"]
+                        prob_o = 1 / opposite_odds_bookie[0]["odds"]
+                        margin = (prob_c + prob_o - 1) * 100
+                        margins.append(margin)
+                
+                if margins:
+                    avg_market_margin = round(sum(margins) / len(margins), 2)
+            
+            elif market_type == MarketType.H2H_Q1:
+                # Para H2H Q1: buscar las 3 opciones
+                bookmaker_odds = [o for o in odds_data if o["bookmaker"] == best["bookmaker"]]
+                if len(bookmaker_odds) >= 3:
+                    total_prob = sum(1 / o["odds"] for o in bookmaker_odds[:3])
+                    bookmaker_margin = round((total_prob - 1) * 100, 2)
+                
+                # Calcular margen promedio de todas las casas
+                all_bookmakers = set(o["bookmaker"] for o in odds_data)
+                margins = []
+                for bookie in all_bookmakers:
+                    bookie_all_odds = [o for o in odds_data if o["bookmaker"] == bookie]
+                    if len(bookie_all_odds) >= 3:
+                        total_prob = sum(1 / o["odds"] for o in bookie_all_odds[:3])
+                        margin = (total_prob - 1) * 100
+                        margins.append(margin)
+                
+                if margins:
+                    avg_market_margin = round(sum(margins) / len(margins), 2)
+            
+            # Formatear todas las cuotas
+            all_odds_formatted = "; ".join([
+                f"{o['bookmaker'].value}:{o['odds']}" 
+                for o in sorted(odds_list, key=lambda x: x["odds"], reverse=True)
+            ])
+            
+            # Crear resultado
+            result = AnalysisResult(
+                match=match,
+                market=market_type,
+                market_name=market_name,
+                best_odds=best["odds"],
+                implied_probability=round(1 / best["odds"], 3),
+                bookmaker=best["bookmaker"],
+                meets_criteria=True,  # Siempre True, ordenar por score
+                min_prob_threshold=self.min_probability,
+                min_odds_threshold=self.min_odds,
+                bookmaker_margin=bookmaker_margin,
+                avg_market_margin=avg_market_margin,
+                avg_market_odds=round(avg_odds, 4) if avg_odds > 0 else None,
+                volatility_std=volatility,
+                num_bookmakers=len(odds_list),
+                all_odds_formatted=all_odds_formatted
+            )
+            
+            results.append(result)
+        
+        return results
+    
     def analyze_match_odds(
         self, 
         match_odds: MatchOdds,
@@ -127,7 +335,7 @@ class FootballOddsAnalyzer:
         
         # Analizar mercado 1X
         best_1x = match_odds.best_1x_odds
-        if best_1x:
+        if best_1x and len(match_odds.odds_1x) > 1:  # Filtrar si solo hay 1 casa
             implied_prob = best_1x.implied_probability
             # Calcular sin filtros booleanos - rankear por Score_Final
             meets_criteria = True  # Siempre True, el ranking se hace por score
@@ -145,9 +353,16 @@ class FootballOddsAnalyzer:
             # Calcular volatilidad (desviación estándar) de las cuotas 1X
             volatility = self._calculate_volatility([odds.odds for odds in match_odds.odds_1x])
             
+            # Formatear todas las cuotas 1X
+            all_odds_formatted = "; ".join([
+                f"{odds.bookmaker.value}:{odds.odds}"
+                for odds in sorted(match_odds.odds_1x, key=lambda x: x.odds, reverse=True)
+            ])
+            
             result = AnalysisResult(
                 match=match_odds.match,
                 market=MarketType.DOUBLE_CHANCE_1X,
+                market_name="1X",
                 best_odds=best_1x.odds,
                 implied_probability=round(implied_prob, 3),
                 bookmaker=best_1x.bookmaker,
@@ -158,13 +373,15 @@ class FootballOddsAnalyzer:
                 avg_market_margin=round(avg_margin, 2) if avg_margin else None,
                 avg_market_odds=round(match_odds.avg_1x_odds, 4) if match_odds.avg_1x_odds > 0 else None,
                 volatility_std=volatility,
+                num_bookmakers=len(match_odds.odds_1x),
+                all_odds_formatted=all_odds_formatted,
                 match_odds=match_odds
             )
             results.append(result)
         
         # Analizar mercado X2
         best_x2 = match_odds.best_x2_odds
-        if best_x2:
+        if best_x2 and len(match_odds.odds_x2) > 1:  # Filtrar si solo hay 1 casa
             implied_prob = best_x2.implied_probability
             # Calcular sin filtros booleanos - rankear por Score_Final
             meets_criteria = True  # Siempre True, el ranking se hace por score
@@ -182,9 +399,16 @@ class FootballOddsAnalyzer:
             # Calcular volatilidad (desviación estándar) de las cuotas X2
             volatility = self._calculate_volatility([odds.odds for odds in match_odds.odds_x2])
             
+            # Formatear todas las cuotas X2
+            all_odds_formatted = "; ".join([
+                f"{odds.bookmaker.value}:{odds.odds}"
+                for odds in sorted(match_odds.odds_x2, key=lambda x: x.odds, reverse=True)
+            ])
+            
             result = AnalysisResult(
                 match=match_odds.match,
                 market=MarketType.DOUBLE_CHANCE_X2,
+                market_name="X2",
                 best_odds=best_x2.odds,
                 implied_probability=round(implied_prob, 3),
                 bookmaker=best_x2.bookmaker,
@@ -195,6 +419,8 @@ class FootballOddsAnalyzer:
                 avg_market_margin=round(avg_margin, 2) if avg_margin else None,
                 avg_market_odds=round(match_odds.avg_x2_odds, 4) if match_odds.avg_x2_odds > 0 else None,
                 volatility_std=volatility,
+                num_bookmakers=len(match_odds.odds_x2),
+                all_odds_formatted=all_odds_formatted,
                 match_odds=match_odds
             )
             results.append(result)
@@ -249,8 +475,25 @@ class FootballOddsAnalyzer:
             successful_odds = 0
             no_odds_available = 0
             
+            # Obtener requests iniciales para la barra de progreso
+            try:
+                initial_requests = await self.odds_client.get_remaining_requests()
+                max_quota = 500
+            except:
+                initial_requests = 500
+                max_quota = 500
+            
+            # Barra de progreso basada en requests API consumidos (sin ncols para que se adapte)
+            pbar = tqdm(total=max_quota, desc="Progreso API", unit="req",
+                       initial=max_quota - initial_requests,
+                       bar_format="{desc}: {percentage:3.0f}%|{bar}| {n_fmt}/{total_fmt} requests [{elapsed}]",
+                       leave=True, position=0, dynamic_ncols=True)
+            
+            last_remaining = initial_requests
+            
             for i, match in enumerate(matches, 1):
                 try:
+                    # Analizar mercado doble chance (1X, X2)
                     match_odds = await self.get_match_odds_data(match)
                     
                     # Si hay cuotas disponibles, analizar
@@ -260,12 +503,27 @@ class FootballOddsAnalyzer:
                         )
                         all_results.extend(match_results)
                         successful_odds += 1
-                    else:
+                    
+                    # Analizar mercados adicionales (TOTALS, BTTS, H2H_Q1)
+                    additional_results = await self.analyze_additional_markets(match)
+                    if additional_results:
+                        all_results.extend(additional_results)
+                        if not (match_odds.odds_1x or match_odds.odds_x2):
+                            successful_odds += 1
+                    
+                    if not (match_odds.odds_1x or match_odds.odds_x2) and not additional_results:
                         no_odds_available += 1
                     
-                    # Log progreso cada 10 partidos
-                    if i % 10 == 0:
-                        self.logger.info(f"Progreso: {i}/{len(matches)} partidos - {successful_odds} con cuotas, {no_odds_available} sin cuotas")
+                    # Actualizar barra con requests consumidos cada 3 partidos
+                    if i % 3 == 0:
+                        try:
+                            current_remaining = await self.odds_client.get_remaining_requests()
+                            consumed = last_remaining - current_remaining
+                            if consumed > 0:
+                                pbar.update(consumed)
+                                last_remaining = current_remaining
+                        except:
+                            pass
                     
                     # Rate limiting - pausa pequeña entre requests
                     await asyncio.sleep(0.5)
@@ -273,6 +531,17 @@ class FootballOddsAnalyzer:
                 except Exception as e:
                     self.logger.error(f"Error analizando {match}: {e}")
                     continue
+            
+            # Actualización final
+            try:
+                final_remaining = await self.odds_client.get_remaining_requests()
+                final_consumed = last_remaining - final_remaining
+                if final_consumed > 0:
+                    pbar.update(final_consumed)
+            except:
+                pass
+            
+            pbar.close()
             
             # Resumen final
             self.logger.info(

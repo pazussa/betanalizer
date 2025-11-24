@@ -11,6 +11,10 @@ class MarketType(str, Enum):
     MATCH_WINNER_1 = "1"
     MATCH_WINNER_X = "X"
     MATCH_WINNER_2 = "2"
+    # Nuevos mercados fusionados de live_markets
+    TOTALS = "totals"  # Over/Under goles
+    BTTS = "btts"  # Both Teams To Score
+    H2H_Q1 = "h2h_q1"  # 1X2 primer tiempo
 
 
 class BookmakerType(str, Enum):
@@ -176,6 +180,10 @@ class AnalysisResult(BaseModel):
     avg_market_odds: Optional[float] = None  # Promedio de cuotas del mercado
     volatility_std: Optional[float] = None  # Volatilidad (desviación estándar) de las cuotas del mercado (%)
     match_odds: Optional['MatchOdds'] = None  # Todas las cuotas del partido
+    # Nuevos campos para fusión
+    market_name: Optional[str] = None  # Nombre específico del mercado ("Over 2.5", "Yes", etc.)
+    num_bookmakers: Optional[int] = None  # Número de casas de apuestas con cuotas
+    all_odds_formatted: Optional[str] = None  # Todas las cuotas formateadas
     
     @property
     def match_display(self) -> str:
