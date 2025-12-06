@@ -1,0 +1,7 @@
+Partido,Fecha_Hora_Colombia,Liga,Tipo_Mercado,Mercado,Mejor_Cuota,Mejor_Casa,Num_Casas,Score_Final,Diferencia_Cuota_Promedio,Volatilidad_Pct,Margen_Casa_Pct,Cuota_Promedio_Mercado,Todas_Las_Cuotas,Resultado,Estrategia
+Manchester City vs Bayer Leverkusen,2025-11-25 15:00:00,Champions League,Doble Chance,X2,4.16,marathonbet,4,0.3669,0.0375,0.6,2.78,4.1225,marathonbet:4.16; pinnacle:4.12; codere_it:4.12; betsson:4.09,Acertado,X2 (Prioridad ALTA)
+Borussia Dortmund vs Villarreal,2025-11-25 15:00:00,Champions League,Doble Chance,X2,2.0,marathonbet,4,0.1957,0.01,0.87,3.22,1.99,marathonbet:2.0; pinnacle:2.0; betsson:2.0; codere_it:1.96,Fallido,X2 (Prioridad ALTA)
+Manchester City vs Bayer Leverkusen,2025-11-25 15:00:00,Champions League,Goles (Over/Under),Under 3.5,2.14,codere_it,2,0.1421,0.045,2.15,3.87,2.095,codere_it:2.14; betsson:2.05,Acertado,Under 3.5 (Prioridad ALTA)
+Hull City vs Ipswich Town,2025-11-25 14:45:00,Championship,Goles (Over/Under),Under 2.5,2.06,pinnacle,3,0.782,0.0467,1.69,2.89,2.0133,pinnacle:2.06; codere_it:2.0; betsson:1.98,Acertado,Under 2.5 (Prioridad BAJA)
+Motherwell vs Hibernian,2025-11-25 14:45:00,Premiership,Goles (Over/Under),Under 2.5,2.06,pinnacle,3,0.782,0.0467,1.69,2.89,2.0133,pinnacle:2.06; codere_it:2.0; betsson:1.98,Acertado,Under 2.5 (Prioridad BAJA)
+Norwich City vs Oxford United,2025-11-25 14:45:00,Championship,Goles (Over/Under),Under 2.5,2.03,pinnacle,3,0.6689,0.0367,1.66,3.02,1.9933,pinnacle:2.03; codere_it:2.0; betsson:1.95,Acertado,Under 2.5 (Prioridad BAJA)

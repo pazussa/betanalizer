@@ -1,5 +1,5 @@
 import logging
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 from datetime import datetime, timedelta
 from tabulate import tabulate
 from .models import AnalysisResult, MarketType

@@ -1,0 +1,11 @@
+Ranking,Partido,Fecha_Hora_Colombia,Liga,Mercado,Cuota,Casa,Score_Final,Volatilidad_Pct,Margen_Casa_Pct,Diferencia_Cuota_Promedio,Pronostico_Web,Recomendacion,Estrellas,Stake_Sugerido
+1,Atlético Madrid vs Inter Milan,2025-11-26 15:00:00,Champions League,Under 2.5,2.01,pinnacle,0.6218,1.91,2.38,0.05,Partido cerrado - Simeone defensivo - Inter perdió Derby,ALTA,5,2%
+2,Blackburn Rovers vs Queens Park Rangers,2025-11-26 14:45:00,Championship,Under 2.5,1.85,pinnacle,0.8304,1.58,2.83,0.0367,QPR marcó <1.5 goles en 9/10 visitas vs Blackburn,ALTA,5,2%
+3,Sheffield United vs Portsmouth,2025-11-26 14:45:00,Championship,X2,2.24,pinnacle,0.4381,2.85,3.88,0.09,Ambos en mala racha - partido abierto - Sheffield sin ganar en casa,MEDIA-ALTA,4,1%
+4,Monterrey vs América,2025-11-26 22:05:00,Liga MX,Under 2.5,1.83,pinnacle,0.9044,3.1,2.72,0.055,Predicción 1-1 - equipos equilibrados,MEDIA-ALTA,4,1%
+5,Bragantino-SP vs Fortaleza,2025-11-26 17:00:00,Brasileirão,X2,2.03,pinnacle,0.6988,2.54,3.42,0.075,Fortaleza sólido visitante,MEDIA-ALTA,4,1%
+6,FC Lugano vs FC St Gallen,2025-11-26 13:00:00,Swiss Superleague,X2,1.85,pinnacle,0.8129,1.77,3.42,0.0475,St Gallen en buena forma,MEDIA,3,0.5%
+7,Millwall vs Sheffield Wednesday,2025-11-26 14:45:00,Championship,Under 2.5,1.83,pinnacle,0.5186,1.67,2.95,0.03,Wednesday sin victorias fuera,MEDIA,3,0.5%
+8,Arsenal vs Bayern Munich,2025-11-26 15:00:00,Champions League,Under 2.5,2.11,codere_it,0.2622,1.44,3.89,0.03,Ambos invictos en UCL - partido táctico,MEDIA,3,0.5%
+9,Blackburn Rovers vs Queens Park Rangers,2025-11-26 14:45:00,Championship,Over 2.5,2.05,pinnacle,0.8304,1.78,2.83,0.05,Blackburn anotando mucho en casa,MEDIA,3,0.5%
+10,Lanus vs CA Tigre BA,2025-11-26 19:30:00,Primera División,X2,1.83,pinnacle,0.5612,2.83,3.35,0.0667,Tigre combativo fuera,MEDIA,3,0.5%

@@ -19,8 +19,10 @@ class OddsAPIIOClient:
     
     def __init__(self):
         self.api_key = os.getenv("ODDS_API_IO_KEY")
-        if not self.api_key:
-            raise APIError("ODDS_API_IO_KEY no está configurada en .env")
+        self.enabled = bool(self.api_key and self.api_key != "your_api_key_here")
+        
+        if not self.enabled:
+            logger.warning("ODDS_API_IO_KEY no configurada - funcionalidad de Bwin deshabilitada")
         
         self.base_url = "https://api.odds-api.io/v3"
         self.logger = logging.getLogger(__name__)
@@ -36,6 +38,10 @@ class OddsAPIIOClient:
         Returns:
             Tupla de (odds_data, h2h_odds) para Bwin
         """
+        # Si no está habilitado, devolver vacío
+        if not self.enabled:
+            return [], []
+        
         try:
             # Primero obtener eventos de football
             events_url = f"{self.base_url}/events"
