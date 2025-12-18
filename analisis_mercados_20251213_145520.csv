@@ -1,0 +1,37 @@
+Partido,Fecha_Hora_Colombia,Liga,Tipo_Mercado,Mercado,Mejor_Cuota,Mejor_Casa,Num_Casas,Score_Final,Diferencia_Cuota_Promedio,Volatilidad_Pct,Margen_Casa_Pct,Cuota_Promedio_Mercado,Todas_Las_Cuotas
+AD Ceuta FC vs Las Palmas,2025-12-14 15:00:00,La Liga 2,Doble Chance,1X,1.52,pinnacle,4,0.6184,0.0325,1.46,4.77,1.4875,pinnacle:1.52; marathonbet:1.49; betsson:1.48; codere_it:1.46
+AD Ceuta FC vs Las Palmas,2025-12-14 15:00:00,La Liga 2,Doble Chance,X2,1.38,pinnacle,4,0.6184,0.045,2.22,4.77,1.335,pinnacle:1.38; marathonbet:1.34; betsson:1.32; codere_it:1.3
+Rangers vs Hibernian,2025-12-15 14:45:00,Premiership,Doble Chance,X2,1.92,pinnacle,4,0.4068,0.0475,1.86,5.26,1.8725,pinnacle:1.92; marathonbet:1.89; betsson:1.85; codere_it:1.83
+Boulogne vs Troyes,2025-12-15 14:45:00,Ligue 2,Doble Chance,1X,1.77,pinnacle,4,0.3759,0.045,1.71,5.64,1.725,pinnacle:1.77; marathonbet:1.73; betsson:1.71; codere_it:1.69
+Boulogne vs Troyes,2025-12-15 14:45:00,Ligue 2,Doble Chance,X2,1.26,pinnacle,4,0.3759,0.0275,1.56,5.64,1.2325,pinnacle:1.26; marathonbet:1.24; betsson:1.22; codere_it:1.21
+Toluca vs Tigres,2025-12-14 20:00:00,Liga MX,Doble Chance,1X,1.24,pinnacle,3,0.3642,0.0067,0.38,5.19,1.2333,pinnacle:1.24; betsson:1.23; marathonbet:1.23
+Toluca vs Tigres,2025-12-14 20:00:00,Liga MX,Doble Chance,X2,1.87,pinnacle,3,0.3642,0.0467,1.86,5.19,1.8233,pinnacle:1.87; marathonbet:1.81; betsson:1.79
+AS Roma vs Como,2025-12-15 14:45:00,Serie A,Goles (Over/Under),Over 2.5,2.24,codere_it,2,0.3517,0.03,1.36,3.81,2.21,codere_it:2.24; betsson:2.18
+AS Roma vs Como,2025-12-15 14:45:00,Serie A,Goles (Over/Under),Under 2.5,1.69,codere_it,2,0.3517,0.02,1.2,3.81,1.67,codere_it:1.69; betsson:1.65
+Nacional vs Tondela,2025-12-15 12:30:00,Primeira Liga,Doble Chance,1X,1.36,pinnacle,3,0.3287,0.0167,0.93,4.99,1.3433,pinnacle:1.36; betsson:1.34; marathonbet:1.33
+Nacional vs Tondela,2025-12-15 12:30:00,Primeira Liga,Doble Chance,X2,1.59,pinnacle,3,0.3287,0.0267,1.21,4.99,1.5633,pinnacle:1.59; betsson:1.55; marathonbet:1.55
+CD Castellón vs CD Mirandés,2025-12-15 14:30:00,La Liga 2,Doble Chance,1X,1.09,pinnacle,4,0.2876,0.0125,1.01,5.98,1.0775,pinnacle:1.09; betsson:1.08; marathonbet:1.08; codere_it:1.06
+CD Castellón vs CD Mirandés,2025-12-15 14:30:00,La Liga 2,Doble Chance,X2,2.77,pinnacle,4,0.2876,0.105,2.71,5.98,2.665,pinnacle:2.77; marathonbet:2.68; betsson:2.64; codere_it:2.57
+Arouca vs Alverca,2025-12-14 15:30:00,Primeira Liga,Doble Chance,1X,1.5,pinnacle,3,0.25,0.0167,0.84,5.0,1.4833,pinnacle:1.5; marathonbet:1.48; betsson:1.47
+Arouca vs Alverca,2025-12-14 15:30:00,Primeira Liga,Doble Chance,X2,1.41,pinnacle,3,0.25,0.0167,0.9,5.0,1.3933,pinnacle:1.41; marathonbet:1.39; betsson:1.38
+Alavés vs Real Madrid,2025-12-14 15:00:00,La Liga,Doble Chance,X2,1.17,marathonbet,4,0.2348,0.0075,0.37,3.28,1.1625,marathonbet:1.17; pinnacle:1.16; codere_it:1.16; betsson:1.16
+AS Roma vs Como,2025-12-15 14:45:00,Serie A,Doble Chance,X2,1.76,pinnacle,4,0.1977,0.0225,0.85,3.44,1.7375,pinnacle:1.76; codere_it:1.74; marathonbet:1.73; betsson:1.72
+Alavés vs Real Madrid,2025-12-14 15:00:00,La Liga,Goles (Over/Under),Over 2.5,1.75,betsson,2,0.1774,0.005,0.29,6.65,1.745,betsson:1.75; codere_it:1.74
+Alavés vs Real Madrid,2025-12-14 15:00:00,La Liga,Goles (Over/Under),Under 2.5,2.02,betsson,2,0.1774,0.04,2.02,6.65,1.98,betsson:2.02; codere_it:1.94
+Fenerbahce vs Torku Konyaspor,2025-12-15 12:00:00,Super League,Doble Chance,1X,1.04,pinnacle,4,0.1729,0.0075,0.8,6.13,1.0325,pinnacle:1.04; marathonbet:1.04; betsson:1.03; codere_it:1.02
+Rangers vs Hibernian,2025-12-15 14:45:00,Premiership,Goles (Over/Under),Over 2.5,1.78,betsson,2,0.1632,0.005,0.28,6.68,1.775,betsson:1.78; codere_it:1.77
+Rangers vs Hibernian,2025-12-15 14:45:00,Premiership,Goles (Over/Under),Under 2.5,1.98,betsson,2,0.1632,0.035,1.8,6.68,1.945,betsson:1.98; codere_it:1.91
+Braga vs Santa Clara,2025-12-15 13:45:00,Primeira Liga,Doble Chance,1X,1.08,pinnacle,3,0.1548,0.0033,0.44,5.75,1.0767,pinnacle:1.08; betsson:1.08; marathonbet:1.07
+Braga vs Santa Clara,2025-12-15 13:45:00,Primeira Liga,Doble Chance,X2,2.59,pinnacle,3,0.1548,0.05,1.4,5.75,2.54,pinnacle:2.59; marathonbet:2.52; betsson:2.51
+Fenerbahce vs Torku Konyaspor,2025-12-15 12:00:00,Super League,Doble Chance,X2,4.12,betsson,4,0.1522,0.355,7.03,6.24,3.765,betsson:4.12; pinnacle:3.92; codere_it:3.51; marathonbet:3.51
+Alavés vs Real Madrid,2025-12-14 15:00:00,La Liga,Doble Chance,1X,2.37,pinnacle,4,0.1188,0.0475,1.5,3.62,2.3225,pinnacle:2.37; marathonbet:2.34; codere_it:2.3; betsson:2.28
+CD Castellón vs CD Mirandés,2025-12-15 14:30:00,La Liga 2,Goles (Over/Under),Over 2.5,1.68,betsson,2,0.1092,0.01,0.6,7.6,1.67,betsson:1.68; codere_it:1.66
+CD Castellón vs CD Mirandés,2025-12-15 14:30:00,La Liga 2,Goles (Over/Under),Under 2.5,2.08,betsson,2,0.1092,0.02,0.97,7.6,2.06,betsson:2.08; codere_it:2.04
+Fenerbahce vs Torku Konyaspor,2025-12-15 12:00:00,Super League,Goles (Over/Under),Over 3.5,2.27,betsson,2,0.1069,0.035,1.57,6.55,2.235,betsson:2.27; codere_it:2.2
+AS Roma vs Como,2025-12-15 14:45:00,Serie A,Doble Chance,1X,1.3,codere_it,4,0.1046,0.0075,0.64,3.73,1.2925,codere_it:1.3; marathonbet:1.3; pinnacle:1.29; betsson:1.28
+AD Ceuta FC vs Las Palmas,2025-12-14 15:00:00,La Liga 2,Goles (Over/Under),Over 1.5,1.52,betsson,2,0.0336,0.0,0.0,8.34,1.52,betsson:1.52; codere_it:1.52
+AD Ceuta FC vs Las Palmas,2025-12-14 15:00:00,La Liga 2,Goles (Over/Under),Under 1.5,2.35,betsson,2,0.0336,0.015,0.64,8.34,2.335,betsson:2.35; codere_it:2.32
+Rangers vs Hibernian,2025-12-15 14:45:00,Premiership,Doble Chance,1X,1.25,betsson,4,0.0207,0.0225,2.03,7.25,1.2275,betsson:1.25; pinnacle:1.25; marathonbet:1.22; codere_it:1.19
+Boulogne vs Troyes,2025-12-15 14:45:00,Ligue 2,Goles (Over/Under),Over 2.5,2.12,betsson,2,0.0034,0.01,0.47,8.9,2.11,betsson:2.12; codere_it:2.1
+Boulogne vs Troyes,2025-12-15 14:45:00,Ligue 2,Goles (Over/Under),Under 2.5,1.63,codere_it,2,-0.0045,0.005,0.31,8.97,1.625,codere_it:1.63; betsson:1.62
+Fenerbahce vs Torku Konyaspor,2025-12-15 12:00:00,Super League,Goles (Over/Under),Under 3.5,1.6,codere_it,2,-0.0881,0.0,0.0,7.95,1.6,codere_it:1.6; betsson:1.6

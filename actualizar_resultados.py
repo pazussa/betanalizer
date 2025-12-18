@@ -7,14 +7,17 @@ Autor: BetAnalizer
 Fecha: 25 de noviembre de 2025
 """
 
-import pandas as pd
+import argparse
 import asyncio
+import logging
 import os
 import sys
-from datetime import datetime, timezone, timedelta
+import unicodedata
+from datetime import datetime
+
 import httpx
+import pandas as pd
 from dotenv import load_dotenv
-import logging
 
 load_dotenv()
 
@@ -25,9 +28,15 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Evitar que httpx imprima URLs completas con `apiKey` en INFO
+logging.getLogger("httpx").setLevel(logging.WARNING)
+logging.getLogger("httpcore").setLevel(logging.WARNING)
+
 
 # Mapeo de ligas del CSV a sport_keys de The Odds API
-LIGA_A_SPORT_KEY = {
+# Nota: algunas ligas comparten nombre en el CSV (p.ej. "Super League", "Primera División").
+# En esos casos, consultamos múltiples sport_keys y unimos resultados.
+LIGA_A_SPORT_KEYS = {
     "EPL": "soccer_epl",
     "La Liga": "soccer_spain_la_liga",
     "La Liga 2": "soccer_spain_segunda_division",
@@ -39,7 +48,7 @@ LIGA_A_SPORT_KEY = {
     "Ligue 2": "soccer_france_ligue_two",
     "Eredivisie": "soccer_netherlands_eredivisie",
     "Primeira Liga": "soccer_portugal_primeira_liga",
-    "Super League": "soccer_turkey_super_league",  # Turquía y Grecia usan el mismo nombre
+    "Super League": ["soccer_turkey_super_league", "soccer_greece_super_league"],
     "Austrian Bundesliga": "soccer_austria_bundesliga",
     "Swiss Superleague": "soccer_switzerland_superleague",
     "Superliga": "soccer_denmark_superliga",
@@ -53,13 +62,18 @@ LIGA_A_SPORT_KEY = {
     "Europa League": "soccer_uefa_europa_league",
     "Conference League": "soccer_uefa_europa_conference_league",
     "Brasileirão": "soccer_brazil_campeonato",
-    "Primera División": "soccer_argentina_primera_division",  # Argentina o Chile
+    "Primera División": ["soccer_argentina_primera_division", "soccer_chile_campeonato"],
     "Liga MX": "soccer_mexico_ligamx",
     "MLS": "soccer_usa_mls",
     "J League": "soccer_japan_j_league",
     "K League 1": "soccer_korea_kleague1",
     "A-League": "soccer_australia_aleague",
+    "Belgium First Div": "soccer_belgium_first_div",
 }
+
+
+class APIAuthError(RuntimeError):
+    pass
 
 
 class ResultadosUpdater:
@@ -75,7 +89,7 @@ class ResultadosUpdater:
         self.client = httpx.AsyncClient(timeout=30.0)
         self.resultados_cache = {}
     
-    async def obtener_scores(self, sport_key: str) -> dict:
+    async def obtener_scores(self, sport_key: str, days_from: int = 3) -> dict:
         """
         Obtiene los resultados de partidos completados para una liga específica
         
@@ -92,7 +106,7 @@ class ResultadosUpdater:
             url = f"{self.BASE_URL}/sports/{sport_key}/scores"
             params = {
                 "apiKey": self.api_key,
-                "daysFrom": 3,  # Últimos 3 días
+                "daysFrom": days_from,
                 "dateFormat": "iso"
             }
             
@@ -128,7 +142,27 @@ class ResultadosUpdater:
             return resultados
             
         except httpx.HTTPStatusError as e:
-            logger.warning(f"Error HTTP {e.response.status_code} obteniendo scores de {sport_key}")
+            detalle = ""
+            try:
+                detalle = e.response.text or ""
+            except Exception:
+                detalle = ""
+
+            if e.response.status_code == 401:
+                raise APIAuthError(
+                    "The Odds API respondió 401 (Unauthorized). Revisa THE_ODDS_API_KEY y/o tu cuota del plan."
+                )
+
+            if e.response.status_code == 422:
+                logger.warning(
+                    f"Error HTTP 422 obteniendo scores de {sport_key}. "
+                    f"Revisa el parámetro daysFrom (en The Odds API suele estar limitado; prueba 1-3)."
+                )
+            else:
+                logger.warning(f"Error HTTP {e.response.status_code} obteniendo scores de {sport_key}")
+
+            if detalle:
+                logger.debug(f"Detalle HTTP error {sport_key}: {detalle}")
             return {}
         except Exception as e:
             logger.warning(f"Error obteniendo scores de {sport_key}: {e}")
@@ -207,7 +241,22 @@ def normalizar_nombre_partido(partido: str) -> str:
     Normaliza el nombre del partido para comparación
     Elimina espacios extra y convierte a minúsculas
     """
-    return " ".join(partido.lower().split())
+    if partido is None:
+        return ""
+    text = " ".join(str(partido).lower().split())
+    return "".join(
+        ch for ch in unicodedata.normalize("NFKD", text)
+        if not unicodedata.combining(ch)
+    )
+
+
+def _sport_keys_for_liga(liga: str) -> list[str]:
+    keys = LIGA_A_SPORT_KEYS.get(liga)
+    if not keys:
+        return []
+    if isinstance(keys, list):
+        return keys
+    return [keys]
 
 
 def buscar_resultado(partido: str, resultados: dict) -> tuple:
@@ -244,9 +293,44 @@ def buscar_resultado(partido: str, resultados: dict) -> tuple:
 
 async def main():
     """Función principal"""
-    # Archivos
-    input_file = "mejores_oportunidades_apuestas.csv"
-    output_file = "mejores_oportunidades_apuestas.csv"  # Sobreescribimos
+    parser = argparse.ArgumentParser(
+        description="Actualiza un CSV con resultados reales desde The Odds API y evalúa si el pronóstico se cumplió."
+    )
+    parser.add_argument("--input", default="mejores_oportunidades_apuestas.csv", help="CSV de entrada")
+    parser.add_argument("--output", default=None, help="CSV de salida (por defecto: <input>_con_resultados.csv)")
+    parser.add_argument("--days-from", type=int, default=3, help="Días hacia atrás para consultar scores en The Odds API")
+    parser.add_argument(
+        "--only-leagues",
+        default=None,
+        help="Lista de ligas (separadas por coma) a consultar. Si no se indica, consulta todas las ligas presentes.",
+    )
+    parser.add_argument(
+        "--only-missing",
+        action="store_true",
+        help="Si el CSV ya tiene columna 'Resultado', consulta solo las ligas que tienen filas 'Sin datos'.",
+    )
+    parser.add_argument(
+        "--only-unresolved",
+        action="store_true",
+        help="Si el CSV ya tiene columna 'Resultado', preserva Acertado/Fallido y recalcula solo filas 'Sin datos' o 'Pendiente'.",
+    )
+    parser.add_argument(
+        "--as-of",
+        default=None,
+        help="Fecha/hora de corte para considerar 'ya jugado' (formato: YYYY-MM-DD HH:MM:SS). Por defecto: ahora.",
+    )
+    args = parser.parse_args()
+
+    # /scores (The Odds API) suele limitar daysFrom (p.ej. a 3). Para evitar 422, lo acotamos.
+    if args.days_from < 1:
+        logger.error("--days-from debe ser >= 1")
+        sys.exit(1)
+    if args.days_from > 3:
+        logger.warning("--days-from=%s no es soportado por /scores; usando 3", args.days_from)
+        args.days_from = 3
+
+    input_file = args.input
+    output_file = args.output or input_file.replace('.csv', '_con_resultados.csv')
     
     if not os.path.exists(input_file):
         logger.error(f"No se encontró el archivo {input_file}")
@@ -255,6 +339,11 @@ async def main():
     # Leer el CSV
     df = pd.read_csv(input_file)
     logger.info(f"Leídas {len(df)} filas del archivo {input_file}")
+
+    # Si vamos a rellenar solo faltantes, preservamos resultados existentes
+    preserve_existing = (args.only_missing or args.only_unresolved) and ('Resultado' in df.columns)
+    original_resultado = df['Resultado'].copy() if 'Resultado' in df.columns else None
+    original_marcador = df['Marcador'].copy() if 'Marcador' in df.columns else None
     
     # Verificar columnas necesarias
     columnas_requeridas = ['Partido', 'Fecha_Hora_Colombia', 'Liga', 'Tipo_Mercado', 'Mercado', 'Mejor_Cuota']
@@ -263,38 +352,76 @@ async def main():
             logger.error(f"Falta la columna requerida: {col}")
             sys.exit(1)
     
-    # Fecha actual (25 de noviembre de 2025, hora Colombia = UTC-5)
-    # Usamos naive datetime para comparar con el CSV
-    ahora = datetime(2025, 11, 25, 23, 59, 59)
+    # Fecha de corte (naive) para comparar con la columna Fecha_Hora_Colombia
+    if args.as_of:
+        try:
+            ahora = datetime.strptime(args.as_of, "%Y-%m-%d %H:%M:%S")
+        except ValueError:
+            logger.error("Formato inválido para --as-of. Usa: YYYY-MM-DD HH:MM:SS")
+            sys.exit(1)
+    else:
+        ahora = datetime.now()
+
+    # La API de /scores refleja el estado actual. Si el corte está en el futuro,
+    # no podremos verificar partidos que aún no han finalizado.
+    if args.as_of:
+        ahora_real = datetime.now()
+        if ahora > ahora_real:
+            logger.warning(
+                "--as-of (%s) está en el futuro; usando ahora (%s) como corte efectivo para Ya_Jugado",
+                args.as_of,
+                ahora_real.strftime("%Y-%m-%d %H:%M:%S"),
+            )
+            ahora = ahora_real
     
     # Convertir fecha a datetime (naive)
     df['Fecha_Hora_DT'] = pd.to_datetime(df['Fecha_Hora_Colombia'])
     
     # Identificar partidos ya jugados (fecha < ahora)
     df['Ya_Jugado'] = df['Fecha_Hora_DT'] < pd.Timestamp(ahora)
+
+    # Filtrar ligas objetivo para reducir consumo de cuota en la API
+    ligas_objetivo = None
+    if args.only_leagues:
+        ligas_objetivo = [x.strip() for x in args.only_leagues.split(",") if x.strip()]
+    elif (args.only_missing or args.only_unresolved) and 'Resultado' in df.columns:
+        if args.only_missing:
+            mask_unresolved = df['Resultado'].astype(str).str.strip().eq('Sin datos')
+        else:
+            mask_unresolved = df['Resultado'].astype(str).str.strip().isin(['Sin datos', 'Pendiente'])
+        ligas_objetivo = df.loc[mask_unresolved, 'Liga'].dropna().unique().tolist()
     
     partidos_jugados = df[df['Ya_Jugado']]['Partido'].unique()
     logger.info(f"Partidos que ya se jugaron: {len(partidos_jugados)}")
     
     # Obtener las ligas únicas de los partidos jugados
     ligas_jugadas = df[df['Ya_Jugado']]['Liga'].unique()
+    if ligas_objetivo is not None:
+        ligas_jugadas = [l for l in ligas_jugadas if l in set(ligas_objetivo)]
     logger.info(f"Ligas a consultar: {list(ligas_jugadas)}")
     
     # Inicializar actualizador
     updater = ResultadosUpdater()
-    
-    # Obtener resultados de cada liga
+
     todos_resultados = {}
-    for liga in ligas_jugadas:
-        sport_key = LIGA_A_SPORT_KEY.get(liga)
-        if sport_key:
-            resultados = await updater.obtener_scores(sport_key)
-            todos_resultados.update(resultados)
-            await asyncio.sleep(0.3)  # Rate limiting
-        else:
-            logger.warning(f"No se encontró sport_key para la liga: {liga}")
-    
-    await updater.close()
+    try:
+        # Obtener resultados de cada liga
+        for liga in ligas_jugadas:
+            sport_keys = _sport_keys_for_liga(liga)
+            if not sport_keys:
+                logger.warning(f"No se encontró sport_key para la liga: {liga}")
+                continue
+
+            for sport_key in sport_keys:
+                resultados = await updater.obtener_scores(sport_key, days_from=args.days_from)
+                todos_resultados.update(resultados)
+                await asyncio.sleep(0.3)  # Rate limiting
+    except APIAuthError as e:
+        logger.error(str(e))
+        logger.error("Abortando sin generar archivo de salida para evitar resultados incompletos.")
+        sys.exit(1)
+    finally:
+        await updater.close()
     
     logger.info(f"Total de resultados obtenidos: {len(todos_resultados)}")
     
@@ -306,7 +433,18 @@ async def main():
         for partido, (gl, gv) in sorted(todos_resultados.items()):
             print(f"  {partido}: {gl}-{gv}")
     
-    # Agregar columna de resultado
+    # Agregar columnas de resultado
+    def obtener_marcador(row):
+        if not row['Ya_Jugado']:
+            return ""
+
+        resultado = buscar_resultado(row['Partido'], todos_resultados)
+        if resultado is None:
+            return ""
+
+        goles_local, goles_visitante = resultado
+        return f"{goles_local}-{goles_visitante}"
+
     def obtener_resultado_str(row):
         if not row['Ya_Jugado']:
             return "Pendiente"
@@ -323,8 +461,20 @@ async def main():
             goles_local,
             goles_visitante
         )
-    
+
+    df['Marcador'] = df.apply(obtener_marcador, axis=1)
+
     df['Resultado'] = df.apply(obtener_resultado_str, axis=1)
+
+    if preserve_existing and original_resultado is not None:
+        if args.only_missing:
+            mask_update = original_resultado.astype(str).str.strip().eq('Sin datos')
+        else:
+            mask_update = original_resultado.astype(str).str.strip().isin(['Sin datos', 'Pendiente'])
+        # Mantener valores anteriores donde no se actualiza
+        df.loc[~mask_update, 'Resultado'] = original_resultado.loc[~mask_update].values
+        if original_marcador is not None:
+            df.loc[~mask_update, 'Marcador'] = original_marcador.loc[~mask_update].fillna('').values
     
     # Eliminar columna temporal
     df = df.drop(columns=['Fecha_Hora_DT', 'Ya_Jugado'])
