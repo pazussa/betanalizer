@@ -184,6 +184,16 @@ class AnalysisResult(BaseModel):
     market_name: Optional[str] = None  # Nombre específico del mercado ("Over 2.5", "Yes", etc.)
     num_bookmakers: Optional[int] = None  # Número de casas de apuestas con cuotas
     all_odds_formatted: Optional[str] = None  # Todas las cuotas formateadas
+    # Bookmaker Disagreement Index (BDI) fields
+    BDI_jsd: Optional[float] = None
+    BDI_n_bookmakers: Optional[int] = None
+    BDI_std_p: Optional[float] = None
+    BDI_mad_p: Optional[float] = None
+    # Fair (vig-removed when pair available) BDI fields
+    BDI_jsd_fair: Optional[float] = None
+    BDI_n_bookmakers_fair: Optional[int] = None
+    BDI_std_p_fair: Optional[float] = None
+    BDI_mad_p_fair: Optional[float] = None
     
     @property
     def match_display(self) -> str:

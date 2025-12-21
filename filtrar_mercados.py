@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Cargar el dataset
-archivo = 'analisis_mercados_20251219_100115.csv'
+archivo = 'analisis_mercados_20251219_204227.csv'
 df = pd.read_csv(archivo)
 
 # -----------------------------

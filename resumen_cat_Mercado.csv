@@ -1,0 +1,7 @@
+Mercado,Acertado,Fallido,total,rate_acierto
+Under 2.5,23,16,39,0.5897435897435898
+Over 2.5,11,20,31,0.3548387096774194
+Under 3.5,4,0,4,1.0
+Over 3.5,0,4,4,0.0
+Over 1.5,1,0,1,1.0
+Under 1.5,0,1,1,0.0

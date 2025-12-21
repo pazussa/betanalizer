@@ -1,9 +1,19 @@
 Partido,Fecha_Hora_Colombia,Liga,Tipo_Mercado,Mercado,Mejor_Cuota,Mejor_Casa,Num_Casas,Score_Final,Diferencia_Cuota_Promedio,Volatilidad_Pct,Margen_Casa_Pct,Cuota_Promedio_Mercado,Todas_Las_Cuotas
-Newcastle Jets FC vs Sydney FC,2025-12-20 01:00:00,A-League,Doble Chance,1X,1.76,pinnacle,4,0.5385,0.03,1.23,3.9,1.73,pinnacle:1.76; marathonbet:1.73; codere_it:1.73; betsson:1.7
-Rotherham United vs Huddersfield Town,2025-12-20 10:00:00,League 1,Doble Chance,1X,1.71,pinnacle,4,0.3822,0.035,1.49,5.52,1.675,pinnacle:1.71; marathonbet:1.68; betsson:1.67; codere_it:1.64
-Shrewsbury Town vs Chesterfield FC,2025-12-20 10:00:00,League 2,Doble Chance,1X,1.6,pinnacle,4,0.244,0.04,2.17,6.27,1.56,pinnacle:1.6; betsson:1.58; marathonbet:1.55; codere_it:1.51
-Mansfield Town vs Stockport County FC,2025-12-20 10:00:00,League 1,Doble Chance,1X,1.72,pinnacle,4,0.186,0.0425,1.54,5.7,1.6775,pinnacle:1.72; codere_it:1.67; betsson:1.67; marathonbet:1.65
-Oviedo vs Celta Vigo,2025-12-20 08:00:00,La Liga,Doble Chance,1X,1.74,pinnacle,4,0.1717,0.015,0.5,3.61,1.725,pinnacle:1.74; codere_it:1.72; betsson:1.72; marathonbet:1.72
-Wolverhampton Wanderers vs Brentford,2025-12-20 10:00:00,EPL,Doble Chance,1X,1.8,pinnacle,4,0.1682,0.0225,1.0,3.33,1.7775,pinnacle:1.8; betsson:1.79; codere_it:1.76; marathonbet:1.76
-Exeter City vs Barnsley,2025-12-20 10:00:00,League 1,Doble Chance,1X,1.7,pinnacle,4,0.1622,0.0425,1.62,5.61,1.6575,pinnacle:1.7; betsson:1.66; codere_it:1.64; marathonbet:1.63
-Dundee United vs Hibernian,2025-12-20 10:00:00,Premiership,Doble Chance,1X,1.74,codere_it,4,0.0754,0.03,1.6,6.1,1.71,codere_it:1.74; pinnacle:1.73; marathonbet:1.7; betsson:1.67
+Cádiz CF vs CD Castellón,2025-12-21 15:00:00,La Liga 2,Doble Chance,1X,1.68,pinnacle,3,0.4315,0.0467,2.25,4.89,1.6333,pinnacle:1.68; marathonbet:1.63; betsson:1.59
+Royal Antwerp vs Anderlecht,2025-12-21 12:30:00,Belgium First Div,Doble Chance,1X,1.65,pinnacle,3,0.261,0.0267,1.16,4.98,1.6233,pinnacle:1.65; marathonbet:1.61; betsson:1.61
+Grasshopper Zürich vs FC St Gallen,2025-12-21 10:30:00,Swiss Superleague,Doble Chance,1X,1.63,pinnacle,4,0.3455,0.0325,1.36,4.95,1.5975,pinnacle:1.63; codere_it:1.6; marathonbet:1.59; betsson:1.57
+AVS Futebol SAD vs Nacional,2025-12-21 10:30:00,Primeira Liga,Doble Chance,1X,1.61,pinnacle,3,0.2968,0.02,0.89,5.02,1.59,pinnacle:1.61; betsson:1.58; marathonbet:1.58
+Go Ahead Eagles vs Groningen,2025-12-21 08:30:00,Eredivisie,Doble Chance,1X,1.7,pinnacle,4,0.1584,0.0325,1.43,5.05,1.6675,pinnacle:1.7; betsson:1.68; marathonbet:1.65; codere_it:1.64
+1. FC Nürnberg vs Hannover 96,2025-12-21 07:30:00,Bundesliga 2,Doble Chance,1X,1.75,pinnacle,4,0.364,0.04,1.7,4.89,1.71,pinnacle:1.75; codere_it:1.72; marathonbet:1.7; betsson:1.67
+TSV Havelse vs Alemannia Aachen,2025-12-21 07:30:00,3. Liga,Doble Chance,1X,1.61,pinnacle,3,0.3402,0.0233,1.65,6.29,1.5867,pinnacle:1.61; betsson:1.6; codere_it:1.55
+SC Preußen Münster vs Elversberg,2025-12-21 07:30:00,Bundesliga 2,Doble Chance,1X,1.76,pinnacle,4,0.3191,0.025,1.55,4.92,1.735,pinnacle:1.76; marathonbet:1.75; codere_it:1.74; betsson:1.69
+Eintracht Braunschweig vs FC Schalke 04,2025-12-21 07:30:00,Bundesliga 2,Doble Chance,1X,1.68,pinnacle,4,0.3149,0.0325,1.57,4.89,1.6475,pinnacle:1.68; codere_it:1.66; marathonbet:1.64; betsson:1.61
+Heracles Almelo vs Heerenveen,2025-12-20 10:30:00,Eredivisie,Doble Chance,1X,1.77,pinnacle,4,0.3985,0.0325,1.18,4.04,1.7375,pinnacle:1.77; codere_it:1.74; betsson:1.72; marathonbet:1.72
+Levante vs Real Sociedad,2025-12-20 10:15:00,La Liga,Doble Chance,1X,1.75,pinnacle,4,0.2417,0.0275,1.04,3.31,1.7225,pinnacle:1.75; betsson:1.72; marathonbet:1.72; codere_it:1.7
+Dundee United vs Hibernian,2025-12-20 10:00:00,Premiership,Doble Chance,1X,1.72,pinnacle,4,0.8456,0.0475,1.86,3.95,1.6725,pinnacle:1.72; marathonbet:1.68; betsson:1.65; codere_it:1.64
+Shrewsbury Town vs Chesterfield FC,2025-12-20 10:00:00,League 2,Doble Chance,1X,1.61,pinnacle,4,0.454,0.05,2.44,5.22,1.56,pinnacle:1.61; betsson:1.58; marathonbet:1.54; codere_it:1.51
+Rotherham United vs Huddersfield Town,2025-12-20 10:00:00,League 1,Doble Chance,1X,1.73,pinnacle,4,0.4251,0.035,1.35,4.54,1.695,pinnacle:1.73; codere_it:1.7; marathonbet:1.68; betsson:1.67
+Exeter City vs Barnsley,2025-12-20 10:00:00,League 1,Doble Chance,1X,1.71,pinnacle,4,0.3877,0.0375,1.36,4.54,1.6725,pinnacle:1.71; codere_it:1.67; betsson:1.66; marathonbet:1.65
+Mansfield Town vs Stockport County FC,2025-12-20 10:00:00,League 1,Doble Chance,1X,1.75,pinnacle,4,0.3571,0.055,2.06,4.62,1.695,pinnacle:1.75; betsson:1.7; codere_it:1.67; marathonbet:1.66
+Wolverhampton Wanderers vs Brentford,2025-12-20 10:00:00,EPL,Doble Chance,1X,1.8,pinnacle,4,0.1605,0.0325,1.09,3.49,1.7675,pinnacle:1.8; marathonbet:1.76; betsson:1.76; codere_it:1.75
+Oviedo vs Celta Vigo,2025-12-20 08:00:00,La Liga,Doble Chance,1X,1.71,marathonbet,4,0.3988,0.0175,1.47,3.21,1.6925,marathonbet:1.71; pinnacle:1.71; codere_it:1.7; betsson:1.65

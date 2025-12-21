@@ -9,6 +9,7 @@ from .models import (
 )
 from .apis.the_odds_api import TheOddsAPIClient
 from .apis.odds_api_io import OddsAPIIOClient
+from .disagreement import bookmaker_disagreement
 
 
 class FootballOddsAnalyzer:
@@ -251,7 +252,63 @@ class FootballOddsAnalyzer:
                 f"{o['bookmaker'].value}:{o['odds']}" 
                 for o in sorted(odds_list, key=lambda x: x["odds"], reverse=True)
             ])
-            
+            # Calcular BDI (no-fair) usando la aproximación binaria (selección vs complemento)
+            sel_label = market_name
+            try:
+                bookmaker_odds_list = []
+                for o in odds_list:
+                    odds_val = o.get("odds")
+                    if not odds_val or odds_val <= 1:
+                        continue
+                    p = 1.0 / float(odds_val)
+                    other_odds = 1.0 / max(1e-9, 1.0 - p)
+                    bookmaker_odds_list.append({sel_label: odds_val, f"{sel_label}_other": other_odds})
+                bdi_res = bookmaker_disagreement(bookmaker_odds_list) if bookmaker_odds_list else {}
+                bdi_jsd = bdi_res.get('jsd_mean')
+                bdi_n = bdi_res.get('n_bookmakers')
+                per_std = bdi_res.get('per_outcome_std', {})
+                per_mad = bdi_res.get('per_outcome_mad', {})
+                bdi_std_p = per_std.get(sel_label)
+                bdi_mad_p = per_mad.get(sel_label)
+            except Exception:
+                bdi_jsd = None
+                bdi_n = None
+                bdi_std_p = None
+                bdi_mad_p = None
+
+            # Calcular BDI "fair" emparejando Over/Under (solo si existe lado opuesto)
+            bdi_jsd_fair = None
+            bdi_n_fair = None
+            bdi_std_p_fair = None
+            bdi_mad_p_fair = None
+            try:
+                # Sólo tiene sentido para mercados binarios como TOTALS o BTTS
+                if market_type == MarketType.TOTALS or market_type == MarketType.BTTS:
+                    is_over = "Over" in market_name
+                    # construir nombre opuesto (ej: 'Under 2.5')
+                    parts = market_name.split()
+                    point = parts[-1] if len(parts) >= 2 else None
+                    opposite_name = f"{'Under' if is_over else 'Over'} {point}"
+
+                    # agrupar por bookie y tomar pares completos
+                    all_bookmakers = set(o["bookmaker"] for o in odds_list)
+                    fair_list = []
+                    for bookie in all_bookmakers:
+                        current = next((x for x in odds_data if x["bookmaker"] == bookie and f"{x['market_name']} {x.get('point')}" == market_name), None)
+                        opposite = next((x for x in odds_data if x["bookmaker"] == bookie and f"{x['market_name']} {x.get('point')}" == opposite_name), None)
+                        if current and opposite:
+                            fair_list.append({market_name: current['odds'], opposite_name: opposite['odds']})
+                    if fair_list:
+                        fair_res = bookmaker_disagreement(fair_list)
+                        bdi_jsd_fair = fair_res.get('jsd_mean')
+                        bdi_n_fair = fair_res.get('n_bookmakers')
+                        per_std_f = fair_res.get('per_outcome_std', {})
+                        per_mad_f = fair_res.get('per_outcome_mad', {})
+                        bdi_std_p_fair = per_std_f.get(market_name)
+                        bdi_mad_p_fair = per_mad_f.get(market_name)
+            except Exception:
+                pass
+
             # Crear resultado
             result = AnalysisResult(
                 match=match,
@@ -269,6 +326,8 @@ class FootballOddsAnalyzer:
                 volatility_std=volatility,
                 num_bookmakers=len(odds_list),
                 all_odds_formatted=all_odds_formatted
+                ,BDI_jsd=bdi_jsd, BDI_n_bookmakers=bdi_n, BDI_std_p=bdi_std_p, BDI_mad_p=bdi_mad_p
+                ,BDI_jsd_fair=bdi_jsd_fair, BDI_n_bookmakers_fair=bdi_n_fair, BDI_std_p_fair=bdi_std_p_fair, BDI_mad_p_fair=bdi_mad_p_fair
             )
             
             results.append(result)
@@ -325,6 +384,29 @@ class FootballOddsAnalyzer:
                 f"{odds.bookmaker.value}:{odds.odds}"
                 for odds in sorted(match_odds.odds_1x, key=lambda x: x.odds, reverse=True)
             ])
+            # Calcular BDI (no-fair) para 1X
+            try:
+                sel_label = "1X"
+                bookmaker_odds_list = []
+                for od in match_odds.odds_1x:
+                    odds_val = od.odds
+                    if not odds_val or odds_val <= 1:
+                        continue
+                    p = 1.0 / float(odds_val)
+                    other_odds = 1.0 / max(1e-9, 1.0 - p)
+                    bookmaker_odds_list.append({sel_label: odds_val, f"{sel_label}_other": other_odds})
+                bdi_res = bookmaker_disagreement(bookmaker_odds_list) if bookmaker_odds_list else {}
+                bdi_jsd = bdi_res.get('jsd_mean')
+                bdi_n = bdi_res.get('n_bookmakers')
+                per_std = bdi_res.get('per_outcome_std', {})
+                per_mad = bdi_res.get('per_outcome_mad', {})
+                bdi_std_p = per_std.get(sel_label)
+                bdi_mad_p = per_mad.get(sel_label)
+            except Exception:
+                bdi_jsd = None
+                bdi_n = None
+                bdi_std_p = None
+                bdi_mad_p = None
             
             result = AnalysisResult(
                 match=match_odds.match,
@@ -343,6 +425,8 @@ class FootballOddsAnalyzer:
                 num_bookmakers=len(match_odds.odds_1x),
                 all_odds_formatted=all_odds_formatted,
                 match_odds=match_odds
+                ,BDI_jsd=bdi_jsd, BDI_n_bookmakers=bdi_n, BDI_std_p=bdi_std_p, BDI_mad_p=bdi_mad_p
+                ,BDI_jsd_fair=None, BDI_n_bookmakers_fair=None, BDI_std_p_fair=None, BDI_mad_p_fair=None
             )
             results.append(result)
         
@@ -371,6 +455,29 @@ class FootballOddsAnalyzer:
                 f"{odds.bookmaker.value}:{odds.odds}"
                 for odds in sorted(match_odds.odds_x2, key=lambda x: x.odds, reverse=True)
             ])
+            # Calcular BDI (no-fair) para X2
+            try:
+                sel_label = "X2"
+                bookmaker_odds_list = []
+                for od in match_odds.odds_x2:
+                    odds_val = od.odds
+                    if not odds_val or odds_val <= 1:
+                        continue
+                    p = 1.0 / float(odds_val)
+                    other_odds = 1.0 / max(1e-9, 1.0 - p)
+                    bookmaker_odds_list.append({sel_label: odds_val, f"{sel_label}_other": other_odds})
+                bdi_res = bookmaker_disagreement(bookmaker_odds_list) if bookmaker_odds_list else {}
+                bdi_jsd = bdi_res.get('jsd_mean')
+                bdi_n = bdi_res.get('n_bookmakers')
+                per_std = bdi_res.get('per_outcome_std', {})
+                per_mad = bdi_res.get('per_outcome_mad', {})
+                bdi_std_p = per_std.get(sel_label)
+                bdi_mad_p = per_mad.get(sel_label)
+            except Exception:
+                bdi_jsd = None
+                bdi_n = None
+                bdi_std_p = None
+                bdi_mad_p = None
             
             result = AnalysisResult(
                 match=match_odds.match,
@@ -389,6 +496,8 @@ class FootballOddsAnalyzer:
                 num_bookmakers=len(match_odds.odds_x2),
                 all_odds_formatted=all_odds_formatted,
                 match_odds=match_odds
+                ,BDI_jsd=bdi_jsd, BDI_n_bookmakers=bdi_n, BDI_std_p=bdi_std_p, BDI_mad_p=bdi_mad_p
+                ,BDI_jsd_fair=None, BDI_n_bookmakers_fair=None, BDI_std_p_fair=None, BDI_mad_p_fair=None
             )
             results.append(result)
         
@@ -400,7 +509,8 @@ class FootballOddsAnalyzer:
         min_odds: float = 1.30,
         hours_ahead: int = 168,
         hours_from: int = 0,
-        prioritize_near_matches: bool = True
+        prioritize_near_matches: bool = True,
+        only_totals: bool = False,
     ) -> List[AnalysisResult]:
         """
         Realiza análisis completo de todos los partidos disponibles
@@ -462,26 +572,36 @@ class FootballOddsAnalyzer:
             
             for i, match in enumerate(matches, 1):
                 try:
-                    # Analizar mercado doble chance (1X, X2)
-                    match_odds = await self.get_match_odds_data(match)
-                    
-                    # Si hay cuotas disponibles, analizar
-                    if match_odds.odds_1x or match_odds.odds_x2:
-                        match_results = self.analyze_match_odds(
-                            match_odds, min_probability, min_odds
-                        )
-                        all_results.extend(match_results)
-                        successful_odds += 1
-                    
-                    # Analizar mercados adicionales (TOTALS, BTTS, H2H_Q1)
-                    additional_results = await self.analyze_additional_markets(match)
-                    if additional_results:
-                        all_results.extend(additional_results)
-                        if not (match_odds.odds_1x or match_odds.odds_x2):
+                    # Si solo pedimos TOTALS, evitamos solicitar H2H y mercados asociados
+                    if only_totals:
+                        # Solo analizar mercados adicionales (totals)
+                        additional_results = await self.analyze_additional_markets(match)
+                        if additional_results:
+                            all_results.extend(additional_results)
                             successful_odds += 1
-                    
-                    if not (match_odds.odds_1x or match_odds.odds_x2) and not additional_results:
-                        no_odds_available += 1
+                        else:
+                            no_odds_available += 1
+                    else:
+                        # Analizar mercado doble chance (1X, X2)
+                        match_odds = await self.get_match_odds_data(match)
+
+                        # Si hay cuotas disponibles, analizar
+                        if match_odds.odds_1x or match_odds.odds_x2:
+                            match_results = self.analyze_match_odds(
+                                match_odds, min_probability, min_odds
+                            )
+                            all_results.extend(match_results)
+                            successful_odds += 1
+
+                        # Analizar mercados adicionales (TOTALS, BTTS, H2H_Q1)
+                        additional_results = await self.analyze_additional_markets(match)
+                        if additional_results:
+                            all_results.extend(additional_results)
+                            if not (match_odds.odds_1x or match_odds.odds_x2):
+                                successful_odds += 1
+
+                        if not (match_odds.odds_1x or match_odds.odds_x2) and not additional_results:
+                            no_odds_available += 1
                     
                     # Actualizar barra con requests consumidos cada 3 partidos
                     if i % 3 == 0:

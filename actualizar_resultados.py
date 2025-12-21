@@ -9,6 +9,7 @@ Fecha: 25 de noviembre de 2025
 
 import argparse
 import asyncio
+
 import logging
 import os
 import sys
@@ -88,6 +89,8 @@ class ResultadosUpdater:
         
         self.client = httpx.AsyncClient(timeout=30.0)
         self.resultados_cache = {}
+
+
     
     async def obtener_scores(self, sport_key: str, days_from: int = 3) -> dict:
         """
