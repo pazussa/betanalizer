@@ -58,6 +58,10 @@ venv\Scripts\activate
 
 # Linux/Mac
 source venv/bin/activate
+# Alternativa: si creas el entorno como `.venv` en vez de `venv`
+# python -m venv .venv
+# activa con:
+source .venv/bin/activate
 
 pip install -r requirements.txt
 ```

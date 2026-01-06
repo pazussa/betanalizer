@@ -48,21 +48,29 @@ class ReportGenerator:
         with open(filepath, 'w', newline='', encoding='utf-8') as csvfile:
             writer = csv.writer(csvfile)
             
-            # Headers
+            # Headers - Orden requerido: Partido, Fecha, Mercado, Mejor Cuota, Cuota Promedio, BDIs
             headers = [
                 "Partido",
                 "Fecha_Hora_Colombia",
-                "Liga",
-                "Tipo_Mercado",
                 "Mercado",
                 "Mejor_Cuota",
+                "Cuota_Promedio_Mercado",
+                "BDI_jsd_fair",
+                "BDI_n_bookmakers_fair",
+                "BDI_std_p_fair",
+                "BDI_mad_p_fair",
+                "BDI_jsd",
+                "BDI_n_bookmakers",
+                "BDI_std_p",
+                "BDI_mad_p",
                 "Mejor_Casa",
                 "Num_Casas",
-                "Score_Final",
                 "Diferencia_Cuota_Promedio",
                 "Volatilidad_Pct",
                 "Margen_Casa_Pct",
-                "Cuota_Promedio_Mercado",
+                "Liga",
+                "Tipo_Mercado",
+                "Score_Final",
                 "Todas_Las_Cuotas"
             ]
             writer.writerow(headers)
@@ -95,21 +103,38 @@ class ReportGenerator:
                 avg_odds = result.avg_market_odds if result.avg_market_odds else ""
                 num_casas = result.num_bookmakers if result.num_bookmakers else ""
                 all_odds = result.all_odds_formatted if result.all_odds_formatted else ""
+                # BDI fields (pueden ser None)
+                bdi_jsd = result.BDI_jsd if result.BDI_jsd is not None else ""
+                bdi_n_bookmakers = result.BDI_n_bookmakers if result.BDI_n_bookmakers is not None else ""
+                bdi_std_p = result.BDI_std_p if result.BDI_std_p is not None else ""
+                bdi_mad_p = result.BDI_mad_p if result.BDI_mad_p is not None else ""
+                bdi_jsd_fair = result.BDI_jsd_fair if result.BDI_jsd_fair is not None else ""
+                bdi_n_bookmakers_fair = result.BDI_n_bookmakers_fair if result.BDI_n_bookmakers_fair is not None else ""
+                bdi_std_p_fair = result.BDI_std_p_fair if result.BDI_std_p_fair is not None else ""
+                bdi_mad_p_fair = result.BDI_mad_p_fair if result.BDI_mad_p_fair is not None else ""
                 
                 row = [
                     result.match_display,
                     fecha_hora_str,
-                    result.match.league,
-                    tipo_mercado,
                     market_name,
                     result.best_odds,
+                    avg_odds,
+                    bdi_jsd_fair,
+                    bdi_n_bookmakers_fair,
+                    bdi_std_p_fair,
+                    bdi_mad_p_fair,
+                    bdi_jsd,
+                    bdi_n_bookmakers,
+                    bdi_std_p,
+                    bdi_mad_p,
                     result.bookmaker.value,
                     num_casas,
-                    score_final,
                     odds_diff,
                     volatility,
                     margin_bookmaker,
-                    avg_odds,
+                    result.match.league,
+                    tipo_mercado,
+                    score_final,
                     all_odds
                 ]
                 
