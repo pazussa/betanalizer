@@ -252,12 +252,13 @@ class APIFootballClient:
             logger.error(f"Error obteniendo odds para fixture {fixture_id}: {e}")
             return []
     
-    async def get_odds_by_date(self, date: str) -> List[Dict]:
+    async def get_odds_by_date(self, date: str, include_teams: bool = True) -> List[Dict]:
         """
         Obtener cuotas para todos los partidos de una fecha específica
         
         Args:
             date: Fecha en formato YYYY-MM-DD
+            include_teams: Si True, enriquece con nombres de equipos desde /fixtures
         
         Returns:
             Lista de fixtures con odds disponibles
@@ -271,8 +272,42 @@ class APIFootballClient:
             response.raise_for_status()
             data = response.json()
             
-            logger.info(f"API-FOOTBALL: {len(data.get('response', []))} fixtures con odds para {date}")
-            return data.get("response", [])
+            odds_data = data.get("response", [])
+            logger.info(f"API-FOOTBALL: {len(odds_data)} fixtures con odds para {date}")
+            
+            if not include_teams or not odds_data:
+                return odds_data
+            
+            # Obtener fixtures para tener los nombres de equipos
+            fixtures_response = await self.client.get(
+                f"{self.BASE_URL}/fixtures",
+                params={"date": date},
+                headers=self._get_headers()
+            )
+            fixtures_response.raise_for_status()
+            fixtures_data = fixtures_response.json().get("response", [])
+            
+            # Crear mapa fixture_id -> teams
+            fixtures_map = {}
+            for f in fixtures_data:
+                fid = f.get("fixture", {}).get("id")
+                if fid:
+                    fixtures_map[fid] = {
+                        "teams": f.get("teams", {}),
+                        "league": f.get("league", {})
+                    }
+            
+            # Enriquecer odds_data con info de equipos
+            for od in odds_data:
+                fixture_id = od.get("fixture", {}).get("id")
+                if fixture_id and fixture_id in fixtures_map:
+                    od["teams"] = fixtures_map[fixture_id]["teams"]
+                    # Usar info de liga de fixtures si no está en odds
+                    if not od.get("league", {}).get("name"):
+                        od["league"] = fixtures_map[fixture_id]["league"]
+            
+            return odds_data
+            
         except Exception as e:
             logger.error(f"Error obteniendo odds para fecha {date}: {e}")
             return []
@@ -378,11 +413,16 @@ class APIFootballClient:
     def parse_totals_odds(self, odds_response: List[Dict]) -> List[Dict]:
         """
         Parsear odds de Over/Under de la respuesta de API-FOOTBALL
+        SOLO mercado de goles del partido completo (no primera/segunda parte)
         
         Returns:
             Lista de dicts con formato:
             {
                 'fixture_id': int,
+                'home_team': str,
+                'away_team': str,
+                'league_name': str,
+                'match_date': str,
                 'bookmaker': str,
                 'line': float (ej: 2.5),
                 'over_odds': float,
@@ -394,15 +434,44 @@ class APIFootballClient:
         for fixture_data in odds_response:
             fixture_info = fixture_data.get("fixture", {})
             fixture_id = fixture_info.get("id")
+            match_date = fixture_info.get("date", "")
+            
+            # Obtener info del partido si está disponible
+            league_info = fixture_data.get("league", {})
+            league_name = league_info.get("name", "")
+            
+            # Obtener nombres de equipos desde fixture_data si están disponibles
+            teams_info = fixture_data.get("teams", {})
+            home_team = teams_info.get("home", {}).get("name", "")
+            away_team = teams_info.get("away", {}).get("name", "")
             
             for bookmaker_data in fixture_data.get("bookmakers", []):
                 bookmaker_id = bookmaker_data.get("id")
                 bookmaker_name = BOOKMAKER_ID_MAP.get(bookmaker_id, f"Unknown_{bookmaker_id}")
                 
+                # Track si ya procesamos el mercado principal para este bookmaker
+                processed_main_market = False
+                
                 for bet_data in bookmaker_data.get("bets", []):
-                    # Goals Over/Under es bet id=5 o similar
-                    bet_name = bet_data.get("name", "")
-                    if "Over/Under" in bet_name or bet_data.get("id") == 5:
+                    bet_name = bet_data.get("name", "").lower()
+                    bet_id = bet_data.get("id")
+                    
+                    # Solo el mercado principal de Goals Over/Under (id=5)
+                    # Excluir explícitamente variantes de primera/segunda parte
+                    is_main_goals_market = (
+                        bet_id == 5 or  # ID específico para Goals Over/Under
+                        (
+                            "over/under" in bet_name and
+                            "goal" in bet_name and
+                            "half" not in bet_name and
+                            "first" not in bet_name and
+                            "second" not in bet_name and
+                            "home" not in bet_name and
+                            "away" not in bet_name
+                        )
+                    )
+                    
+                    if is_main_goals_market and not processed_main_market:
                         values = bet_data.get("values", [])
                         
                         # Agrupar por línea
@@ -433,12 +502,20 @@ class APIFootballClient:
                             if 'over' in odds and 'under' in odds:
                                 results.append({
                                     'fixture_id': fixture_id,
+                                    'home_team': home_team,
+                                    'away_team': away_team,
+                                    'league_name': league_name,
+                                    'match_date': match_date,
                                     'bookmaker_id': bookmaker_id,
                                     'bookmaker': bookmaker_name,
                                     'line': line,
                                     'over_odds': odds['over'],
                                     'under_odds': odds['under'],
                                 })
+                        
+                        # Marcar como procesado solo si encontramos datos
+                        if lines:
+                            processed_main_market = True
         
         return results
     

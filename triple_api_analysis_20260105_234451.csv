@@ -1,0 +1,51 @@
+match,league,starts_at,market,line,side,num_bookmakers,min_odds,max_odds,fair_odds,BDI_jsd_fair,bookmakers,source
+Rayo Vallecano vs Mallorca,La Liga,2026-01-11T13:00:00.000Z,Over 2.5,2.5,over,3,1.847457627118644,2.4,2.3,0.0412,"Bovada, BetRivers, BetMGM",SportsGameOdds
+Rayo Vallecano vs Mallorca,La Liga,2026-01-11T13:00:00.000Z,Under 2.5,2.5,under,3,1.529100529100529,1.9803921568627452,1.5495,0.0411,"Bovada, BetRivers, BetMGM",SportsGameOdds
+Bremen vs Hoffenheim,Bundesliga,2026-01-10T14:30:00.000Z,Under 3.5,3.5,under,3,1.5494505494505495,1.8928571428571428,1.5714,0.0317,"Bovada, BetRivers, BetMGM",SportsGameOdds
+Bremen vs Hoffenheim,Bundesliga,2026-01-10T14:30:00.000Z,Over 3.5,3.5,over,3,1.925925925925926,2.3,2.3,0.03,"Bovada, BetRivers, BetMGM",SportsGameOdds
+Bayern vs Wolfsburg,Bundesliga,2026-01-11T16:30:00.000Z,Over 3.5,3.5,over,3,1.5813953488372094,1.819672131147541,1.5814,0.0231,"Bovada, BetPARX, BetRivers",SportsGameOdds
+Bayern vs Wolfsburg,Bundesliga,2026-01-11T16:30:00.000Z,Under 3.5,3.5,under,3,2.02,2.3,2.28,0.0211,"Bovada, BetPARX, BetRivers",SportsGameOdds
+Villarreal vs Alavés,La Liga,2026-01-10T15:15:00.000Z,Under 2.5,2.5,under,4,1.72992700729927,1.8695652173913042,1.7704,0.0109,"Bovada, BetPARX, BetRivers, BetMGM",SportsGameOdds
+Torino vs Udinese,Serie A,2026-01-07T19:45:00.000Z,Over 2.5,2.5,over,3,2.2,2.35,2.33,0.0104,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Levante vs Espanyol,La Liga,2026-01-11T15:15:00.000Z,Under 2.5,2.5,under,4,1.6802721088435373,1.8,1.7161,0.0103,"BetPARX, BetRivers, Bovada, BetMGM",SportsGameOdds
+Levante vs Espanyol,La Liga,2026-01-11T15:15:00.000Z,Over 2.5,2.5,over,4,1.9803921568627452,2.12,2.085,0.01,"BetPARX, BetRivers, Bovada, BetMGM",SportsGameOdds
+Villarreal vs Alavés,La Liga,2026-01-10T15:15:00.000Z,Over 2.5,2.5,over,4,1.900900900900901,2.04,1.9862,0.0099,"Bovada, BetPARX, BetRivers, BetMGM",SportsGameOdds
+Leverkusen vs Stuttgart,Bundesliga,2026-01-10T17:30:00.000Z,Over 3.5,3.5,over,3,2.15,2.2800000000000002,2.28,0.0098,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Real Oviedo vs Real Betis,La Liga,2026-01-10T13:00:00.000Z,Over 2.5,2.5,over,4,1.9803921568627452,2.12,2.075,0.0093,"Bovada, BetPARX, BetRivers, BetMGM",SportsGameOdds
+Real Oviedo vs Real Betis,La Liga,2026-01-10T13:00:00.000Z,Under 2.5,2.5,under,4,1.6802721088435373,1.8,1.7146,0.0092,"Bovada, BetPARX, BetRivers, BetMGM",SportsGameOdds
+Sevilla vs Celta,La Liga,2026-01-12T20:00:00.000Z,Over 2.5,2.5,over,4,1.9803921568627452,2.1,2.075,0.0085,"Bovada, BetPARX, BetRivers, BetMGM",SportsGameOdds
+Sevilla vs Celta,La Liga,2026-01-12T20:00:00.000Z,Under 2.5,2.5,under,4,1.6993006993006992,1.8,1.7256,0.0085,"Bovada, BetPARX, BetRivers, BetMGM",SportsGameOdds
+Bologna vs Atalanta,Serie A,2026-01-07T17:30:00.000Z,Over 2.5,2.5,over,4,1.8771929824561404,2.0,1.905,0.0084,"Bovada, BetPARX, BetRivers, BetMGM",SportsGameOdds
+Parma vs Inter,Serie A,2026-01-07T19:45:00.000Z,Under 2.5,2.5,under,3,2.2,2.3200000000000003,2.3,0.0083,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+M'gladbach vs Augsburg,Bundesliga,2026-01-11T14:30:00.000Z,Over 2.5,2.5,over,4,1.72992700729927,1.8333333333333335,1.7463,0.008,"BetPARX, BetRivers, BetMGM, Bovada",SportsGameOdds
+Lecce vs Roma,Serie A,2026-01-06T17:00:00.000Z,Over 2.5,2.5,over,2,2.25,2.35,2.3,0.0077,"BetRivers, BetMGM",SportsGameOdds
+Girona vs Osasuna,La Liga,2026-01-10T17:30:00.000Z,Over 2.5,2.5,over,3,2.0,2.1,2.08,0.0075,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Union Berlin vs Mainz 05,Bundesliga,2026-01-10T14:30:00.000Z,Under 2.5,2.5,under,3,1.6289308176100628,1.6993006993006992,1.6993,0.0071,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Freiburg vs HSV,Bundesliga,2026-01-10T14:30:00.000Z,Under 2.5,2.5,under,3,1.9523809523809523,2.04,2.02,0.0067,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Valencia vs Elche,La Liga,2026-01-10T20:00:00.000Z,Over 2.5,2.5,over,3,2.25,2.35,2.33,0.0067,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Cremonese vs Cagliari,Serie A,2026-01-08T17:30:00.000Z,Over 2.5,2.5,over,3,2.15,2.23,2.23,0.0061,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+St. Pauli vs Leipzig,Bundesliga,2026-01-10T14:30:00.000Z,Under 2.5,2.5,under,3,1.9803921568627452,2.06,2.04,0.0059,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Milan vs Genoa,Serie A,2026-01-08T19:45:00.000Z,Over 2.5,2.5,over,3,1.9523809523809523,2.02,2.02,0.0057,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Pisa vs Como,Serie A,2026-01-06T14:00:00.000Z,Under 2.5,2.5,under,3,1.6493506493506493,1.7092198581560285,1.6993,0.0055,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Napoli vs Verona,Serie A,2026-01-07T17:30:00.000Z,Under 2.5,2.5,under,4,1.72992700729927,1.8,1.7634,0.005,"BetPARX, BetRivers, BetMGM, Bovada",SportsGameOdds
+Sassuolo vs Juventus,Serie A,2026-01-06T19:45:00.000Z,Under 2.5,2.5,under,4,1.8,1.8695652173913042,1.8439,0.0049,"Bovada, BetPARX, BetRivers, BetMGM",SportsGameOdds
+Napoli vs Verona,Serie A,2026-01-07T17:30:00.000Z,Over 2.5,2.5,over,4,1.9803921568627452,2.05,2.0,0.0045,"BetPARX, BetRivers, BetMGM, Bovada",SportsGameOdds
+Getafe vs Real Sociedad,La Liga,2026-01-09T20:00:00.000Z,Over 1.5,1.5,over,3,1.6802721088435373,1.72992700729927,1.7194,0.0044,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+M'gladbach vs Augsburg,Bundesliga,2026-01-11T14:30:00.000Z,Under 2.5,2.5,under,4,1.9803921568627452,2.04,2.01,0.0039,"BetPARX, BetRivers, BetMGM, Bovada",SportsGameOdds
+Sassuolo vs Juventus,Serie A,2026-01-06T19:45:00.000Z,Over 2.5,2.5,over,4,1.900900900900901,1.9523809523809523,1.905,0.0039,"Bovada, BetPARX, BetRivers, BetMGM",SportsGameOdds
+Union Berlin vs Mainz 05,Bundesliga,2026-01-10T14:30:00.000Z,Over 2.5,2.5,over,3,2.1,2.15,2.1,0.0039,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Torino vs Udinese,Serie A,2026-01-07T19:45:00.000Z,Under 2.5,2.5,under,3,1.558659217877095,1.5988023952095807,1.5714,0.0037,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Lazio vs Fiorentina,Serie A,2026-01-07T19:45:00.000Z,Under 2.5,2.5,under,3,1.62111801242236,1.6578947368421053,1.6494,0.0034,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+St. Pauli vs Leipzig,Bundesliga,2026-01-10T14:30:00.000Z,Over 2.5,2.5,over,3,1.7194244604316546,1.7518796992481203,1.7299,0.0028,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Girona vs Osasuna,La Liga,2026-01-10T17:30:00.000Z,Under 2.5,2.5,under,3,1.6993006993006992,1.72992700729927,1.7092,0.0026,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Lecce vs Roma,Serie A,2026-01-06T17:00:00.000Z,Under 2.5,2.5,under,2,1.5494505494505495,1.5714285714285714,1.5604,0.0025,"BetRivers, BetMGM",SportsGameOdds
+Parma vs Inter,Serie A,2026-01-07T19:45:00.000Z,Over 2.5,2.5,over,3,1.5714285714285714,1.5988023952095807,1.5814,0.0025,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Freiburg vs HSV,Bundesliga,2026-01-10T14:30:00.000Z,Over 2.5,2.5,over,3,1.7407407407407407,1.7692307692307692,1.7519,0.0024,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Leverkusen vs Stuttgart,Bundesliga,2026-01-10T17:30:00.000Z,Under 3.5,3.5,under,3,1.5988023952095807,1.62111801242236,1.5988,0.0023,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Valencia vs Elche,La Liga,2026-01-10T20:00:00.000Z,Under 2.5,2.5,under,3,1.558659217877095,1.5813953488372094,1.5714,0.0021,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Bologna vs Atalanta,Serie A,2026-01-07T17:30:00.000Z,Under 2.5,2.5,under,4,1.819672131147541,1.847457627118644,1.8368,0.002,"Bovada, BetPARX, BetRivers, BetMGM",SportsGameOdds
+Pisa vs Como,Serie A,2026-01-06T14:00:00.000Z,Over 2.5,2.5,over,3,2.08,2.1,2.1,0.0016,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Getafe vs Real Sociedad,La Liga,2026-01-09T20:00:00.000Z,Under 1.5,1.5,under,3,2.05,2.0700000000000003,2.06,0.0014,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Lazio vs Fiorentina,Serie A,2026-01-07T19:45:00.000Z,Over 2.5,2.5,over,3,2.15,2.17,2.16,0.0013,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Cremonese vs Cagliari,Serie A,2026-01-08T17:30:00.000Z,Under 2.5,2.5,under,3,1.6097560975609757,1.62111801242236,1.6211,0.0012,"BetPARX, BetRivers, BetMGM",SportsGameOdds
+Milan vs Genoa,Serie A,2026-01-08T19:45:00.000Z,Under 2.5,2.5,under,3,1.7518796992481203,1.7575757575757576,1.7519,0.0005,"BetPARX, BetRivers, BetMGM",SportsGameOdds

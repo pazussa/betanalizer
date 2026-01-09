@@ -1,0 +1,743 @@
+2025-02-07|Atlético Huracán vs CA Tigre BA
+2025-02-07|FC Porto vs Sporting Lisbon
+2025-02-07|KV Mechelen vs Gent
+2025-02-07|SC Preußen Münster vs Hamburger SV
+2025-02-07|Banfield vs Belgrano de Cordoba
+2025-02-07|Albacete vs Zaragoza
+2025-02-07|Necaxa vs Santos Laguna
+2025-02-07|FC Martigues vs Troyes
+2025-02-07|Mansfield Town vs Northampton Town
+2025-02-07|Paris Saint Germain vs AS Monaco
+2025-02-07|Bayern Munich vs Werder Bremen
+2025-02-07|SV Sandhausen vs Arminia Bielefeld
+2025-02-07|Nantes vs Brest
+2025-02-07|Pogoń Szczecin vs Górnik Zabrze
+2025-02-07|Brescia vs Salernitana
+2025-02-07|Greuther Fürth vs Jahn Regensburg
+2025-02-07|Puebla vs América
+2025-02-07|Union Santa Fe vs Argentinos Juniors
+2025-02-07|Stal Mielec vs Jagiellonia Białystok
+2025-02-07|Paris FC vs Pau FC
+2025-02-07|Rodez AF vs SC Bastia
+2025-02-07|Independiente Rivadavia vs Estudiantes
+2025-02-07|Samsunspor vs Hatayspor
+2025-02-07|Grenoble vs Red Star
+2025-02-07|Querétaro vs Atlético San Luis
+2025-02-07|Como vs Juventus
+2025-02-07|Central Córdoba vs Newells Old Boys
+2025-02-07|Rayo Vallecano vs Valladolid
+2025-02-07|Sturm Graz vs Austria Wien
+2025-02-07|Stade Lavallois vs Annecy FC
+2025-02-08|Tigres vs Atlas
+2025-02-08|Benfica vs Moreirense FC
+2025-02-08|Empoli vs AC Milan
+2025-02-08|Radomiak Radom vs Śląsk Wrocław
+2025-02-08|PSV Eindhoven vs Willem II
+2025-02-08|Sivasspor vs Besiktas JK
+2025-02-08|Volos FC vs Panetolikos Agrinio
+2025-02-08|Rheindorf Altach vs Grazer AK
+2025-02-08|Milton Keynes Dons vs Bromley FC
+2025-02-08|Rapid Wien vs Wolfsberger AC
+2025-02-08|Salford City vs Tranmere Rovers
+2025-02-08|Cosenza vs Carrarese
+2025-02-08|Cruz Azul vs Pachuca
+2025-02-08|Famalicão vs Vitória SC
+2025-02-08|1. FC Magdeburg vs 1. FC Nürnberg
+2025-02-08|Sampdoria vs Modena
+2025-02-08|Erzgebirge Aue vs Alemannia Aachen
+2025-02-08|FC Energie Cottbus vs Wehen Wiesbaden
+2025-02-08|Rosario Central vs Atlético Tucuman
+2025-02-08|Borussia Monchengladbach vs Eintracht Frankfurt
+2025-02-08|Fleetwood Town vs Cheltenham Town
+2025-02-08|Charlton Athletic vs Stevenage
+2025-02-08|Raków Częstochowa vs GKS Katowice
+2025-02-08|Rot-Weiss Essen vs SpVgg Unterhaching
+2025-02-08|Heracles Almelo vs Go Ahead Eagles
+2025-02-08|SSV Ulm 1846 vs SC Paderborn
+2025-02-08|Metz vs Clermont
+2025-02-08|Barrow vs Gillingham
+2025-02-08|Dender vs Sint Truiden
+2025-02-08|Málaga vs Levante
+2025-02-08|AC Ajaccio vs Guingamp
+2025-02-08|Hellas Verona vs Atalanta BC
+2025-02-08|OFI Crete vs PAOK Thessaloniki
+2025-02-08|Pisa vs Cittadella
+2025-02-08|Lorient vs Amiens
+2025-02-08|Racing Club vs Boca Juniors
+2025-02-08|Swindon Town vs Port Vale
+2025-02-08|Nice vs RC Lens
+2025-02-08|Hertha Berlin vs 1. FC Kaiserslautern
+2025-02-08|Mantova vs Sassuolo
+2025-02-08|VfL Wolfsburg vs Bayer Leverkusen
+2025-02-08|TSV 1860 München vs FC Ingolstadt 04
+2025-02-08|Racing de Ferrol vs CD Castellón
+2025-02-08|FC Lausanne-Sport vs Yverdon Sport FC
+2025-02-08|Las Palmas vs Villarreal
+2025-02-08|FC Juárez vs Monterrey
+2025-02-08|AVS Futebol SAD vs Santa Clara
+2025-02-08|Borussia Dortmund vs VfB Stuttgart
+2025-02-08|Lincoln City vs Cambridge United
+2025-02-08|Bolton Wanderers vs Crawley Town
+2025-02-08|Genk vs Cercle Brugge KSV
+2025-02-08|Grimsby Town vs Carlisle United
+2025-02-08|León vs Toluca
+2025-02-08|Huddersfield Town vs Reading
+2025-02-08|Stockport County FC vs Barnsley
+2025-02-08|Burton Albion vs Blackpool
+2025-02-08|Piast Gliwice vs Legia Warszawa
+2025-02-08|Colchester United vs Walsall
+2025-02-08|Frosinone vs US Catanzaro 1929
+2025-02-08|BSC Young Boys vs FC Sion
+2025-02-08|Crewe Alexandra vs Newport County
+2025-02-08|Lille vs Le Havre
+2025-02-08|Saint Etienne vs Rennes
+2025-02-08|FC Lugano vs Grasshopper Zürich
+2025-02-08|Sheffield United vs Portsmouth
+2025-02-08|Sporting Gijón vs SD Eibar
+2025-02-08|Feyenoord vs Sparta Rotterdam
+2025-02-08|VfB Stuttgart II vs Dynamo Dresden
+2025-02-08|Torino vs Genoa
+2025-02-08|SC Freiburg vs 1. FC Heidenheim
+2025-02-08|Norwich City vs Derby County
+2025-02-08|Bradford City vs Harrogate Town
+2025-02-08|1. FC Saarbrücken vs Waldhof Mannheim
+2025-02-08|Kayserispor vs Torku Konyaspor
+2025-02-08|Newcastle Jets FC vs Melbourne Victory
+2025-02-08|Rotherham United vs Shrewsbury Town
+2025-02-08|Groningen vs NEC Nijmegen
+2025-02-08|Velez Sarsfield BA vs San Lorenzo
+2025-02-08|TSG Hoffenheim vs Union Berlin
+2025-02-08|River Plate vs Independiente
+2025-02-08|Accrington Stanley vs Wimbledon
+2025-02-08|Real Madrid vs Atlético Madrid
+2025-02-08|Notts County vs Morecambe
+2025-02-08|West Bromwich Albion vs Sheffield Wednesday
+2025-02-08|Granada CF vs CD Mirandés
+2025-02-08|Club Brugge vs Leuven
+2025-02-08|Sunderland vs Watford
+2025-02-08|Sydney FC vs Western Sydney Wanderers
+2025-02-08|SV Darmstadt 98 vs Elversberg
+2025-02-08|Celta Vigo vs Real Betis
+2025-02-08|Athletic Bilbao vs Girona
+2025-02-08|FSV Mainz 05 vs Augsburg
+2025-02-09|Hannover 96 vs Fortuna Düsseldorf
+2025-02-09|Lyon vs Stade de Reims
+2025-02-09|Korona Kielce vs Motor Lublin
+2025-02-09|FC Utrecht vs Almere City
+2025-02-09|RKC Waalwijk vs NAC Breda
+2025-02-09|Cremonese vs Südtirol
+2025-02-09|Fortuna Sittard vs Ajax
+2025-02-09|Kasimpasa SK vs Çaykur Rizespor
+2025-02-09|Lazio vs Monza
+2025-02-09|Venezia vs AS Roma
+2025-02-09|Cagliari vs Parma
+2025-02-09|Macarthur FC vs Western United FC
+2025-02-09|Austria Klagenfurt vs RB Salzburg
+2025-02-09|Alanyaspor vs Fenerbahce
+2025-02-09|Karlsruher SC vs Eintracht Braunschweig
+2025-02-09|Widzew Łódź vs Cracovia Kraków
+2025-02-09|Servette vs FC Basel
+2025-02-09|1. FC Köln vs FC Schalke 04
+2025-02-09|WSG Tirol vs Hartberg
+2025-02-09|Alavés vs Getafe
+2025-02-09|Elche vs Tenerife
+2025-02-09|Reggiana vs Cesena FC
+2025-02-09|Anderlecht vs Royal Antwerp
+2025-02-09|Hansa Rostock vs FC Viktoria Köln 1904
+2025-02-09|Spezia vs Palermo
+2025-02-09|Bristol City vs Swansea City
+2025-02-14|Queens Park Rangers vs Derby County
+2025-02-14|Adana Demirspor vs Antalyaspor
+2025-02-14|Troyes vs Lorient
+2025-02-14|Deportes Iquique vs Coquimbo Unido
+2025-02-14|Tijuana vs FC Juárez
+2025-02-14|CD Mirandés vs Racing de Ferrol
+2025-02-14|Red Star vs FC Martigues
+2025-02-14|Cracovia Kraków vs Korona Kielce
+2025-02-14|Banfield vs Boca Juniors
+2025-02-14|Brondby IF vs Viborg FF
+2025-02-14|AC Ajaccio vs Stade Lavallois
+2025-02-14|América vs Necaxa
+2025-02-14|US Catanzaro 1929 vs Cittadella
+2025-02-14|Pohang Steelers vs Daejeon Citizen
+2025-02-14|Mazatlán FC vs Santos Laguna
+2025-02-14|Brest vs Auxerre
+2025-02-14|Boavista Porto vs CF Estrela
+2025-02-14|Bologna vs Torino
+2025-02-14|Pau FC vs Rodez AF
+2025-02-14|Standard Liege vs Genk
+2025-02-14|Lech Poznań vs Raków Częstochowa
+2025-02-14|Amiens vs Grenoble
+2025-02-14|Augsburg vs RB Leipzig
+2025-02-14|Brighton and Hove Albion vs Chelsea
+2025-02-14|Go Ahead Eagles vs Sparta Rotterdam
+2025-02-14|1. FC Magdeburg vs 1. FC Köln
+2025-02-14|Girona vs Getafe
+2025-02-14|SC Paderborn vs SC Preußen Münster
+2025-02-14|FC Viktoria Köln 1904 vs Alemannia Aachen
+2025-02-14|Clermont vs SC Bastia
+2025-02-15|Yokohama F Marinos vs Albirex Niigata
+2025-02-15|Eintracht Braunschweig vs SV Darmstadt 98
+2025-02-15|AEK Athens vs Atromitos Athens
+2025-02-15|Wolfsberger AC vs Sturm Graz
+2025-02-15|Walsall vs Chesterfield FC
+2025-02-15|AC Milan vs Hellas Verona
+2025-02-15|Gwangju FC vs Suwon FC
+2025-02-15|Kilmarnock vs St Johnstone
+2025-02-15|1. FC Kaiserslautern vs Hannover 96
+2025-02-15|Moreirense FC vs Casa Pia
+2025-02-15|Yokohama FC vs FC Tokyo
+2025-02-15|Sheffield Wednesday vs Coventry City
+2025-02-15|Carlisle United vs Colchester United
+2025-02-15|Northampton Town vs Wrexham AFC
+2025-02-15|Nacional vs Estoril
+2025-02-15|Aston Villa vs Ipswich Town
+2025-02-15|Carrarese vs Salernitana
+2025-02-15|Kawasaki Frontale vs Nagoya Grampus
+2025-02-15|Preston North End vs Burnley
+2025-02-15|Manchester City vs Newcastle United
+2025-02-15|VfL Bochum vs Borussia Dortmund
+2025-02-15|AS Monaco vs Nantes
+2025-02-15|Aldosivi Mar del Plata vs Estudiantes
+2025-02-15|FC Blau-Weiß Linz vs Rheindorf Altach
+2025-02-15|Shrewsbury Town vs Bolton Wanderers
+2025-02-15|Real Racing Club de Santander vs Cádiz CF
+2025-02-15|Leuven vs Dender
+2025-02-15|Modena vs Spezia
+2025-02-15|Wehen Wiesbaden vs Rot-Weiss Essen
+2025-02-15|Górnik Zabrze vs Radomiak Radom
+2025-02-15|Bayer Leverkusen vs Bayern Munich
+2025-02-15|O'Higgins vs Huachipato
+2025-02-15|Leganés vs Alavés
+2025-02-15|Santa Clara vs Benfica
+2025-02-15|RB Salzburg vs WSG Tirol
+2025-02-15|Blackpool vs Mansfield Town
+2025-02-15|FC Lugano vs FC Luzern
+2025-02-15|Jeju United FC vs FC Seoul
+2025-02-15|Barnsley vs Huddersfield Town
+2025-02-15|Newport County vs Bradford City
+2025-02-15|Universidad de Chile vs Ñublense
+2025-02-15|Racing Club vs Argentinos Juniors
+2025-02-15|Motherwell vs Ross County
+2025-02-15|Harrogate Town vs Swindon Town
+2025-02-15|Cardiff City vs Bristol City
+2025-02-15|Stevenage vs Peterborough United
+2025-02-15|Blackburn Rovers vs Plymouth Argyle
+2025-02-15|Shonan Bellmare vs Kashima Antlers
+2025-02-15|Reading vs Rotherham United
+2025-02-15|Vissel Kobe vs Urawa Red Diamonds
+2025-02-15|Bristol Rovers vs Burton Albion
+2025-02-15|Tenerife vs Córdoba
+2025-02-15|Waldhof Mannheim vs Hansa Rostock
+2025-02-15|Marseille vs Saint Etienne
+2025-02-15|FC St. Pauli vs SC Freiburg
+2025-02-15|Borussia Dortmund II vs SV Sandhausen
+2025-02-15|Doncaster Rovers vs Grimsby Town
+2025-02-15|Fortuna Düsseldorf vs Hertha Berlin
+2025-02-15|Morecambe vs Accrington Stanley
+2025-02-15|Middlesbrough vs Watford
+2025-02-15|West Ham United vs Brentford
+2025-02-15|PSV Eindhoven vs FC Utrecht
+2025-02-15|Crawley Town vs Wycombe Wanderers
+2025-02-15|Birmingham City vs Charlton Athletic
+2025-02-15|Sporting Lisbon vs Arouca
+2025-02-15|Legia Warszawa vs Puszcza Niepołomice
+2025-02-15|Bari vs Cremonese
+2025-02-15|Arminia Bielefeld vs Erzgebirge Aue
+2025-02-15|FC Ingolstadt 04 vs VfB Stuttgart II
+2025-02-15|Sint Truiden vs Club Brugge
+2025-02-15|Cambridge United vs Exeter City
+2025-02-15|Oxford United vs Portsmouth
+2025-02-15|Wimbledon vs Salford City
+2025-02-15|Dundee FC vs Aberdeen
+2025-02-15|CA Osasuna vs Real Madrid
+2025-02-15|Atlas vs Puebla
+2025-02-15|Fagiano Okayama vs Kyoto Purple Sanga
+2025-02-15|Defensa y Justicia vs Barracas Central
+2025-02-15|OFI Crete vs Asteras Tripolis
+2025-02-15|Sassuolo vs Brescia
+2025-02-15|Toulouse vs Paris Saint Germain
+2025-02-15|Luton vs Sheffield United
+2025-02-15|Hull City vs Norwich City
+2025-02-15|VfB Stuttgart vs VfL Wolfsburg
+2025-02-15|Crystal Palace vs Everton
+2025-02-15|FC Winterthur vs BSC Young Boys
+2025-02-15|Villarreal vs Valencia
+2025-02-15|Southampton vs Bournemouth
+2025-02-15|Bromley FC vs Fleetwood Town
+2025-02-15|Central Córdoba vs Belgrano de Cordoba
+2025-02-15|Basaksehir vs Bodrum FK
+2025-02-15|Gazişehir Gaziantep vs Sivasspor
+2025-02-15|Leicester City vs Arsenal
+2025-02-15|Avispa Fukuoka vs Kashiwa Reysol
+2025-02-15|NAC Breda vs Feyenoord
+2025-02-15|Guingamp vs Metz
+2025-02-15|FC Sion vs FC Zurich
+2025-02-15|Atlético Madrid vs Celta Vigo
+2025-02-15|Willem II vs Groningen
+2025-02-15|Celtic vs Dundee United
+2025-02-15|Cheltenham Town vs Barrow
+2025-02-15|Leyton Orient vs Lincoln City
+2025-02-15|Western United FC vs Auckland FC
+2025-02-15|Śląsk Wrocław vs Widzew Łódź
+2025-02-15|Südtirol vs Sampdoria
+2025-02-15|Royal Antwerp vs KV Kortrijk
+2025-02-15|Toluca vs Guadalajara
+2025-02-15|Palestino vs Cobresal
+2025-02-15|Millwall vs West Bromwich Albion
+2025-02-15|Wigan Athletic vs Stockport County FC
+2025-02-15|Hannover 96 vs VfL Osnabrück
+2025-02-15|Atalanta BC vs Cagliari
+2025-02-15|Independiente Rivadavia vs CA Tigre BA
+2025-02-15|Elversberg vs Greuther Fürth
+2025-02-15|Besiktas JK vs Trabzonspor
+2025-02-15|CD Castellón vs SD Eibar
+2025-02-15|USL Dunkerque vs Paris FC
+2025-02-15|Union Berlin vs Borussia Monchengladbach
+2025-02-15|Melbourne City vs Perth Glory
+2025-02-15|FC Cartagena vs Málaga
+2025-02-15|Stoke City vs Swansea City
+2025-02-15|Tigres vs Cruz Azul
+2025-02-15|Fulham vs Nottingham Forest
+2025-02-15|Tranmere Rovers vs Milton Keynes Dons
+2025-02-15|Lazio vs Napoli
+2025-02-15|Adelaide United vs Newcastle Jets FC
+2025-02-15|Gillingham vs Crewe Alexandra
+2025-02-16|Fiorentina vs Como
+2025-02-16|FC Schalke 04 vs Karlsruher SC
+2025-02-16|Grazer AK vs LASK
+2025-02-16|SpVgg Unterhaching vs 1. FC Saarbrücken
+2025-02-16|Levante vs Sporting Gijón
+2025-02-16|FC Zwolle vs Heerenveen
+2025-02-16|Hatayspor vs Alanyaspor
+2025-02-16|Gent vs Beerschot Wilrijk
+2025-02-16|Stal Mielec vs Pogoń Szczecin
+2025-02-16|Jahn Regensburg vs Hamburger SV
+2025-02-16|Juve Stabia vs Cosenza
+2025-02-16|Hearts vs Rangers
+2025-02-16|Espanyol vs Athletic Bilbao
+2025-02-16|Liverpool vs Wolverhampton Wanderers
+2025-02-16|Montpellier vs Lyon
+2025-02-16|FC Machida Zelvia vs Hiroshima Sanfrecce FC
+2025-02-16|Daegu FC vs Gangwon FC
+2025-02-16|1. FC Nürnberg vs SSV Ulm 1846
+2025-02-16|Udinese vs Empoli
+2025-02-16|GKS Katowice vs Piast Gliwice
+2025-02-16|NEC Nijmegen vs Almere City
+2025-02-16|Palermo vs Mantova
+2025-02-16|Torku Konyaspor vs Samsunspor
+2025-02-16|AaB vs FC Nordsjaelland
+2025-02-16|St Mirren vs Hibernian
+2025-02-16|Hartberg vs Austria Klagenfurt
+2025-02-16|Tokyo Verdy vs Shimizu S Pulse
+2025-02-16|FC Twente Enschede vs RKC Waalwijk
+2025-02-16|Monza vs Lecce
+2025-02-16|Western Sydney Wanderers vs Macarthur FC
+2025-02-16|Frosinone vs Reggiana
+2025-02-16|Yverdon Sport FC vs FC St Gallen
+2025-02-16|Eyüpspor vs Kayserispor
+2025-02-16|Levadiakos vs Aris Thessaloniki
+2025-02-16|Jeonbuk Hyundai Motors vs Sangju Sangmu FC
+2025-02-16|Silkeborg IF vs Vejle Boldklub
+2025-02-21|Audax Italiano vs Deportes Iquique
+2025-02-21|SC Bastia vs Red Star
+2025-02-21|Eyüpspor vs Besiktas JK
+2025-02-21|Sampdoria vs Sassuolo
+2025-02-21|Necaxa vs Mazatlán FC
+2025-02-21|Raków Częstochowa vs Górnik Zabrze
+2025-02-21|Hamburger SV vs 1. FC Kaiserslautern
+2025-02-21|FC Martigues vs Annecy FC
+2025-02-21|Piast Gliwice vs Stal Mielec
+2025-02-21|Bodrum FK vs Hatayspor
+2025-02-21|KV Mechelen vs Sint Truiden
+2025-02-21|Rodez AF vs Amiens
+2025-02-21|Braga vs Nacional
+2025-02-21|Rennes vs Stade de Reims
+2025-02-21|Celta Vigo vs CA Osasuna
+2025-02-21|Unión Española vs Palestino
+2025-02-21|Hertha Berlin vs 1. FC Nürnberg
+2025-02-21|Godoy Cruz vs Platense
+2025-02-21|Burnley vs Sheffield Wednesday
+2025-02-21|USL Dunkerque vs Clermont
+2025-02-21|Deportivo Riestra vs Talleres
+2025-02-21|Lanus vs Velez Sarsfield BA
+2025-02-21|Grenoble vs Guingamp
+2025-02-21|Lecce vs Udinese
+2025-02-21|SC Freiburg vs Werder Bremen
+2025-02-21|Leicester City vs Brentford
+2025-02-21|Málaga vs Tenerife
+2025-02-21|Bristol City vs Middlesbrough
+2025-02-21|Paris FC vs Troyes
+2025-02-21|TSV 1860 München vs Arminia Bielefeld
+2025-02-21|Lyngby vs Randers FC
+2025-02-21|Estudiantes vs Central Córdoba
+2025-02-21|Puebla vs Tijuana
+2025-02-21|Auckland FC vs Wellington Phoenix FC
+2025-02-22|Reggiana vs Carrarese
+2025-02-22|D.C. United vs Toronto FC
+2025-02-22|Widzew Łódź vs Pogoń Szczecin
+2025-02-22|Rotherham United vs Barnsley
+2025-02-22|Perth Glory vs Sydney FC
+2025-02-22|Derby County vs Millwall
+2025-02-22|Pisa vs Juve Stabia
+2025-02-22|Northampton Town vs Bristol Rovers
+2025-02-22|Austin FC vs Sporting Kansas City
+2025-02-22|Nashville SC vs New England Revolution
+2025-02-22|Carlisle United vs Gillingham
+2025-02-22|Aberdeen vs Kilmarnock
+2025-02-22|Portsmouth vs Queens Park Rangers
+2025-02-22|Metz vs AC Ajaccio
+2025-02-22|Norwich City vs Stoke City
+2025-02-22|Las Palmas vs Barcelona
+2025-02-22|Mantova vs Bari
+2025-02-22|Volos FC vs Levadiakos
+2025-02-22|Inter Milan vs Genoa
+2025-02-22|Seattle Sounders FC vs Charlotte FC
+2025-02-22|Kashiwa Reysol vs Kawasaki Frontale
+2025-02-22|Southampton vs Brighton and Hove Albion
+2025-02-22|WSG Tirol vs Wolfsberger AC
+2025-02-22|Colchester United vs Wimbledon
+2025-02-22|Shimizu S Pulse vs Albirex Niigata
+2025-02-22|Borussia Dortmund vs Union Berlin
+2025-02-22|Rayo Vallecano vs Villarreal
+2025-02-22|Reading vs Birmingham City
+2025-02-22|FSV Mainz 05 vs FC St. Pauli
+2025-02-22|Borussia Monchengladbach vs Augsburg
+2025-02-22|Yokohama FC vs Fagiano Okayama
+2025-02-22|Arsenal vs West Ham United
+2025-02-22|Royal Antwerp vs Leuven
+2025-02-22|Burgos CF vs Oviedo
+2025-02-22|Alemannia Aachen vs Borussia Dortmund II
+2025-02-22|Blackpool vs Crawley Town
+2025-02-22|Lorient vs Stade Lavallois
+2025-02-22|Karlsruher SC vs 1. FC Magdeburg
+2025-02-22|Antalyaspor vs Kasimpasa SK
+2025-02-22|Estoril vs Rio Ave FC
+2025-02-22|Cerezo Osaka vs Shonan Bellmare
+2025-02-22|Houston Dynamo vs FC Dallas
+2025-02-22|FC St Gallen vs FC Basel
+2025-02-22|Accrington Stanley vs Doncaster Rovers
+2025-02-22|Coquimbo Unido vs Universidad Católica (CHI)
+2025-02-22|St. Louis City SC vs Colorado Rapids
+2025-02-22|San Jose Earthquakes vs Real Salt Lake
+2025-02-22|León vs Tigres
+2025-02-22|Bolton Wanderers vs Leyton Orient
+2025-02-22|Independiente vs Instituto de Córdoba
+2025-02-22|VfL Wolfsburg vs VfL Bochum
+2025-02-22|Rangers vs St Mirren
+2025-02-22|Valencia vs Atlético Madrid
+2025-02-22|Parma vs Bologna
+2025-02-22|Huddersfield Town vs Peterborough United
+2025-02-22|Swindon Town vs Chesterfield FC
+2025-02-22|West Bromwich Albion vs Oxford United
+2025-02-22|Bromley FC vs Harrogate Town
+2025-02-22|Erzgebirge Aue vs SpVgg Unterhaching
+2025-02-22|FC Seoul vs FC Anyang
+2025-02-22|Holstein Kiel vs Bayer Leverkusen
+2025-02-22|Westerlo vs Charleroi
+2025-02-22|Dundee United vs Motherwell
+2025-02-22|Grimsby Town vs Fleetwood Town
+2025-02-22|Cremonese vs Cesena FC
+2025-02-22|Gamba Osaka vs Avispa Fukuoka
+2025-02-22|Cambridge United vs Stockport County FC
+2025-02-22|Los Angeles FC vs Minnesota United FC
+2025-02-22|Hannover 96 vs SC Paderborn
+2025-02-22|Torino vs AC Milan
+2025-02-22|Kashima Antlers vs Tokyo Verdy
+2025-02-22|Jeju United FC vs Sangju Sangmu FC
+2025-02-22|Korona Kielce vs Śląsk Wrocław
+2025-02-22|FC Zurich vs Yverdon Sport FC
+2025-02-22|SC Preußen Münster vs Jahn Regensburg
+2025-02-22|Casa Pia vs Gil Vicente
+2025-02-22|1. FC Saarbrücken vs Hannover 96
+2025-02-22|Crewe Alexandra vs Barrow
+2025-02-22|Bradford City vs Milton Keynes Dons
+2025-02-22|SSV Ulm 1846 vs Elversberg
+2025-02-22|Atromitos Athens vs Panserraikos FC
+2025-02-22|Samsunspor vs Çaykur Rizespor
+2025-02-22|Ross County vs Dundee FC
+2025-02-22|Granada CF vs Zaragoza
+2025-02-22|Venezia vs Lazio
+2025-02-22|Port Vale vs Salford City
+2025-02-22|Benfica vs Boavista Porto
+2025-02-22|Athens Kallithea FC vs OFI Crete
+2025-02-22|Sunderland vs Hull City
+2025-02-22|Alavés vs Espanyol
+2025-02-22|Lille vs AS Monaco
+2025-02-22|Lincoln City vs Burton Albion
+2025-02-22|Coventry City vs Preston North End
+2025-02-22|Morecambe vs Walsall
+2025-02-22|Fulham vs Crystal Palace
+2025-02-22|Atlanta United FC vs CF Montreal
+2025-02-22|Racing de Ferrol vs Córdoba
+2025-02-22|Boca Juniors vs Aldosivi Mar del Plata
+2025-02-22|Pumas vs América
+2025-02-22|Caen vs Pau FC
+2025-02-22|Saint Etienne vs Angers
+2025-02-22|Orlando City SC vs Philadelphia Union
+2025-02-22|Feyenoord vs Almere City
+2025-02-22|Rosario Central vs Sarmiento de Junin
+2025-02-22|Austria Klagenfurt vs Grazer AK
+2025-02-22|Sivasspor vs Torku Konyaspor
+2025-02-22|Kyoto Purple Sanga vs Urawa Red Diamonds
+2025-02-22|Notts County vs Tranmere Rovers
+2025-02-22|San Martin de San Juan vs River Plate
+2025-02-22|Dender vs Beerschot Wilrijk
+2025-02-22|Guadalajara vs Pachuca
+2025-02-22|Radomiak Radom vs Legia Warszawa
+2025-02-22|Aston Villa vs Chelsea
+2025-02-22|Rot-Weiss Essen vs FC Ingolstadt 04
+2025-02-22|Ñublense vs Deportes Limache
+2025-02-22|Bournemouth vs Wolverhampton Wanderers
+2025-02-22|Wycombe Wanderers vs Wigan Athletic
+2025-02-22|Charlton Athletic vs Exeter City
+2025-02-22|Columbus Crew SC vs Chicago Fire
+2025-02-22|Shrewsbury Town vs Stevenage
+2025-02-22|Cittadella vs Modena
+2025-02-22|Ipswich Town vs Tottenham Hotspur
+2025-02-22|Auxerre vs Marseille
+2025-02-22|FC Juárez vs Toluca
+2025-02-22|Austria Wien vs RB Salzburg
+2025-02-22|Plymouth Argyle vs Cardiff City
+2025-02-22|Everton vs Manchester United
+2025-02-22|Swansea City vs Blackburn Rovers
+2025-02-22|Nagoya Grampus vs Vissel Kobe
+2025-02-22|Newport County vs Cheltenham Town
+2025-02-22|Sporting Gijón vs Almería
+2025-02-22|Monterrey vs Atlético San Luis
+2025-02-22|Hansa Rostock vs Dynamo Dresden
+2025-02-22|SC Verl vs FC Viktoria Köln 1904
+2025-02-22|Melbourne Victory vs Melbourne City
+2025-02-22|SD Eibar vs Real Racing Club de Santander
+2025-02-22|FC Cincinnati vs New York Red Bulls
+2025-02-22|Hibernian vs Celtic
+2025-02-22|FC Lausanne-Sport vs Grasshopper Zürich
+2025-02-22|FC Tokyo vs FC Machida Zelvia
+2025-02-22|Daegu FC vs Suwon FC
+2025-02-22|Central Coast Mariners vs Western Sydney Wanderers
+2025-02-22|Inter Miami CF vs New York City FC
+2025-02-23|FC Nordsjaelland vs SonderjyskE
+2025-02-23|Como vs Napoli
+2025-02-23|Jeonbuk Hyundai Motors vs Gwangju FC
+2025-02-23|1. FC Köln vs Fortuna Düsseldorf
+2025-02-23|Cracovia Kraków vs Jagiellonia Białystok
+2025-02-23|Cosenza vs Palermo
+2025-02-23|Alanyaspor vs Adana Demirspor
+2025-02-23|Lechia Gdańsk vs Puszcza Niepołomice
+2025-02-23|Kayserispor vs Goztepe
+2025-02-23|Western United FC vs Adelaide United
+2025-02-23|Club Brugge vs Standard Liege
+2025-02-23|AGF Aarhus vs AaB
+2025-02-23|Deportivo La Coruña vs SD Huesca
+2025-02-23|Sturm Graz vs FC Blau-Weiß Linz
+2025-02-23|FC Luzern vs FC Sion
+2025-02-23|Daejeon Citizen vs Ulsan Hyundai FC
+2025-02-23|Spezia vs US Catanzaro 1929
+2025-02-23|Greuther Fürth vs Eintracht Braunschweig
+2025-02-23|Newcastle United vs Nottingham Forest
+2025-02-23|Athletic Bilbao vs Valladolid
+2025-02-23|FC Twente Enschede vs NEC Nijmegen
+2025-02-23|Hellas Verona vs Fiorentina
+2025-02-23|Watford vs Luton
+2025-02-23|St Johnstone vs Hearts
+2025-02-23|SV Darmstadt 98 vs FC Schalke 04
+2025-02-23|Brescia vs Südtirol
+2025-02-23|Ajax vs Go Ahead Eagles
+2025-02-23|Rheindorf Altach vs Hartberg
+2025-02-23|VfB Stuttgart II vs FC Energie Cottbus
+2025-02-23|Gangwon FC vs Pohang Steelers
+2025-02-23|Nantes vs RC Lens
+2025-02-23|Hiroshima Sanfrecce FC vs Yokohama F Marinos
+2025-02-28|Fortuna Düsseldorf vs Greuther Fürth
+2025-02-28|Mazatlán FC vs Cruz Azul
+2025-02-28|Troyes vs SC Bastia
+2025-02-28|Charleroi vs Genk
+2025-02-28|San Martin de San Juan vs Belgrano de Cordoba
+2025-02-28|Fiorentina vs Lecce
+2025-02-28|Central Córdoba vs Deportivo Riestra
+2025-02-28|RKC Waalwijk vs Fortuna Sittard
+2025-02-28|FC Viktoria Köln 1904 vs 1. FC Saarbrücken
+2025-02-28|Radomiak Radom vs Widzew Łódź
+2025-02-28|VfB Stuttgart vs Bayern Munich
+2025-02-28|Randers FC vs AGF Aarhus
+2025-02-28|AS Monaco vs Stade de Reims
+2025-02-28|Yokohama F Marinos vs Shonan Bellmare
+2025-02-28|Valladolid vs Las Palmas
+2025-02-28|Sheffield Wednesday vs Sunderland
+2025-02-28|Clermont vs Caen
+2025-02-28|Annecy FC vs Paris FC
+2025-02-28|FC Cartagena vs SD Eibar
+2025-02-28|Górnik Zabrze vs Cracovia Kraków
+2025-02-28|Boca Juniors vs Rosario Central
+2025-02-28|Südtirol vs Spezia
+2025-02-28|Stade Lavallois vs FC Martigues
+2025-02-28|Auckland FC vs Adelaide United
+2025-02-28|FC Schalke 04 vs SC Preußen Münster
+2025-02-28|Pau FC vs Grenoble
+2025-02-28|Deportes Limache vs Coquimbo Unido
+2025-03-01|Chicago Fire vs D.C. United
+2025-03-01|Stal Mielec vs Korona Kielce
+2025-03-01|Zagłębie Lubin vs Piast Gliwice
+2025-03-01|Cesena FC vs Salernitana
+2025-03-01|Frosinone vs Mantova
+2025-03-01|FC Utrecht vs NAC Breda
+2025-03-01|Middlesbrough vs Derby County
+2025-03-01|Stevenage vs Huddersfield Town
+2025-03-01|Minnesota United FC vs CF Montreal
+2025-03-01|FC Winterthur vs FC St Gallen
+2025-03-01|Besiktas JK vs Kayserispor
+2025-03-01|León vs Tijuana
+2025-03-01|Peterborough United vs Shrewsbury Town
+2025-03-01|Grazer AK vs Austria Wien
+2025-03-01|Panserraikos FC vs Athens Kallithea FC
+2025-03-01|Atalanta BC vs Venezia
+2025-03-01|Brisbane Roar vs Melbourne Victory
+2025-03-01|Wimbledon vs Bromley FC
+2025-03-01|Gillingham vs Morecambe
+2025-03-01|Rapid Wien vs Rheindorf Altach
+2025-03-01|Werder Bremen vs VfL Wolfsburg
+2025-03-01|Dynamo Dresden vs SC Verl
+2025-03-01|Almería vs Málaga
+2025-03-01|Sint Truiden vs KV Kortrijk
+2025-03-01|Doncaster Rovers vs Newport County
+2025-03-01|Crawley Town vs Cambridge United
+2025-03-01|1. FC Heidenheim vs Borussia Monchengladbach
+2025-03-01|Feyenoord vs NEC Nijmegen
+2025-03-01|Birmingham City vs Wycombe Wanderers
+2025-03-01|Union Santa Fe vs Gimnasia La Plata
+2025-03-01|Paris Saint Germain vs Lille
+2025-03-01|VfL Bochum vs TSG Hoffenheim
+2025-03-01|Red Star vs Guingamp
+2025-03-01|Wrexham AFC vs Bolton Wanderers
+2025-03-01|Carrarese vs Cremonese
+2025-03-01|Rangers vs Motherwell
+2025-03-01|CD Castellón vs Burgos CF
+2025-03-01|Girona vs Celta Vigo
+2025-03-01|Panathinaikos vs Panetolikos Agrinio
+2025-03-01|RC Lens vs Le Havre
+2025-03-01|Hannover 96 vs TSV 1860 München
+2025-03-01|Everton de Viña del Mar vs Ñublense
+2025-03-01|Blackburn Rovers vs Norwich City
+2025-03-01|Napoli vs Inter Milan
+2025-03-01|FC Lausanne-Sport vs Servette
+2025-03-01|Go Ahead Eagles vs PSV Eindhoven
+2025-03-01|Arouca vs FC Porto
+2025-03-01|Burton Albion vs Mansfield Town
+2025-03-01|Wigan Athletic vs Reading
+2025-03-01|Tranmere Rovers vs Port Vale
+2025-03-01|Pogoń Szczecin vs Lech Poznań
+2025-03-01|Oxford United vs Coventry City
+2025-03-01|Vitória SC vs Casa Pia
+2025-03-01|Real Betis vs Real Madrid
+2025-03-01|1. FC Kaiserslautern vs Jahn Regensburg
+2025-03-01|Bristol Rovers vs Rotherham United
+2025-03-01|Union Saint-Gilloise vs Dender
+2025-03-01|La Serena vs Unión Española
+2025-03-01|River Plate vs Estudiantes
+2025-03-01|Orlando City SC vs Toronto FC
+2025-03-01|Sassuolo vs Pisa
+2025-03-01|Kashima Antlers vs FC Tokyo
+2025-03-01|Vissel Kobe vs Avispa Fukuoka
+2025-03-01|Stockport County FC vs Blackpool
+2025-03-01|Sporting Kansas City vs San Jose Earthquakes
+2025-03-01|Pumas vs Guadalajara
+2025-03-01|Karlsruher SC vs 1. FC Köln
+2025-03-01|Amiens vs Metz
+2025-03-01|Walsall vs Swindon Town
+2025-03-01|Exeter City vs Northampton Town
+2025-03-01|Atlético Madrid vs Athletic Bilbao
+2025-03-01|Necaxa vs Tigres
+2025-03-01|Pohang Steelers vs Daegu FC
+2025-03-01|FC Ingolstadt 04 vs SV Sandhausen
+2025-03-01|New England Revolution vs Columbus Crew SC
+2025-03-01|Eintracht Braunschweig vs SSV Ulm 1846
+2025-03-01|América vs Toluca
+2025-03-01|Aldosivi Mar del Plata vs Sarmiento de Junin
+2025-03-01|Lorient vs Rodez AF
+2025-03-01|RB Leipzig vs FSV Mainz 05
+2025-03-01|Talleres vs CA Tigre BA
+2025-03-01|Philadelphia Union vs FC Cincinnati
+2025-03-01|Cheltenham Town vs Grimsby Town
+2025-03-01|Cercle Brugge KSV vs Royal Antwerp
+2025-03-01|SD Huesca vs Racing de Ferrol
+2025-03-01|Gent vs Club Brugge
+2025-03-01|Harrogate Town vs Accrington Stanley
+2025-03-01|Hartberg vs Wolfsberger AC
+2025-03-01|Luton vs Portsmouth
+2025-03-01|Zaragoza vs Sporting Gijón
+2025-03-01|1. FC Nürnberg vs Hannover 96
+2025-03-01|Fleetwood Town vs Notts County
+2025-03-01|Salford City vs Bradford City
+2025-03-01|Los Angeles FC vs New York City FC
+2025-03-01|Saint Etienne vs Nice
+2025-03-01|Barnsley vs Lincoln City
+2025-03-01|Queens Park Rangers vs Sheffield United
+2025-03-01|Charlotte FC vs Atlanta United FC
+2025-03-01|Real Salt Lake vs Seattle Sounders FC
+2025-03-01|Gwangju FC vs FC Anyang
+2025-03-01|Ross County vs Kilmarnock
+2025-03-01|Nacional vs Famalicão
+2025-03-01|Leyton Orient vs Charlton Athletic
+2025-03-01|FC Energie Cottbus vs VfL Osnabrück
+2025-03-01|Ulsan Hyundai FC vs Jeonbuk Hyundai Motors
+2025-03-01|New York Red Bulls vs Nashville SC
+2025-03-01|Chesterfield FC vs Crewe Alexandra
+2025-03-01|Adana Demirspor vs Bodrum FK
+2025-03-01|Borussia Dortmund II vs Rot-Weiss Essen
+2025-03-01|FC Juárez vs Pachuca
+2025-03-01|Macarthur FC vs Sydney FC
+2025-03-01|Groningen vs FC Twente Enschede
+2025-03-01|Portland Timbers vs Austin FC
+2025-03-01|Colorado Rapids vs FC Dallas
+2025-03-01|Wehen Wiesbaden vs Erzgebirge Aue
+2025-03-01|Udinese vs Parma
+2025-03-01|Palestino vs Audax Italiano
+2025-03-01|Universidad Católica (CHI) vs Deportes Iquique
+2025-03-01|Juve Stabia vs Cittadella
+2025-03-01|Stoke City vs Watford
+2025-03-01|FC Basel vs FC Sion
+2025-03-01|Eintracht Frankfurt vs Bayer Leverkusen
+2025-03-01|Leeds United vs West Bromwich Albion
+2025-03-01|Kawasaki Frontale vs Kyoto Purple Sanga
+2025-03-01|San Diego FC vs St. Louis City SC
+2025-03-01|FC St. Pauli vs Borussia Dortmund
+2025-03-01|Dundee FC vs St Johnstone
+2025-03-01|Rayo Vallecano vs Sevilla
+2025-03-01|St Mirren vs Celtic
+2025-03-01|Milton Keynes Dons vs Colchester United
+2025-03-01|Volos FC vs Aris Thessaloniki
+2025-03-02|Urawa Red Diamonds vs Kashiwa Reysol
+2025-03-02|Tokyo Verdy vs Gamba Osaka
+2025-03-02|FC Blau-Weiß Linz vs WSG Tirol
+2025-03-02|Viborg FF vs Vejle Boldklub
+2025-03-02|Hibernian vs Hearts
+2025-03-02|Palermo vs Brescia
+2025-03-02|Heracles Almelo vs FC Zwolle
+2025-03-02|Kasimpasa SK vs Galatasaray
+2025-03-02|Albirex Niigata vs Cerezo Osaka
+2025-03-02|Waldhof Mannheim vs Alemannia Aachen
+2025-03-02|Lyon vs Brest
+2025-03-02|Hiroshima Sanfrecce FC vs Yokohama FC
+2025-03-02|Gangwon FC vs Jeju United FC
+2025-03-02|Austria Klagenfurt vs LASK
+2025-03-02|US Catanzaro 1929 vs Reggiana
+2025-03-02|Daejeon Citizen vs Suwon FC
+2025-03-02|Monza vs Torino
+2025-03-02|Heerenveen vs AZ Alkmaar
+2025-03-02|SonderjyskE vs Silkeborg IF
+2025-03-02|Modena vs Cosenza
+2025-03-02|Western Sydney Wanderers vs Perth Glory
+2025-03-02|Bologna vs Cagliari
+2025-03-02|FC Lugano vs FC Zurich
+2025-03-02|Elversberg vs Hertha Berlin
+2025-03-02|1. FC Magdeburg vs SV Darmstadt 98
+2025-03-02|Puszcza Niepołomice vs Motor Lublin
+2025-03-02|SC Paderborn vs Hamburger SV
+2025-03-02|Çaykur Rizespor vs Alanyaspor
+2025-03-02|Legia Warszawa vs Śląsk Wrocław
+2025-03-02|Córdoba vs Granada CF
+2025-03-02|Almere City vs Ajax
+2025-03-02|Leganés vs Getafe
+2025-03-02|Genoa vs Empoli
+2025-03-02|Nagoya Grampus vs FC Machida Zelvia
+2025-03-02|Fagiano Okayama vs Shimizu S Pulse

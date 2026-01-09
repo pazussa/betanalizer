@@ -1,0 +1,109 @@
+event_id,match,league,starts_at,bookmaker,bookmaker_id,line,side,odds_american,odds_decimal,source
+ZeJPtjBYFF7rZPijPAQp,West Ham vs Forest,Premier League,2026-01-06T20:00:00.000Z,BetPARX,betparx,2.5,over,-106,1.9433962264150944,SportsGameOdds
+ZeJPtjBYFF7rZPijPAQp,West Ham vs Forest,Premier League,2026-01-06T20:00:00.000Z,BetRivers,betrivers,2.5,over,-108,1.925925925925926,SportsGameOdds
+ZeJPtjBYFF7rZPijPAQp,West Ham vs Forest,Premier League,2026-01-06T20:00:00.000Z,Bovada,bovada,2.5,over,-105,1.9523809523809523,SportsGameOdds
+ZeJPtjBYFF7rZPijPAQp,West Ham vs Forest,Premier League,2026-01-06T20:00:00.000Z,BetMGM,betmgm,2.5,over,-115,1.8695652173913042,SportsGameOdds
+ZeJPtjBYFF7rZPijPAQp,West Ham vs Forest,Premier League,2026-01-06T20:00:00.000Z,BetPARX,betparx,2.5,under,-115,1.8695652173913042,SportsGameOdds
+ZeJPtjBYFF7rZPijPAQp,West Ham vs Forest,Premier League,2026-01-06T20:00:00.000Z,BetRivers,betrivers,2.5,under,-116,1.8620689655172413,SportsGameOdds
+ZeJPtjBYFF7rZPijPAQp,West Ham vs Forest,Premier League,2026-01-06T20:00:00.000Z,Bovada,bovada,2.5,under,-115,1.8695652173913042,SportsGameOdds
+ZeJPtjBYFF7rZPijPAQp,West Ham vs Forest,Premier League,2026-01-06T20:00:00.000Z,BetMGM,betmgm,2.5,under,-120,1.8333333333333335,SportsGameOdds
+kpBvtWBYpaVSBQLRV0Pp,Everton vs Wolves,Premier League,2026-01-07T19:30:00.000Z,BetPARX,betparx,2.5,over,+114,2.1399999999999997,SportsGameOdds
+kpBvtWBYpaVSBQLRV0Pp,Everton vs Wolves,Premier League,2026-01-07T19:30:00.000Z,BetRivers,betrivers,2.5,over,+112,2.12,SportsGameOdds
+kpBvtWBYpaVSBQLRV0Pp,Everton vs Wolves,Premier League,2026-01-07T19:30:00.000Z,BetPARX,betparx,2.5,under,-141,1.7092198581560285,SportsGameOdds
+kpBvtWBYpaVSBQLRV0Pp,Everton vs Wolves,Premier League,2026-01-07T19:30:00.000Z,BetRivers,betrivers,2.5,under,-143,1.6993006993006992,SportsGameOdds
+m5LoECMJ2GEqDgA9uWRD,Bournemouth vs Tottenham,Premier League,2026-01-07T19:30:00.000Z,BetPARX,betparx,2.5,over,-143,1.6993006993006992,SportsGameOdds
+m5LoECMJ2GEqDgA9uWRD,Bournemouth vs Tottenham,Premier League,2026-01-07T19:30:00.000Z,BetRivers,betrivers,2.5,over,-147,1.6802721088435373,SportsGameOdds
+m5LoECMJ2GEqDgA9uWRD,Bournemouth vs Tottenham,Premier League,2026-01-07T19:30:00.000Z,BetMGM,betmgm,2.5,over,-147,1.6802721088435373,SportsGameOdds
+m5LoECMJ2GEqDgA9uWRD,Bournemouth vs Tottenham,Premier League,2026-01-07T19:30:00.000Z,BetPARX,betparx,2.5,under,+116,2.16,SportsGameOdds
+m5LoECMJ2GEqDgA9uWRD,Bournemouth vs Tottenham,Premier League,2026-01-07T19:30:00.000Z,BetRivers,betrivers,2.5,under,+115,2.15,SportsGameOdds
+m5LoECMJ2GEqDgA9uWRD,Bournemouth vs Tottenham,Premier League,2026-01-07T19:30:00.000Z,BetMGM,betmgm,2.5,under,+105,2.05,SportsGameOdds
+n3x7OVL5lwWWUZQpaokI,Fulham vs Chelsea,Premier League,2026-01-07T19:30:00.000Z,BetPARX,betparx,2.5,over,-127,1.7874015748031495,SportsGameOdds
+n3x7OVL5lwWWUZQpaokI,Fulham vs Chelsea,Premier League,2026-01-07T19:30:00.000Z,BetRivers,betrivers,2.5,over,-128,1.78125,SportsGameOdds
+n3x7OVL5lwWWUZQpaokI,Fulham vs Chelsea,Premier League,2026-01-07T19:30:00.000Z,BetMGM,betmgm,2.5,over,-133,1.7518796992481203,SportsGameOdds
+n3x7OVL5lwWWUZQpaokI,Fulham vs Chelsea,Premier League,2026-01-07T19:30:00.000Z,BetPARX,betparx,2.5,under,+102,2.02,SportsGameOdds
+n3x7OVL5lwWWUZQpaokI,Fulham vs Chelsea,Premier League,2026-01-07T19:30:00.000Z,BetRivers,betrivers,2.5,under,+102,2.02,SportsGameOdds
+n3x7OVL5lwWWUZQpaokI,Fulham vs Chelsea,Premier League,2026-01-07T19:30:00.000Z,BetMGM,betmgm,2.5,under,-102,1.9803921568627452,SportsGameOdds
+p8YdSj0F2IrD04Pcffhh,Brentford vs Sunderland,Premier League,2026-01-07T19:30:00.000Z,Bovada,bovada,2.5,over,+105,2.05,SportsGameOdds
+p8YdSj0F2IrD04Pcffhh,Brentford vs Sunderland,Premier League,2026-01-07T19:30:00.000Z,BetPARX,betparx,2.5,over,-111,1.900900900900901,SportsGameOdds
+p8YdSj0F2IrD04Pcffhh,Brentford vs Sunderland,Premier League,2026-01-07T19:30:00.000Z,BetRivers,betrivers,2.5,over,-112,1.8928571428571428,SportsGameOdds
+p8YdSj0F2IrD04Pcffhh,Brentford vs Sunderland,Premier League,2026-01-07T19:30:00.000Z,BetMGM,betmgm,2.5,over,-102,1.9803921568627452,SportsGameOdds
+p8YdSj0F2IrD04Pcffhh,Brentford vs Sunderland,Premier League,2026-01-07T19:30:00.000Z,Bovada,bovada,2.5,under,-125,1.8,SportsGameOdds
+p8YdSj0F2IrD04Pcffhh,Brentford vs Sunderland,Premier League,2026-01-07T19:30:00.000Z,BetPARX,betparx,2.5,under,-111,1.900900900900901,SportsGameOdds
+p8YdSj0F2IrD04Pcffhh,Brentford vs Sunderland,Premier League,2026-01-07T19:30:00.000Z,BetRivers,betrivers,2.5,under,-112,1.8928571428571428,SportsGameOdds
+p8YdSj0F2IrD04Pcffhh,Brentford vs Sunderland,Premier League,2026-01-07T19:30:00.000Z,BetMGM,betmgm,2.5,under,-133,1.7518796992481203,SportsGameOdds
+xCpHM61mp9nE7mcoOcT9,Man City vs Brighton,Premier League,2026-01-07T19:30:00.000Z,BetPARX,betparx,3.5,over,+110,2.1,SportsGameOdds
+xCpHM61mp9nE7mcoOcT9,Man City vs Brighton,Premier League,2026-01-07T19:30:00.000Z,BetRivers,betrivers,3.5,over,+108,2.08,SportsGameOdds
+xCpHM61mp9nE7mcoOcT9,Man City vs Brighton,Premier League,2026-01-07T19:30:00.000Z,BetMGM,betmgm,3.5,over,+105,2.05,SportsGameOdds
+xCpHM61mp9nE7mcoOcT9,Man City vs Brighton,Premier League,2026-01-07T19:30:00.000Z,BetPARX,betparx,3.5,under,-137,1.72992700729927,SportsGameOdds
+xCpHM61mp9nE7mcoOcT9,Man City vs Brighton,Premier League,2026-01-07T19:30:00.000Z,BetRivers,betrivers,3.5,under,-139,1.7194244604316546,SportsGameOdds
+xCpHM61mp9nE7mcoOcT9,Man City vs Brighton,Premier League,2026-01-07T19:30:00.000Z,BetMGM,betmgm,3.5,under,-147,1.6802721088435373,SportsGameOdds
+znjqTdAeDV8d2S6H2cRp,Crystal Palace vs Aston Villa,Premier League,2026-01-07T19:30:00.000Z,Bovada,bovada,2.5,over,-110,1.9090909090909092,SportsGameOdds
+znjqTdAeDV8d2S6H2cRp,Crystal Palace vs Aston Villa,Premier League,2026-01-07T19:30:00.000Z,BetPARX,betparx,2.5,over,-109,1.9174311926605505,SportsGameOdds
+znjqTdAeDV8d2S6H2cRp,Crystal Palace vs Aston Villa,Premier League,2026-01-07T19:30:00.000Z,BetRivers,betrivers,2.5,over,-110,1.9090909090909092,SportsGameOdds
+znjqTdAeDV8d2S6H2cRp,Crystal Palace vs Aston Villa,Premier League,2026-01-07T19:30:00.000Z,Bovada,bovada,2.5,under,-110,1.9090909090909092,SportsGameOdds
+znjqTdAeDV8d2S6H2cRp,Crystal Palace vs Aston Villa,Premier League,2026-01-07T19:30:00.000Z,BetPARX,betparx,2.5,under,-114,1.8771929824561404,SportsGameOdds
+znjqTdAeDV8d2S6H2cRp,Crystal Palace vs Aston Villa,Premier League,2026-01-07T19:30:00.000Z,BetRivers,betrivers,2.5,under,-115,1.8695652173913042,SportsGameOdds
+bnlT9267U612LtGO8oGk,Burnley vs Man Utd,Premier League,2026-01-07T20:15:00.000Z,BetPARX,betparx,2.5,over,-141,1.7092198581560285,SportsGameOdds
+bnlT9267U612LtGO8oGk,Burnley vs Man Utd,Premier League,2026-01-07T20:15:00.000Z,BetRivers,betrivers,2.5,over,-143,1.6993006993006992,SportsGameOdds
+bnlT9267U612LtGO8oGk,Burnley vs Man Utd,Premier League,2026-01-07T20:15:00.000Z,BetMGM,betmgm,2.5,over,-147,1.6802721088435373,SportsGameOdds
+bnlT9267U612LtGO8oGk,Burnley vs Man Utd,Premier League,2026-01-07T20:15:00.000Z,BetPARX,betparx,2.5,under,+112,2.12,SportsGameOdds
+bnlT9267U612LtGO8oGk,Burnley vs Man Utd,Premier League,2026-01-07T20:15:00.000Z,BetRivers,betrivers,2.5,under,+112,2.12,SportsGameOdds
+bnlT9267U612LtGO8oGk,Burnley vs Man Utd,Premier League,2026-01-07T20:15:00.000Z,BetMGM,betmgm,2.5,under,+105,2.05,SportsGameOdds
+kmGLUs3tkXOTuDC20wed,Newcastle vs Leeds,Premier League,2026-01-07T20:15:00.000Z,BetPARX,betparx,2.5,over,-128,1.78125,SportsGameOdds
+kmGLUs3tkXOTuDC20wed,Newcastle vs Leeds,Premier League,2026-01-07T20:15:00.000Z,BetRivers,betrivers,2.5,over,-130,1.7692307692307692,SportsGameOdds
+kmGLUs3tkXOTuDC20wed,Newcastle vs Leeds,Premier League,2026-01-07T20:15:00.000Z,BetMGM,betmgm,2.5,over,-130,1.7692307692307692,SportsGameOdds
+kmGLUs3tkXOTuDC20wed,Newcastle vs Leeds,Premier League,2026-01-07T20:15:00.000Z,BetPARX,betparx,2.5,under,+104,2.04,SportsGameOdds
+kmGLUs3tkXOTuDC20wed,Newcastle vs Leeds,Premier League,2026-01-07T20:15:00.000Z,BetRivers,betrivers,2.5,under,+102,2.02,SportsGameOdds
+kmGLUs3tkXOTuDC20wed,Newcastle vs Leeds,Premier League,2026-01-07T20:15:00.000Z,BetMGM,betmgm,2.5,under,-105,1.9523809523809523,SportsGameOdds
+WmAxBbYySSLBUN2PGwQj,Pisa vs Como,Serie A,2026-01-06T14:00:00.000Z,BetPARX,betparx,2.5,over,+110,2.1,SportsGameOdds
+WmAxBbYySSLBUN2PGwQj,Pisa vs Como,Serie A,2026-01-06T14:00:00.000Z,BetRivers,betrivers,2.5,over,+108,2.08,SportsGameOdds
+WmAxBbYySSLBUN2PGwQj,Pisa vs Como,Serie A,2026-01-06T14:00:00.000Z,BetMGM,betmgm,2.5,over,+110,2.1,SportsGameOdds
+WmAxBbYySSLBUN2PGwQj,Pisa vs Como,Serie A,2026-01-06T14:00:00.000Z,BetPARX,betparx,2.5,under,-141,1.7092198581560285,SportsGameOdds
+WmAxBbYySSLBUN2PGwQj,Pisa vs Como,Serie A,2026-01-06T14:00:00.000Z,BetRivers,betrivers,2.5,under,-143,1.6993006993006992,SportsGameOdds
+WmAxBbYySSLBUN2PGwQj,Pisa vs Como,Serie A,2026-01-06T14:00:00.000Z,BetMGM,betmgm,2.5,under,-154,1.6493506493506493,SportsGameOdds
+7FDTQQ370cIsRauvSDXP,Lecce vs Roma,Serie A,2026-01-06T17:00:00.000Z,BetRivers,betrivers,2.5,over,+135,2.35,SportsGameOdds
+7FDTQQ370cIsRauvSDXP,Lecce vs Roma,Serie A,2026-01-06T17:00:00.000Z,BetMGM,betmgm,2.5,over,+125,2.25,SportsGameOdds
+7FDTQQ370cIsRauvSDXP,Lecce vs Roma,Serie A,2026-01-06T17:00:00.000Z,BetRivers,betrivers,2.5,under,-182,1.5494505494505495,SportsGameOdds
+7FDTQQ370cIsRauvSDXP,Lecce vs Roma,Serie A,2026-01-06T17:00:00.000Z,BetMGM,betmgm,2.5,under,-175,1.5714285714285714,SportsGameOdds
+UCWAsyAZpVBd91oApVzT,Sassuolo vs Juventus,Serie A,2026-01-06T19:45:00.000Z,Bovada,bovada,2.5,over,-105,1.9523809523809523,SportsGameOdds
+UCWAsyAZpVBd91oApVzT,Sassuolo vs Juventus,Serie A,2026-01-06T19:45:00.000Z,BetPARX,betparx,2.5,over,-110,1.9090909090909092,SportsGameOdds
+UCWAsyAZpVBd91oApVzT,Sassuolo vs Juventus,Serie A,2026-01-06T19:45:00.000Z,BetRivers,betrivers,2.5,over,-111,1.900900900900901,SportsGameOdds
+UCWAsyAZpVBd91oApVzT,Sassuolo vs Juventus,Serie A,2026-01-06T19:45:00.000Z,BetMGM,betmgm,2.5,over,-111,1.900900900900901,SportsGameOdds
+UCWAsyAZpVBd91oApVzT,Sassuolo vs Juventus,Serie A,2026-01-06T19:45:00.000Z,Bovada,bovada,2.5,under,-115,1.8695652173913042,SportsGameOdds
+UCWAsyAZpVBd91oApVzT,Sassuolo vs Juventus,Serie A,2026-01-06T19:45:00.000Z,BetPARX,betparx,2.5,under,-118,1.847457627118644,SportsGameOdds
+UCWAsyAZpVBd91oApVzT,Sassuolo vs Juventus,Serie A,2026-01-06T19:45:00.000Z,BetRivers,betrivers,2.5,under,-119,1.8403361344537816,SportsGameOdds
+UCWAsyAZpVBd91oApVzT,Sassuolo vs Juventus,Serie A,2026-01-06T19:45:00.000Z,BetMGM,betmgm,2.5,under,-125,1.8,SportsGameOdds
+VPp7GFBYEU73LEZOaumj,Napoli vs Verona,Serie A,2026-01-07T17:30:00.000Z,BetPARX,betparx,2.5,over,+100,2.0,SportsGameOdds
+VPp7GFBYEU73LEZOaumj,Napoli vs Verona,Serie A,2026-01-07T17:30:00.000Z,BetRivers,betrivers,2.5,over,+100,2.0,SportsGameOdds
+VPp7GFBYEU73LEZOaumj,Napoli vs Verona,Serie A,2026-01-07T17:30:00.000Z,BetMGM,betmgm,2.5,over,-102,1.9803921568627452,SportsGameOdds
+VPp7GFBYEU73LEZOaumj,Napoli vs Verona,Serie A,2026-01-07T17:30:00.000Z,Bovada,bovada,2.5,over,+105,2.05,SportsGameOdds
+VPp7GFBYEU73LEZOaumj,Napoli vs Verona,Serie A,2026-01-07T17:30:00.000Z,BetPARX,betparx,2.5,under,-130,1.7692307692307692,SportsGameOdds
+VPp7GFBYEU73LEZOaumj,Napoli vs Verona,Serie A,2026-01-07T17:30:00.000Z,BetRivers,betrivers,2.5,under,-132,1.7575757575757576,SportsGameOdds
+VPp7GFBYEU73LEZOaumj,Napoli vs Verona,Serie A,2026-01-07T17:30:00.000Z,BetMGM,betmgm,2.5,under,-137,1.72992700729927,SportsGameOdds
+VPp7GFBYEU73LEZOaumj,Napoli vs Verona,Serie A,2026-01-07T17:30:00.000Z,Bovada,bovada,2.5,under,-125,1.8,SportsGameOdds
+guYbBksfusZwKsG0c6oy,Bologna vs Atalanta,Serie A,2026-01-07T17:30:00.000Z,Bovada,bovada,2.5,over,+100,2.0,SportsGameOdds
+guYbBksfusZwKsG0c6oy,Bologna vs Atalanta,Serie A,2026-01-07T17:30:00.000Z,BetPARX,betparx,2.5,over,-110,1.9090909090909092,SportsGameOdds
+guYbBksfusZwKsG0c6oy,Bologna vs Atalanta,Serie A,2026-01-07T17:30:00.000Z,BetRivers,betrivers,2.5,over,-111,1.900900900900901,SportsGameOdds
+guYbBksfusZwKsG0c6oy,Bologna vs Atalanta,Serie A,2026-01-07T17:30:00.000Z,BetMGM,betmgm,2.5,over,-114,1.8771929824561404,SportsGameOdds
+guYbBksfusZwKsG0c6oy,Bologna vs Atalanta,Serie A,2026-01-07T17:30:00.000Z,Bovada,bovada,2.5,under,-120,1.8333333333333335,SportsGameOdds
+guYbBksfusZwKsG0c6oy,Bologna vs Atalanta,Serie A,2026-01-07T17:30:00.000Z,BetPARX,betparx,2.5,under,-118,1.847457627118644,SportsGameOdds
+guYbBksfusZwKsG0c6oy,Bologna vs Atalanta,Serie A,2026-01-07T17:30:00.000Z,BetRivers,betrivers,2.5,under,-119,1.8403361344537816,SportsGameOdds
+guYbBksfusZwKsG0c6oy,Bologna vs Atalanta,Serie A,2026-01-07T17:30:00.000Z,BetMGM,betmgm,2.5,under,-122,1.819672131147541,SportsGameOdds
+Z9cLuKaiFnu3Se5tP8Ww,Lazio vs Fiorentina,Serie A,2026-01-07T19:45:00.000Z,BetPARX,betparx,2.5,over,+117,2.17,SportsGameOdds
+Z9cLuKaiFnu3Se5tP8Ww,Lazio vs Fiorentina,Serie A,2026-01-07T19:45:00.000Z,BetRivers,betrivers,2.5,over,+116,2.16,SportsGameOdds
+Z9cLuKaiFnu3Se5tP8Ww,Lazio vs Fiorentina,Serie A,2026-01-07T19:45:00.000Z,BetMGM,betmgm,2.5,over,+115,2.15,SportsGameOdds
+Z9cLuKaiFnu3Se5tP8Ww,Lazio vs Fiorentina,Serie A,2026-01-07T19:45:00.000Z,BetPARX,betparx,2.5,under,-152,1.6578947368421053,SportsGameOdds
+Z9cLuKaiFnu3Se5tP8Ww,Lazio vs Fiorentina,Serie A,2026-01-07T19:45:00.000Z,BetRivers,betrivers,2.5,under,-154,1.6493506493506493,SportsGameOdds
+Z9cLuKaiFnu3Se5tP8Ww,Lazio vs Fiorentina,Serie A,2026-01-07T19:45:00.000Z,BetMGM,betmgm,2.5,under,-161,1.62111801242236,SportsGameOdds
+t7s9jQg0ryDEXHglvWs7,Parma vs Inter,Serie A,2026-01-07T19:45:00.000Z,BetPARX,betparx,2.5,over,-172,1.5813953488372094,SportsGameOdds
+t7s9jQg0ryDEXHglvWs7,Parma vs Inter,Serie A,2026-01-07T19:45:00.000Z,BetRivers,betrivers,2.5,over,-175,1.5714285714285714,SportsGameOdds
+t7s9jQg0ryDEXHglvWs7,Parma vs Inter,Serie A,2026-01-07T19:45:00.000Z,BetMGM,betmgm,2.5,over,-167,1.5988023952095807,SportsGameOdds
+t7s9jQg0ryDEXHglvWs7,Parma vs Inter,Serie A,2026-01-07T19:45:00.000Z,BetPARX,betparx,2.5,under,+132,2.3200000000000003,SportsGameOdds
+t7s9jQg0ryDEXHglvWs7,Parma vs Inter,Serie A,2026-01-07T19:45:00.000Z,BetRivers,betrivers,2.5,under,+130,2.3,SportsGameOdds
+t7s9jQg0ryDEXHglvWs7,Parma vs Inter,Serie A,2026-01-07T19:45:00.000Z,BetMGM,betmgm,2.5,under,+120,2.2,SportsGameOdds
+v4nNmBr0kgXvL1cRBNhs,Torino vs Udinese,Serie A,2026-01-07T19:45:00.000Z,BetPARX,betparx,2.5,over,+135,2.35,SportsGameOdds
+v4nNmBr0kgXvL1cRBNhs,Torino vs Udinese,Serie A,2026-01-07T19:45:00.000Z,BetRivers,betrivers,2.5,over,+133,2.33,SportsGameOdds
+v4nNmBr0kgXvL1cRBNhs,Torino vs Udinese,Serie A,2026-01-07T19:45:00.000Z,BetMGM,betmgm,2.5,over,+120,2.2,SportsGameOdds
+v4nNmBr0kgXvL1cRBNhs,Torino vs Udinese,Serie A,2026-01-07T19:45:00.000Z,BetPARX,betparx,2.5,under,-175,1.5714285714285714,SportsGameOdds
+v4nNmBr0kgXvL1cRBNhs,Torino vs Udinese,Serie A,2026-01-07T19:45:00.000Z,BetRivers,betrivers,2.5,under,-179,1.558659217877095,SportsGameOdds
+v4nNmBr0kgXvL1cRBNhs,Torino vs Udinese,Serie A,2026-01-07T19:45:00.000Z,BetMGM,betmgm,2.5,under,-167,1.5988023952095807,SportsGameOdds

@@ -1,0 +1,376 @@
+# Cobertura de Resultados
+
+## Por archivo
+
+- historical_20250103_con_resultados.csv: 310 con resultado, 16 sin resultado (95.1%)
+- historical_20250110_con_resultados.csv: 370 con resultado, 32 sin resultado (92.0%)
+- historical_20250117_con_resultados.csv: 570 con resultado, 80 sin resultado (87.7%)
+- historical_20250124_con_resultados.csv: 542 con resultado, 164 sin resultado (76.8%)
+- historical_20250131_con_resultados.csv: 502 con resultado, 208 sin resultado (70.7%)
+- historical_20250207_con_resultados.csv: 314 con resultado, 354 sin resultado (47.0%)
+- historical_20250214_con_resultados.csv: 340 con resultado, 518 sin resultado (39.6%)
+- historical_20250221_con_resultados.csv: 370 con resultado, 538 sin resultado (40.7%)
+- historical_20250228_con_resultados.csv: 242 con resultado, 614 sin resultado (28.3%)
+- historical_20250307_con_resultados.csv: 832 con resultado, 34 sin resultado (96.1%)
+- historical_20250314_con_resultados.csv: 854 con resultado, 52 sin resultado (94.3%)
+- historical_20250321_con_resultados.csv: 158 con resultado, 0 sin resultado (100.0%)
+- historical_20250328_con_resultados.csv: 868 con resultado, 34 sin resultado (96.2%)
+
+**Total**: 6272 con resultado, 2644 sin resultado (70.3%)
+
+## Por liga (faltantes)
+
+- Liga Profesional: 268 sin resultado
+- Liga Portugal: 144 sin resultado
+- La Liga 2: 128 sin resultado
+- Ligue 2: 124 sin resultado
+- Bundesliga: 122 sin resultado
+- Ekstraklasa: 114 sin resultado
+- League One: 112 sin resultado
+- Eredivisie: 98 sin resultado
+- Serie B: 98 sin resultado
+- Championship: 98 sin resultado
+- Pro League: 92 sin resultado
+- Serie A: 90 sin resultado
+- Super League Greece: 88 sin resultado
+- La Liga: 88 sin resultado
+- Super League Switzerland: 82 sin resultado
+- Süper Lig: 82 sin resultado
+- MLS: 82 sin resultado
+- Ligue 1: 76 sin resultado
+- Liga MX: 76 sin resultado
+- 3. Liga: 72 sin resultado
+- Scottish Premiership: 68 sin resultado
+- J1 League: 68 sin resultado
+- Austrian Bundesliga: 66 sin resultado
+- A-League: 56 sin resultado
+- K League 1: 54 sin resultado
+- League Two: 48 sin resultado
+- Superliga Denmark: 44 sin resultado
+- Primera División Chile: 40 sin resultado
+- Bundesliga 2: 34 sin resultado
+- Premier League: 32 sin resultado
+
+## Partidos faltantes (muestras)
+
+- Ligue 1:
+  - Marseille vs Le Havre
+  - Montpellier vs AS Monaco
+  - RC Lens vs Paris Saint Germain
+  - Lyon vs Toulouse
+  - Auxerre vs Saint Etienne
+  - Strasbourg vs Lille
+  - Le Havre vs Brest
+  - Nice vs RC Lens
+  - Lille vs Le Havre
+  - Lyon vs Stade de Reims
+- Super League Greece:
+  - AEK Athens vs Athens Kallithea FC
+  - Atromitos Athens vs Olympiakos Piraeus
+  - Volos FC vs Atromitos Athens
+  - Asteras Tripolis vs Athens Kallithea FC
+  - OFI Crete vs Panserraikos FC
+  - Volos FC vs Panetolikos Agrinio
+  - OFI Crete vs PAOK Thessaloniki
+  - Levadiakos vs Aris Thessaloniki
+  - OFI Crete vs Asteras Tripolis
+  - AEK Athens vs Atromitos Athens
+- League Two:
+  - Port Vale vs Barrow
+  - Wimbledon vs Cheltenham Town
+  - Carlisle United vs Milton Keynes Dons
+  - Harrogate Town vs Accrington Stanley
+  - Salford City vs Bradford City
+  - Doncaster Rovers vs Newport County
+  - Gillingham vs Morecambe
+  - Cheltenham Town vs Grimsby Town
+  - Walsall vs Swindon Town
+  - Chesterfield FC vs Crewe Alexandra
+- League One:
+  - Blackpool vs Cambridge United
+  - Stevenage vs Burton Albion
+  - Stockport County FC vs Barnsley
+  - Charlton Athletic vs Stevenage
+  - Huddersfield Town vs Reading
+  - Burton Albion vs Blackpool
+  - Bristol Rovers vs Burton Albion
+  - Birmingham City vs Charlton Athletic
+  - Northampton Town vs Wrexham AFC
+  - Reading vs Rotherham United
+- Pro League:
+  - Charleroi vs Union Saint-Gilloise
+  - Sint Truiden vs Royal Antwerp
+  - Westerlo vs Genk
+  - Club Brugge vs KV Kortrijk
+  - Standard Liege vs Dender
+  - Leuven vs KV Mechelen
+  - Royal Antwerp vs Club Brugge
+  - KV Mechelen vs Gent
+  - Dender vs Sint Truiden
+  - Leuven vs Dender
+- Liga Portugal:
+  - Vitória SC vs Arouca
+  - Gil Vicente vs FC Porto
+  - SC Farense vs Rio Ave FC
+  - CF Estrela vs Benfica
+  - Benfica vs Moreirense FC
+  - Casa Pia vs CF Estrela
+  - Nacional vs Estoril
+  - Sporting Lisbon vs Arouca
+  - Vitória SC vs Braga
+  - Casa Pia vs Gil Vicente
+- 3. Liga:
+  - 1. FC Saarbrücken vs TSV 1860 München
+  - Arminia Bielefeld vs FC Energie Cottbus
+  - Wehen Wiesbaden vs SC Verl
+  - TSV 1860 München vs VfB Stuttgart II
+  - Waldhof Mannheim vs SC Verl
+  - FC Viktoria Köln 1904 vs TSV 1860 München
+  - TSV 1860 München vs FC Ingolstadt 04
+  - Wehen Wiesbaden vs Rot-Weiss Essen
+  - FC Viktoria Köln 1904 vs Alemannia Aachen
+  - SpVgg Unterhaching vs 1. FC Saarbrücken
+- Bundesliga:
+  - VfL Bochum vs RB Leipzig
+  - Holstein Kiel vs TSG Hoffenheim
+  - VfL Wolfsburg vs Holstein Kiel
+  - FSV Mainz 05 vs VfB Stuttgart
+  - SC Freiburg vs Bayern Munich
+  - Borussia Monchengladbach vs VfL Bochum
+  - Bayern Munich vs Werder Bremen
+  - SC Freiburg vs 1. FC Heidenheim
+  - TSG Hoffenheim vs Union Berlin
+  - VfL Wolfsburg vs Bayer Leverkusen
+- Super League Switzerland:
+  - FC Sion vs Grasshopper Zürich
+  - FC Zurich vs Yverdon Sport FC
+  - FC Luzern vs FC St Gallen
+  - FC Lugano vs Grasshopper Zürich
+  - FC Lausanne-Sport vs Yverdon Sport FC
+  - BSC Young Boys vs FC Sion
+  - Servette vs FC Basel
+  - Yverdon Sport FC vs FC St Gallen
+  - FC Lugano vs FC Luzern
+  - FC Winterthur vs BSC Young Boys
+- Süper Lig:
+  - Gazişehir Gaziantep vs Bodrum FK
+  - Besiktas JK vs Samsunspor
+  - Torku Konyaspor vs Kasimpasa SK
+  - Samsunspor vs Gazişehir Gaziantep
+  - Sivasspor vs Kayserispor
+  - Alanyaspor vs Basaksehir
+  - Galatasaray vs Torku Konyaspor
+  - Çaykur Rizespor vs Adana Demirspor
+  - Bodrum FK vs Eyüpspor
+  - Antalyaspor vs Besiktas JK
+- Bundesliga 2:
+  - Jahn Regensburg vs Hannover 96
+  - SC Preußen Münster vs Greuther Fürth
+  - Hannover 96 vs SC Preußen Münster
+  - SC Preußen Münster vs Hamburger SV
+  - 1. FC Kaiserslautern vs Hannover 96
+  - Elversberg vs Greuther Fürth
+  - Hannover 96 vs SC Paderborn
+  - Greuther Fürth vs Eintracht Braunschweig
+  - FC Schalke 04 vs SC Preußen Münster
+- Liga Profesional:
+  - Barracas Central vs Racing Club
+  - Independiente vs Sarmiento de Junin
+  - Belgrano de Cordoba vs Atlético Huracán
+  - San Martin de San Juan vs Atlético Tucuman
+  - San Lorenzo vs Talleres
+  - Estudiantes vs Union Santa Fe
+  - Platense vs River Plate
+  - Barracas Central vs Banfield
+  - San Martin de San Juan vs Rosario Central
+  - Lanus vs Sarmiento de Junin
+- Premier League:
+  - Fulham vs Manchester United
+  - Leicester City vs Brentford
+  - Leicester City vs Manchester United
+- Eredivisie:
+  - Heracles Almelo vs FC Utrecht
+  - RKC Waalwijk vs Willem II
+  - NAC Breda vs Heracles Almelo
+  - FC Zwolle vs FC Utrecht
+  - Heerenveen vs Fortuna Sittard
+  - NEC Nijmegen vs PSV Eindhoven
+  - Go Ahead Eagles vs FC Twente Enschede
+  - Willem II vs AZ Alkmaar
+  - PSV Eindhoven vs Willem II
+  - FC Utrecht vs Almere City
+- Liga MX:
+  - Atlético San Luis vs Necaxa
+  - Mazatlán FC vs Toluca
+  - Necaxa vs Santos Laguna
+  - Querétaro vs Atlético San Luis
+  - Puebla vs América
+  - León vs Toluca
+  - FC Juárez vs Monterrey
+  - Toluca vs Guadalajara
+  - Tijuana vs FC Juárez
+  - Mazatlán FC vs Santos Laguna
+- Ligue 2:
+  - Paris FC vs Red Star
+  - Lorient vs Clermont
+  - Clermont vs AC Ajaccio
+  - Amiens vs Annecy FC
+  - SC Bastia vs Metz
+  - Grenoble vs Rodez AF
+  - USL Dunkerque vs FC Martigues
+  - Red Star vs Lorient
+  - Guingamp vs Paris FC
+  - Grenoble vs Red Star
+- Serie A:
+  - Torino vs Cagliari
+  - Como vs Juventus
+  - Venezia vs AS Roma
+  - Cagliari vs Parma
+  - Lazio vs Monza
+  - Napoli vs Udinese
+  - Udinese vs Empoli
+  - AC Milan vs Hellas Verona
+  - Fiorentina vs Como
+  - Monza vs Lecce
+- Serie B:
+  - Spezia vs Sassuolo
+  - Sassuolo vs Juve Stabia
+  - Cittadella vs Spezia
+  - Salernitana vs Cremonese
+  - Carrarese vs Brescia
+  - Mantova vs Sassuolo
+  - Frosinone vs US Catanzaro 1929
+  - Modena vs Spezia
+  - Sassuolo vs Brescia
+  - US Catanzaro 1929 vs Cittadella
+- Ekstraklasa:
+  - GKS Katowice vs Stal Mielec
+  - Lech Poznań vs Widzew Łódź
+  - Motor Lublin vs Lechia Gdańsk
+  - Cracovia Kraków vs Raków Częstochowa
+  - Pogoń Szczecin vs Zagłębie Lubin
+  - Jagiellonia Białystok vs Radomiak Radom
+  - Pogoń Szczecin vs Górnik Zabrze
+  - Radomiak Radom vs Śląsk Wrocław
+  - Raków Częstochowa vs GKS Katowice
+  - Korona Kielce vs Motor Lublin
+- La Liga 2:
+  - Real Racing Club de Santander vs Málaga
+  - CD Castellón vs SD Huesca
+  - Tenerife vs Albacete
+  - Racing de Ferrol vs CD Castellón
+  - Elche vs Tenerife
+  - FC Cartagena vs Málaga
+  - Real Racing Club de Santander vs Cádiz CF
+  - Tenerife vs Córdoba
+  - CD Castellón vs SD Eibar
+  - Oviedo vs Albacete
+- La Liga:
+  - Real Betis vs Athletic Bilbao
+  - Rayo Vallecano vs Valladolid
+  - Celta Vigo vs Real Betis
+  - Sevilla vs Barcelona
+  - Espanyol vs Athletic Bilbao
+  - Real Betis vs Real Sociedad
+  - Rayo Vallecano vs Villarreal
+  - Alavés vs Espanyol
+  - Leganés vs Getafe
+  - Real Betis vs Sevilla
+- A-League:
+  - Sydney FC vs Adelaide United
+  - Central Coast Mariners vs Newcastle Jets FC
+  - Perth Glory vs Melbourne Victory
+  - Macarthur FC vs Western United FC
+  - Western United FC vs Auckland FC
+  - Western Sydney Wanderers vs Macarthur FC
+  - Melbourne City vs Perth Glory
+  - Adelaide United vs Newcastle Jets FC
+  - Western United FC vs Adelaide United
+  - Auckland FC vs Wellington Phoenix FC
+- Scottish Premiership:
+  - Hibernian vs Aberdeen
+  - Kilmarnock vs Dundee United
+  - Celtic vs Dundee United
+  - Hearts vs Rangers
+  - Dundee FC vs Aberdeen
+  - St Mirren vs Hibernian
+  - Motherwell vs Ross County
+  - Kilmarnock vs St Johnstone
+  - Hibernian vs Celtic
+  - Rangers vs St Mirren
+- Austrian Bundesliga:
+  - Sturm Graz vs Austria Wien
+  - Rapid Wien vs Wolfsberger AC
+  - Rheindorf Altach vs Grazer AK
+  - Austria Klagenfurt vs RB Salzburg
+  - WSG Tirol vs Hartberg
+  - FC Blau-Weiß Linz vs Rheindorf Altach
+  - RB Salzburg vs WSG Tirol
+  - Wolfsberger AC vs Sturm Graz
+  - Grazer AK vs LASK
+  - Hartberg vs Austria Klagenfurt
+- Championship:
+  - West Bromwich Albion vs Sheffield Wednesday
+  - Norwich City vs Derby County
+  - Sheffield United vs Portsmouth
+  - Bristol City vs Swansea City
+  - Queens Park Rangers vs Derby County
+  - Stoke City vs Swansea City
+  - Oxford United vs Portsmouth
+  - Middlesbrough vs Watford
+  - Millwall vs West Bromwich Albion
+  - Hull City vs Norwich City
+- K League 1:
+  - Jeju United FC vs FC Seoul
+  - Pohang Steelers vs Daejeon Citizen
+  - Daegu FC vs Gangwon FC
+  - Jeonbuk Hyundai Motors vs Sangju Sangmu FC
+  - Gwangju FC vs Suwon FC
+  - Jeonbuk Hyundai Motors vs Gwangju FC
+  - FC Seoul vs FC Anyang
+  - Gangwon FC vs Pohang Steelers
+  - Daejeon Citizen vs Ulsan Hyundai FC
+  - Jeju United FC vs Sangju Sangmu FC
+- Superliga Denmark:
+  - Brondby IF vs Viborg FF
+  - AaB vs FC Nordsjaelland
+  - Silkeborg IF vs Vejle Boldklub
+  - AGF Aarhus vs AaB
+  - FC Nordsjaelland vs SonderjyskE
+  - Lyngby vs Randers FC
+  - Viborg FF vs Vejle Boldklub
+  - Randers FC vs AGF Aarhus
+  - SonderjyskE vs Silkeborg IF
+- J1 League:
+  - Fagiano Okayama vs Kyoto Purple Sanga
+  - Tokyo Verdy vs Shimizu S Pulse
+  - Yokohama FC vs FC Tokyo
+  - Kyoto Purple Sanga vs Urawa Red Diamonds
+  - Kashiwa Reysol vs Kawasaki Frontale
+  - Shimizu S Pulse vs Albirex Niigata
+  - Kashima Antlers vs Tokyo Verdy
+  - Yokohama FC vs Fagiano Okayama
+  - Gamba Osaka vs Avispa Fukuoka
+  - Yokohama F Marinos vs Shonan Bellmare
+- Primera División Chile:
+  - Universidad de Chile vs Ñublense
+  - Deportes Iquique vs Coquimbo Unido
+  - Palestino vs Cobresal
+  - O'Higgins vs Huachipato
+  - Audax Italiano vs Deportes Iquique
+  - Coquimbo Unido vs Universidad Católica (CHI)
+  - Unión Española vs Palestino
+  - Ñublense vs Deportes Limache
+  - La Serena vs Unión Española
+  - Deportes Limache vs Coquimbo Unido
+- MLS:
+  - Austin FC vs Sporting Kansas City
+  - Seattle Sounders FC vs Charlotte FC
+  - Inter Miami CF vs New York City FC
+  - Houston Dynamo vs FC Dallas
+  - Atlanta United FC vs CF Montreal
+  - Los Angeles FC vs Minnesota United FC
+  - Orlando City SC vs Philadelphia Union
+  - Columbus Crew SC vs Chicago Fire
+  - FC Cincinnati vs New York Red Bulls
+  - New York Red Bulls vs Nashville SC
