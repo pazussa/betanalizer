@@ -1,0 +1,26 @@
+strategy_rule,Fecha_Hora_Colombia,Partido,Liga,Mercado,Mejor_Casa,Mejor_Cuota,Margen_Casa_Pct,result_bin,cuota_ganada,stake,ganancia
+sabado + Under 2.5 + margen<=3.75,2025-12-20 03:35:00,Melbourne City vs Melbourne Victory,A-League,Under 2.5,pinnacle,2.02,2.98,1.0,2.02,1.0,1.02
+sabado + Under 2.5 + margen<=3.75,2025-12-20 06:30:00,Torku Konyaspor vs Kayserispor,Super League,Under 2.5,pinnacle,2.02,2.98,1.0,2.02,1.0,1.02
+sabado + Under 2.5 + margen<=3.75,2025-12-20 07:30:00,Preston North End vs Norwich City,Championship,Under 2.5,pinnacle,1.99,3.16,1.0,1.99,1.0,0.99
+sabado + Under 2.5 + margen<=3.75,2025-12-20 08:00:00,Andorra CF vs Deportivo La Coruña,La Liga 2,Under 2.5,pinnacle,1.93,2.83,1.0,1.93,1.0,0.9299999999999999
+sabado + Under 2.5 + margen<=3.75,2025-12-20 09:00:00,Monza vs Carrarese,Serie B,Under 2.5,pinnacle,1.86,3.51,0.0,0.0,1.0,-1.0
+sabado + Under 2.5 + margen<=3.75,2025-12-20 09:00:00,Frosinone vs Spezia,Serie B,Under 2.5,pinnacle,1.96,3.38,0.0,0.0,1.0,-1.0
+sabado + Under 2.5 + margen<=3.75,2025-12-20 09:30:00,VfL Wolfsburg vs SC Freiburg,Bundesliga,Under 2.5,pinnacle,2.05,2.83,0.0,0.0,1.0,-1.0
+sabado + Under 2.5 + margen<=3.75,2025-12-20 09:30:00,1. FC Köln vs Union Berlin,Bundesliga,Under 2.5,pinnacle,1.92,2.84,1.0,1.92,1.0,0.9199999999999999
+sabado + Under 2.5 + margen<=3.75,2025-12-20 10:00:00,Sheffield United vs Birmingham City,Championship,Under 2.5,pinnacle,1.92,3.37,0.0,0.0,1.0,-1.0
+sabado + Under 2.5 + margen<=3.75,2025-12-20 10:00:00,St Mirren vs Livingston,Premiership,Under 2.5,pinnacle,1.93,3.63,1.0,1.93,1.0,0.9299999999999999
+sabado + Under 2.5 + margen<=3.75,2025-12-20 10:00:00,Wolverhampton Wanderers vs Brentford,EPL,Under 2.5,pinnacle,1.85,2.83,1.0,1.85,1.0,0.8500000000000001
+sabado + Under 2.5 + margen<=3.75,2025-12-20 10:00:00,Dundee United vs Hibernian,Premiership,Under 2.5,pinnacle,1.97,3.67,1.0,1.97,1.0,0.97
+sabado + Under 2.5 + margen<=3.75,2025-12-20 10:00:00,Watford vs Stoke City,Championship,Under 2.5,pinnacle,1.91,3.38,1.0,1.91,1.0,0.9099999999999999
+sabado + Under 2.5 + margen<=3.75,2025-12-20 10:15:00,Levante vs Real Sociedad,La Liga,Under 2.5,pinnacle,1.94,3.09,1.0,1.94,1.0,0.94
+sabado + Under 2.5 + margen<=3.75,2025-12-20 11:15:00,Avellino vs Palermo,Serie B,Under 2.5,pinnacle,1.84,3.37,0.0,0.0,1.0,-1.0
+sabado + Under 2.5 + margen<=3.75,2025-12-20 12:00:00,Lazio vs Cremonese,Serie A,Under 2.5,pinnacle,1.83,2.72,1.0,1.83,1.0,0.8300000000000001
+domingo + Under 3.5,2025-12-21 06:15:00,FC Utrecht vs PSV Eindhoven,Eredivisie,Under 3.5,tipico_de,1.67,7.5,1.0,1.67,1.0,0.6699999999999999
+domingo + Under 3.5,2025-12-21 07:30:00,Club Brugge vs Gent,Belgium First Div,Under 3.5,tipico_de,1.7,7.6,1.0,1.7,1.0,0.7
+domingo + Under 3.5,2025-12-21 08:00:00,FC Lausanne-Sport vs FC Luzern,Swiss Superleague,Under 3.5,codere_it,1.61,6.16,0.0,0.0,1.0,-1.0
+domingo + Under 3.5,2025-12-21 08:30:00,Feyenoord vs FC Twente Enschede,Eredivisie,Under 3.5,tipico_de,1.6,7.95,1.0,1.6,1.0,0.6000000000000001
+domingo + Under 3.5,2025-12-21 10:00:00,Celtic vs Aberdeen,Premiership,Under 3.5,tipico_de,1.67,8.66,0.0,0.0,1.0,-1.0
+domingo + Under 3.5,2025-12-21 10:15:00,Villarreal vs Barcelona,La Liga,Under 3.5,leovegas_se,2.25,5.42,1.0,2.25,1.0,1.25
+domingo + Under 3.5,2025-12-21 11:30:00,1. FC Heidenheim vs Bayern Munich,Bundesliga,Under 3.5,leovegas_se,2.33,5.42,0.0,0.0,1.0,-1.0
+domingo + Under 3.5,2025-12-21 12:00:00,Galatasaray vs Kasimpasa SK,Super League,Under 3.5,tipico_de,1.95,7.78,1.0,1.95,1.0,0.95
+domingo + Under 3.5,2025-12-21 14:00:00,AEK Athens vs OFI Crete,Super League,Under 3.5,tipico_de,1.7,8.82,1.0,1.7,1.0,0.7

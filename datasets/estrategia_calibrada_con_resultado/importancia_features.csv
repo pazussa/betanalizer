@@ -1,0 +1,41 @@
+model,feature,importance
+logistic,cat__Mejor_Casa_bwin,0.708922637864138
+logistic,num__diferencia_cuota_promedio,0.5940589779936226
+logistic,num__cuota_promedio_mercado,0.36523896890720886
+logistic,cat__Liga_Bundesliga,0.34926895825313875
+logistic,cat__Liga_Primera División,0.34471351236911163
+logistic,cat__Liga_Europa League,0.3222930070002874
+logistic,num__edge_pct,0.31964205465285217
+logistic,num__mejor_cuota,0.31832160330030274
+logistic,cat__Mercado_Over 3.5,0.3176307665614522
+logistic,cat__Liga_Ligue 2,0.2764228224716122
+logistic,cat__Liga_Swiss Superleague,0.26564842561213703
+logistic,cat__Liga_Belgium First Div,0.26029800225364413
+logistic,cat__Mejor_Casa_betsson,0.22977280507953626
+logistic,cat__Liga_Serie B,0.21296378862010448
+logistic,cat__Liga_Eliteserien,0.20236633488541314
+logistic,cat__Mercado_Under 1.5,0.18919228544472064
+logistic,cat__Liga_League 1,0.18690970413880542
+logistic,cat__Mercado_Under 3.5,0.16359925230548655
+logistic,cat__Mejor_Casa_marathonbet,0.16241177652571262
+logistic,cat__Mejor_Casa_pinnacle,0.16149604058983003
+random_forest,num__cuota_promedio_mercado,0.17336934060051748
+random_forest,num__mejor_cuota,0.162722552533364
+random_forest,num__p_win_calibrada,0.11773143801596786
+random_forest,num__confianza_calibrada,0.11766641706552126
+random_forest,num__volatilidad_pct,0.054250739291732554
+random_forest,num__edge_pct,0.051903077166685276
+random_forest,num__confianza,0.048800914565799526
+random_forest,num__diferencia_cuota_promedio,0.04625574080638398
+random_forest,num__score_final,0.044524932553558244
+random_forest,num__margen_casa_pct,0.04348493332527582
+random_forest,num__score_minus_margin,0.042642655550139345
+random_forest,num__num_casas,0.013100069694575242
+random_forest,cat__Mercado_1X,0.010638765750051479
+random_forest,cat__Tipo_Mercado_Doble Chance,0.00915965560236335
+random_forest,cat__market_family_double_chance,0.009091022276322521
+random_forest,cat__market_family_totals,0.008240744280160616
+random_forest,cat__Tipo_Mercado_Goles (Over/Under),0.007027240538398565
+random_forest,cat__Mercado_Under 2.5,0.005268818004384075
+random_forest,cat__Mercado_Over 2.5,0.004530146754784177
+random_forest,cat__Mejor_Casa_pinnacle,0.004387288716757112

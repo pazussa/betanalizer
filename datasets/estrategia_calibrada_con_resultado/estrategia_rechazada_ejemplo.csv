@@ -1,0 +1,2 @@
+rule,train_n,valid_n,test_n,train_hit,valid_hit,test_hit,train_roi,valid_roi,test_roi,oos_n,oos_hit,oos_roi,hit_ci_low,hit_ci_high,roi_ci_low,roi_ci_high,oos_days,positive_days,non_negative_days
+cuota_promedio_mercado <= 1.4300 AND margen_casa_pct <= 3.8900 AND num_casas >= 4.0000,80,20,30,0.825,0.75,0.8333333333333334,0.030249999999999964,-0.050500000000000024,0.07617666666666663,50,0.8,0.025505999999999966,0.6696262789551477,0.8875637005402612,-0.12462595000000004,0.16120110000000004,4,3,3
